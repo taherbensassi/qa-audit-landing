@@ -1,22 +1,24 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { content } from "@/lib/content";
 import { staggerContainer } from "@/lib/animations";
-import { ArrowRight, Headphones, BarChart3, Shield } from "lucide-react";
-
-const HeroScene = dynamic(
-  () => import("./HeroScene").then((m) => m.HeroScene),
-  { ssr: false }
-);
+import {
+  ArrowRight,
+  BrainCircuit,
+  Network,
+  Layers,
+  Zap,
+  Lock,
+  Activity,
+} from "lucide-react";
+import { HeroWorkflow } from "./HeroWorkflow";
+import { HeroNetwork } from "./HeroNetwork";
 
 const { hero } = content;
 
-/* Letter-stagger animation for headline */
 const letterVariants = {
   hidden: { opacity: 0, y: 40, rotateX: -40 },
   visible: (i: number) => ({
@@ -24,8 +26,8 @@ const letterVariants = {
     y: 0,
     rotateX: 0,
     transition: {
-      delay: 0.6 + i * 0.025,
-      duration: 0.6,
+      delay: 0.4 + i * 0.02,
+      duration: 0.5,
       ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
@@ -36,11 +38,23 @@ const fadeUpStagger = {
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: {
+      delay,
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
   }),
 };
 
-function StaggeredText({ text, startIndex = 0, className = "" }: { text: string; startIndex?: number; className?: string }) {
+function StaggeredText({
+  text,
+  startIndex = 0,
+  className = "",
+}: {
+  text: string;
+  startIndex?: number;
+  className?: string;
+}) {
   return (
     <span className={className} style={{ perspective: 600 }}>
       {text.split("").map((char, i) => (
@@ -58,36 +72,98 @@ function StaggeredText({ text, startIndex = 0, className = "" }: { text: string;
   );
 }
 
+/* Floating tech orbitals */
+const orbitals = [
+  { icon: BrainCircuit, label: "LLM Engine", x: "5%", y: "22%", delay: 0.5 },
+  { icon: Network, label: "MCP Protocol", x: "88%", y: "18%", delay: 1.0 },
+  { icon: Layers, label: "Multi-model", x: "3%", y: "65%", delay: 1.5 },
+  { icon: Zap, label: "Real-time", x: "92%", y: "58%", delay: 2.0 },
+  { icon: Lock, label: "SOC2", x: "12%", y: "45%", delay: 2.5 },
+  { icon: Activity, label: "Streaming", x: "82%", y: "40%", delay: 3.0 },
+];
+
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.92]);
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+  const networkY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const networkOpacity = useTransform(scrollYProgress, [0, 0.6], [0.6, 0]);
+  const orbitalY = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const workflowY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const lines = hero.headline.split("\n");
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-gray-950 pt-32 pb-0">
-      {/* 3D Globe Background */}
-      <motion.div style={{ opacity: bgOpacity }}>
-        <HeroScene />
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen overflow-hidden bg-[#09090b] pt-32 pb-0"
+    >
+      {/* Animated network background — deepest parallax layer */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{ y: networkY, opacity: networkOpacity }}
+      >
+        <HeroNetwork />
       </motion.div>
 
-      {/* Gradient overlays for depth */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-gray-950/60 via-transparent to-gray-950" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-gray-950/40 via-transparent to-gray-950/40" />
-
-      {/* Animated grid lines background */}
-      <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.04]"
+      {/* Subtle grid */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] opacity-[0.025]"
         style={{
-          backgroundImage: `linear-gradient(rgba(124,58,237,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.3) 1px, transparent 1px)`,
+          backgroundImage:
+            "linear-gradient(rgba(124,58,237,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.4) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
+
+      {/* Radial glow center */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 30%, rgba(124,58,237,0.06) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#09090b]/40 via-transparent to-[#09090b]" />
+
+      {/* Floating tech orbitals — mid parallax layer */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-[2] hidden lg:block"
+        style={{ y: orbitalY }}
+      >
+        {orbitals.map((orb) => (
+          <motion.div
+            key={orb.label}
+            className="absolute flex items-center gap-1.5"
+            style={{ left: orb.x, top: orb.y }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{
+              opacity: [0, 0.25, 0.15, 0.25],
+              scale: 1,
+              y: [0, -6, 0, 6, 0],
+            }}
+            transition={{
+              delay: orb.delay + 1,
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <div className="flex h-6 w-6 items-center justify-center border border-violet-500/10 bg-violet-500/5 backdrop-blur-sm">
+              <orb.icon size={10} className="text-violet-400/50" />
+            </div>
+            <span className="font-mono text-[8px] uppercase tracking-widest text-violet-400/30">
+              {orb.label}
+            </span>
+          </motion.div>
+        ))}
+      </motion.div>
 
       <motion.div
         variants={staggerContainer}
@@ -97,17 +173,17 @@ export function Hero() {
       >
         {/* Badge */}
         <motion.div
-          custom={0.3}
+          custom={0.2}
           variants={fadeUpStagger}
-          className="mb-6 inline-flex items-center gap-2 border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 backdrop-blur-md animate-pulse-glow"
+          className="mb-6 inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-4 py-1.5 backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 bg-violet-400 keep-round animate-pulse" />
-          <span className="font-mono text-xs tracking-wider uppercase text-violet-300">
+          <span className="h-1.5 w-1.5 bg-emerald-400 keep-round animate-pulse" />
+          <span className="font-mono text-xs tracking-wider uppercase text-zinc-500">
             {hero.label}
           </span>
         </motion.div>
 
-        {/* Headline with letter stagger */}
+        {/* Headline */}
         <motion.h1
           initial="hidden"
           animate="visible"
@@ -127,81 +203,78 @@ export function Hero() {
 
         {/* Subheadline */}
         <motion.p
-          custom={1.8}
+          custom={1.2}
           variants={fadeUpStagger}
-          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-400"
+          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400"
         >
           {hero.subheadline}
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTAs */}
         <motion.div
-          custom={2.1}
+          custom={1.5}
           variants={fadeUpStagger}
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Button href={hero.cta.href} size="lg">
-            <span className="relative z-10 flex items-center">
+          <Button href={hero.cta.href} variant="primaryDark" size="lg">
+            <span className="flex items-center">
               {hero.cta.label}
-              <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight
+                size={16}
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              />
             </span>
           </Button>
-          <Button href={hero.secondaryCta.href} variant="secondary" size="lg">
+          <Button
+            href={hero.secondaryCta.href}
+            variant="secondaryDark"
+            size="lg"
+          >
             {hero.secondaryCta.label}
           </Button>
         </motion.div>
 
-        {/* Feature pills */}
+        {/* Workflow animation — own parallax layer */}
         <motion.div
-          custom={2.5}
+          custom={1.8}
           variants={fadeUpStagger}
-          className="mt-12 flex flex-wrap items-center justify-center gap-3"
+          className="mt-20"
+          style={{ y: workflowY }}
         >
-          {[
-            { icon: Headphones, label: "Call Analysis" },
-            { icon: BarChart3, label: "Quality Scoring" },
-            { icon: Shield, label: "Compliance" },
-          ].map(({ icon: Icon, label }, i) => (
-            <motion.span
-              key={label}
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 text-xs text-gray-300 backdrop-blur-md"
-            >
-              <Icon size={14} className="text-violet-400" />
-              {label}
-            </motion.span>
-          ))}
+          <HeroWorkflow />
         </motion.div>
       </motion.div>
 
-      {/* Hero image with parallax */}
+      {/* Hero dashboard image with parallax */}
       <motion.div
         style={{ y: imageY, scale: imageScale }}
-        className="relative z-10 mx-auto mt-16 max-w-6xl px-6"
+        className="relative z-10 mx-auto mt-20 max-w-6xl px-6"
       >
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 2.8, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden border border-violet-500/20 bg-gray-900/50 shadow-2xl shadow-violet-500/10 backdrop-blur-sm"
+          className="relative overflow-hidden border border-white/[0.08] bg-[#111113]/80 shadow-2xl shadow-black/40 backdrop-blur-sm"
         >
-          {/* Glow behind image */}
-          <div className="absolute -inset-4 bg-gradient-to-b from-violet-500/10 via-transparent to-transparent blur-xl" />
-          {/* Animated border glow */}
-          <div className="absolute inset-0 z-20 pointer-events-none border border-violet-400/10 animate-border-glow" />
-          <Image
-            src={hero.image}
+          {/* Glow corners */}
+          <span className="absolute top-0 left-0 w-16 h-px bg-gradient-to-r from-violet-500/30 to-transparent" />
+          <span className="absolute top-0 left-0 h-16 w-px bg-gradient-to-b from-violet-500/30 to-transparent" />
+          <span className="absolute bottom-0 right-0 w-16 h-px bg-gradient-to-l from-indigo-500/30 to-transparent" />
+          <span className="absolute bottom-0 right-0 h-16 w-px bg-gradient-to-t from-indigo-500/30 to-transparent" />
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/hero-dashboard.svg"
             alt="Platform dashboard"
             width={1200}
             height={700}
             className="relative w-full"
-            priority
           />
         </motion.div>
       </motion.div>
 
-      {/* Bottom gradient fade to next section */}
-      <div className="relative z-10 h-32 bg-gradient-to-b from-gray-950 to-white" />
+      {/* Fade to white */}
+      <div className="relative z-10 h-32 bg-gradient-to-b from-[#09090b] to-white" />
     </section>
   );
 }

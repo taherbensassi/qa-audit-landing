@@ -2,7 +2,7 @@ import Link from "next/link";
 
 type ButtonProps = {
   href: string;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "primaryDark" | "secondaryDark";
   size?: "default" | "lg";
   children: React.ReactNode;
   className?: string;
@@ -27,6 +27,10 @@ export function Button({
     secondary:
       "border border-violet-200 hover:border-violet-300 text-violet-700 bg-white hover:bg-violet-50 hover:-translate-y-0.5",
     ghost: "text-violet-600 hover:text-violet-700",
+    primaryDark:
+      "bg-white text-zinc-900 hover:bg-zinc-100 shadow-lg shadow-white/10 hover:-translate-y-0.5 font-semibold",
+    secondaryDark:
+      "border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white bg-transparent hover:-translate-y-0.5",
   };
 
   return (

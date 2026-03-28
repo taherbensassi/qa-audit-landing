@@ -39,7 +39,7 @@ export function SectionDivider({ variant = "wave", flip = false, className = "" 
             <motion.path
               key={i}
               d={`M0,${20 + i * 12} C360,${i * 8} 720,${50 - i * 10} 1440,${15 + i * 15}`}
-              stroke="rgba(124, 58, 237, 0.15)"
+              stroke="rgba(167, 139, 250, 0.15)"
               strokeWidth="1.5"
               initial={{ pathLength: 0 }}
               animate={isInView ? { pathLength: 1 } : {}}
@@ -62,14 +62,14 @@ export function SectionDivider({ variant = "wave", flip = false, className = "" 
       >
         <motion.path
           d="M0,40 C240,10 480,70 720,40 C960,10 1200,70 1440,40 L1440,80 L0,80 Z"
-          fill="rgba(124, 58, 237, 0.04)"
+          fill="rgba(167, 139, 250, 0.04)"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         />
         <motion.path
           d="M0,50 C360,20 720,70 1080,35 C1260,20 1380,50 1440,45"
-          stroke="rgba(124, 58, 237, 0.12)"
+          stroke="rgba(167, 139, 250, 0.12)"
           strokeWidth="1.5"
           fill="none"
           initial={{ pathLength: 0 }}
