@@ -1,0 +1,58 @@
+import {
+  Mic,
+  ClipboardCheck,
+  Shield,
+  Sparkles,
+  FileCode,
+  Zap,
+  Upload,
+  Plug,
+  BarChart3,
+  Brain,
+  FileCheck,
+  SlidersHorizontal,
+  Building2,
+  Activity,
+  TrendingUp,
+  FileText,
+  Mail,
+  Download,
+  CheckCircle,
+  Settings,
+  Users,
+  Lock,
+  Globe,
+  ShieldCheck,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const iconMap: Record<string, LucideIcon> = {
+  Mic,
+  ClipboardCheck,
+  Shield,
+  Sparkles,
+  FileCode,
+  Zap,
+  Upload,
+  Plug,
+  BarChart3,
+  Brain,
+  FileCheck,
+  SlidersHorizontal,
+  Building2,
+  Activity,
+  TrendingUp,
+  FileText,
+  Mail,
+  Download,
+  CheckCircle,
+  Settings,
+  Users,
+  Lock,
+  Globe,
+  ShieldCheck,
+};
+
+export function getIcon(name: string): LucideIcon {
+  return iconMap[name] ?? Mic;
+}
