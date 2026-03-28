@@ -16,18 +16,10 @@
     "subheadline": "Transition from manual QA sampling to full AI-powered quality monitoring. Analyze 100% of your conversations with precision that matches your best auditors.",
     "cta": { "label": "Request a Demo", "href": "#demo" },
     "secondaryCta": { "label": "Explore the Platform", "href": "#platform" },
-    "image": "/images/hero-dashboard.svg"
+    "image": "/images/product/dashboard.png"
   },
   "clients": {
-    "headline": "Trusted by leading call centers",
-    "logos": [
-      { "name": "Total Energy", "src": "/images/clients/client-1.svg" },
-      { "name": "Orange Telecom", "src": "/images/clients/client-2.svg" },
-      { "name": "AXA Insurance", "src": "/images/clients/client-3.svg" },
-      { "name": "Engie", "src": "/images/clients/client-4.svg" },
-      { "name": "SFR", "src": "/images/clients/client-5.svg" },
-      { "name": "Allianz", "src": "/images/clients/client-6.svg" }
-    ]
+    "headline": "Trusted by leading call centers"
   },
   "useCases": {
     "label": "Use Cases",
@@ -36,26 +28,20 @@
       {
         "title": "Quality Assurance",
         "description": "Automate call evaluations using your existing grilles. Score every conversation consistently, surface coaching opportunities, and track agent performance over time.",
-        "image": "/images/use-case-qa.svg",
+        "image": "/images/product/evaltion.png",
         "stats": "+98% accuracy vs. manual audit"
       },
       {
         "title": "Compliance & Risk",
         "description": "Monitor regulatory adherence across every interaction. Detect script deviations, flag non-compliant language, and generate audit-ready compliance reports automatically.",
-        "image": "/images/use-case-compliance.svg",
+        "image": "/images/product/workflow.png",
         "stats": "35% improvement in script adherence"
       },
       {
         "title": "Sales Performance",
         "description": "Analyze commercial conversations to identify winning patterns. Track pitch compliance, measure conversion drivers, and replicate top-performer behaviors across your team.",
-        "image": "/images/use-case-sales.svg",
+        "image": "/images/product/grille.png",
         "stats": "+15% conversion rate improvement"
-      },
-      {
-        "title": "Customer Intelligence",
-        "description": "Extract actionable insights from the voice of your customers. Detect friction points, trending topics, and sentiment shifts to inform your product and marketing strategy.",
-        "image": "/images/use-case-insights.svg",
-        "stats": "Real-time trend detection"
       }
     ]
   },
@@ -63,7 +49,7 @@
     "label": "Platform",
     "headline": "One platform, complete visibility",
     "description": "A unified workspace where QA managers, compliance officers, and team leads collaborate on quality — from call ingestion to executive reporting.",
-    "image": "/images/platform-overview.svg",
+    "image": "/images/product/dashboard.png",
     "capabilities": [
       {
         "category": "Ingestion & Processing",
@@ -152,9 +138,10 @@
   "showcase": {
     "headline": "See the platform in action",
     "items": [
-      { "title": "Evaluation Dashboard", "image": "/images/showcase-dashboard.svg", "description": "Real-time overview of all evaluations, scores, and compliance status" },
-      { "title": "Grille Editor", "image": "/images/showcase-grille.svg", "description": "Build and customize evaluation grilles with weighted scoring" },
-      { "title": "AI Analysis", "image": "/images/showcase-analysis.svg", "description": "Watch the AI evaluate a call against your criteria in real time" }
+      { "title": "Dashboard", "image": "/images/product/dashboard.png", "description": "Real-time overview of all evaluations, scores, and compliance status" },
+      { "title": "Evaluations", "image": "/images/product/evaltion.png", "description": "Browse, filter, and review AI-scored call evaluations" },
+      { "title": "Grille Editor", "image": "/images/product/grille.png", "description": "Build and customize evaluation grilles with weighted scoring" },
+      { "title": "AI Pipeline", "image": "/images/product/workflow.png", "description": "Watch the AI evaluate a call through the full pipeline in real time" }
     ]
   },
   "demo": {

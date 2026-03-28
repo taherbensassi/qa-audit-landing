@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/landing/Navbar";
-import { ComingSoon } from "@/components/landing/ComingSoon";
+import { PricingContent } from "@/components/landing/PricingContent";
+import { DemoCTA } from "@/components/landing/DemoCTA";
 import { Footer } from "@/components/landing/Footer";
 import type { Metadata } from "next";
 
@@ -12,7 +13,8 @@ export default function PricingPage() {
   return (
     <>
       <Navbar />
-      <ComingSoon title="Pricing" />
+      <PricingContent />
+      <DemoCTA />
       <Footer />
     </>
   );

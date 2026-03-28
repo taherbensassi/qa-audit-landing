@@ -264,7 +264,7 @@ export function Hero() {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/hero-dashboard.svg"
+            src="/images/product/dashboard.png"
             alt="Platform dashboard"
             width={1200}
             height={700}

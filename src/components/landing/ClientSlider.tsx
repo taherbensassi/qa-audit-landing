@@ -1,71 +1,103 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { content } from "@/lib/content";
 import { fadeInUp } from "@/lib/animations";
+import { Building2, Zap, Shield, Globe, BarChart3, BrainCircuit } from "lucide-react";
 
-const { clients } = content;
-
-/* Duplicate logos enough times to fill the carousel seamlessly */
-const logosRow1 = [...clients.logos, ...clients.logos, ...clients.logos];
-const logosRow2 = [...clients.logos, ...clients.logos, ...clients.logos].reverse();
+const industries = [
+  { icon: Zap, label: "Energy", delay: 0 },
+  { icon: Globe, label: "Telecom", delay: 0.8 },
+  { icon: Shield, label: "Insurance", delay: 1.6 },
+  { icon: Building2, label: "Banking", delay: 2.4 },
+  { icon: BarChart3, label: "Retail", delay: 3.2 },
+  { icon: BrainCircuit, label: "BPO", delay: 4.0 },
+];
 
 export function ClientSlider() {
   return (
-    <section className="relative border-y border-gray-100 bg-white py-14 overflow-hidden">
+    <section className="relative border-y border-gray-100 bg-white py-16 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-violet-50/20 via-transparent to-violet-50/20" />
+
       <motion.p
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mb-8 text-center text-xs font-medium tracking-widest uppercase text-gray-400"
+        className="mb-10 text-center text-xs font-medium tracking-[0.2em] uppercase text-gray-400"
       >
-        {clients.headline}
+        Built for regulated industries
       </motion.p>
 
-      {/* Row 1 — scrolls left */}
-      <div className="relative mb-5">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
-        <div className="flex animate-scroll-left items-center gap-20 w-max">
-          {logosRow1.map((logo, i) => (
-            <div
-              key={`r1-${i}`}
-              className="flex-shrink-0 opacity-40 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 hover:scale-110"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={130}
-                height={44}
-                className="h-9 w-auto object-contain"
-              />
+      {/* 3D orbital ring of industry icons */}
+      <div className="relative mx-auto h-48 w-full max-w-3xl" style={{ perspective: 800 }}>
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* Center badge */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, type: "spring", damping: 12 }}
+            className="relative z-10 flex flex-col items-center gap-2"
+          >
+            <div className="flex h-16 w-16 items-center justify-center border-2 border-violet-200 bg-violet-50">
+              <Shield size={24} className="text-violet-600" strokeWidth={1.5} />
             </div>
-          ))}
+            <span className="font-mono text-[10px] uppercase tracking-widest text-violet-500">
+              Multi-Industry
+            </span>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Row 2 — scrolls right */}
-      <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
-        <div className="flex animate-scroll-right items-center gap-20 w-max">
-          {logosRow2.map((logo, i) => (
-            <div
-              key={`r2-${i}`}
-              className="flex-shrink-0 opacity-25 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 hover:scale-110"
+        {/* Orbiting industry tags */}
+        {industries.map((item, i) => {
+          const angle = (i / industries.length) * 360;
+          const radiusX = 280;
+          const radiusY = 70;
+          return (
+            <motion.div
+              key={item.label}
+              className="absolute left-1/2 top-1/2"
+              animate={{
+                x: [
+                  Math.cos(((angle) * Math.PI) / 180) * radiusX - 40,
+                  Math.cos(((angle + 120) * Math.PI) / 180) * radiusX - 40,
+                  Math.cos(((angle + 240) * Math.PI) / 180) * radiusX - 40,
+                  Math.cos(((angle + 360) * Math.PI) / 180) * radiusX - 40,
+                ],
+                y: [
+                  Math.sin(((angle) * Math.PI) / 180) * radiusY - 16,
+                  Math.sin(((angle + 120) * Math.PI) / 180) * radiusY - 16,
+                  Math.sin(((angle + 240) * Math.PI) / 180) * radiusY - 16,
+                  Math.sin(((angle + 360) * Math.PI) / 180) * radiusY - 16,
+                ],
+                scale: [
+                  1 + Math.sin(((angle) * Math.PI) / 180) * 0.15,
+                  1 + Math.sin(((angle + 120) * Math.PI) / 180) * 0.15,
+                  1 + Math.sin(((angle + 240) * Math.PI) / 180) * 0.15,
+                  1 + Math.sin(((angle + 360) * Math.PI) / 180) * 0.15,
+                ],
+                opacity: [
+                  0.5 + (1 + Math.sin(((angle) * Math.PI) / 180)) * 0.25,
+                  0.5 + (1 + Math.sin(((angle + 120) * Math.PI) / 180)) * 0.25,
+                  0.5 + (1 + Math.sin(((angle + 240) * Math.PI) / 180)) * 0.25,
+                  0.5 + (1 + Math.sin(((angle + 360) * Math.PI) / 180)) * 0.25,
+                ],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
             >
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={110}
-                height={36}
-                className="h-7 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+              <div className="flex items-center gap-2 border border-gray-100 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:border-violet-200 hover:shadow-md">
+                <item.icon size={14} className="text-violet-500" strokeWidth={1.5} />
+                <span className="text-xs font-medium text-gray-600 whitespace-nowrap">
+                  {item.label}
+                </span>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
