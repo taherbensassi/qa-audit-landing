@@ -8,23 +8,23 @@ const steps = [
   {
     num: "01",
     icon: Upload,
-    title: "Ingest",
+    title: "Ingestion",
     description:
-      "Upload calls or connect your telephony system via API. Batch or real-time — we handle audio in any format, any language.",
+      "Importez vos appels ou connectez votre système de téléphonie via API. En lot ou en temps réel — nous traitons l'audio dans tous les formats et toutes les langues.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "Evaluate",
+    title: "Évaluation",
     description:
-      "AI transcribes and analyzes each call against your custom evaluation grilles. Every theme, every criterion, every compliance rule — scored in seconds.",
+      "L'IA transcrit et analyse chaque appel selon vos grilles d'évaluation personnalisées. Chaque thème, chaque critère, chaque règle de conformité — noté en secondes.",
   },
   {
     num: "03",
     icon: LineChart,
-    title: "Act",
+    title: "Action",
     description:
-      "Review scores, surface coaching opportunities, and export audit-ready compliance reports. Your team focuses on improving quality — not listening to calls.",
+      "Consultez les scores, identifiez les opportunités de coaching et exportez des rapports de conformité prêts pour l'audit. Votre équipe se concentre sur l'amélioration — pas sur l'écoute.",
   },
 ];
 
@@ -40,25 +40,25 @@ export function HowItWorks() {
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600"
         >
-          How It Works
+          Comment ça marche
         </motion.p>
         <motion.h2
           variants={fadeInUp}
           className="mb-20 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl"
           style={{ lineHeight: 1.2 }}
         >
-          From raw audio to actionable insight
+          De l'audio brut à l'insight actionnable
           <br />
-          <span className="text-gray-400">in three steps</span>
+          <span className="text-gray-400">en trois étapes</span>
         </motion.h2>
 
         <div className="relative grid gap-12 md:grid-cols-3">
           {/* Connecting line */}
           <div className="pointer-events-none absolute top-16 left-[16.5%] right-[16.5%] hidden md:block">
             <motion.div
-              className="h-px w-full bg-gradient-to-r from-violet-200 via-violet-300 to-violet-200"
+              className="h-px w-full bg-gradient-to-r from-red-200 via-violet-300 to-violet-200"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -74,7 +74,7 @@ export function HowItWorks() {
             >
               {/* Number badge */}
               <motion.div
-                className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-violet-200 bg-white text-lg font-bold text-violet-600 keep-round shadow-sm relative z-10"
+                className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-red-200 bg-white text-lg font-bold text-red-600 keep-round shadow-sm relative z-10"
                 whileInView={{ scale: [0.8, 1.05, 1] }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
@@ -83,8 +83,8 @@ export function HowItWorks() {
               </motion.div>
 
               {/* Icon */}
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100">
-                <step.icon size={22} className="text-violet-600" strokeWidth={1.5} />
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-red-50 transition-colors duration-300 group-hover:bg-red-100">
+                <step.icon size={22} className="text-red-600" strokeWidth={1.5} />
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-900">

@@ -9,38 +9,38 @@ const steps = [
   {
     num: "01",
     icon: Upload,
-    title: "Upload your calls",
+    title: "Importez vos appels",
     description:
-      "Batch upload audio files or connect your telephony system via our REST API. We accept any format — MP3, WAV, FLAC, OGG — in any language. Real-time or batch processing, your choice.",
+      "Import en lot de fichiers audio ou connexion à votre système de téléphonie via notre API REST. Nous acceptons tous les formats — MP3, WAV, FLAC, OGG — dans toutes les langues. Temps réel ou batch, à vous de choisir.",
     image: "/images/product/dashboard.png",
-    details: ["Multi-format audio support", "API & manual upload", "Automatic speaker detection"],
+    details: ["Support audio multi-format", "Import API & manuel", "Détection automatique des locuteurs"],
   },
   {
     num: "02",
     icon: BrainCircuit,
-    title: "AI transcribes & analyzes",
+    title: "L'IA transcrit & analyse",
     description:
-      "Our LLM pipeline transcribes each call with speaker diarization, then evaluates the conversation against your custom evaluation grille — every theme, every criterion, every compliance rule.",
+      "Notre pipeline LLM transcrit chaque appel avec diarisation des locuteurs, puis évalue la conversation selon votre grille d'évaluation — chaque thème, chaque critère, chaque règle de conformité.",
     image: "/images/product/workflow.png",
-    details: ["Multi-language transcription", "Speaker diarization", "10-step automated pipeline"],
+    details: ["Transcription multi-langue", "Diarisation des locuteurs", "Pipeline automatisé en 10 étapes"],
   },
   {
     num: "03",
     icon: ClipboardCheck,
-    title: "Review & validate",
+    title: "Revoyez & validez",
     description:
-      "Human-in-the-loop quality assurance. Your QA managers review AI evaluations, calibrate scoring, and validate results. The AI learns from your corrections over time.",
+      "Assurance qualité avec l'humain au centre. Vos responsables QA revoient les évaluations IA, calibrent le scoring et valident les résultats. L'IA apprend de vos corrections au fil du temps.",
     image: "/images/product/evaltion.png",
-    details: ["Side-by-side comparison", "Calibration system", "Audit trail"],
+    details: ["Comparaison côte à côte", "Système de calibration", "Piste d'audit"],
   },
   {
     num: "04",
     icon: BarChart3,
-    title: "Act on insights",
+    title: "Agissez sur les insights",
     description:
-      "Surface coaching opportunities, track agent performance trends, and export audit-ready compliance reports. Your team focuses on improving quality — not listening to calls.",
+      "Identifiez les opportunités de coaching, suivez les tendances de performance des agents et exportez des rapports de conformité prêts pour l'audit. Votre équipe se concentre sur l'amélioration — pas sur l'écoute.",
     image: "/images/product/dashboard.png",
-    details: ["Score distribution analytics", "Agent performance trends", "PDF & Excel exports"],
+    details: ["Analytics de distribution de scores", "Tendances performance agents", "Exports PDF & Excel"],
   },
 ];
 
@@ -55,22 +55,22 @@ export function HowItWorksContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600"
         >
-          How It Works
+          Comment ça marche
         </motion.p>
         <motion.h1
           variants={fadeInUp}
           className="mb-6 max-w-3xl text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl"
           style={{ lineHeight: 1.1 }}
         >
-          From raw audio to actionable insight
+          De l'audio brut à l'insight actionnable
         </motion.h1>
         <motion.p
           variants={fadeInUp}
           className="mb-24 max-w-2xl text-lg text-gray-500"
         >
-          Four automated steps. Zero manual listening. Every call scored against your standards in under two minutes.
+          Quatre étapes automatisées. Zéro écoute manuelle. Chaque appel évalué selon vos standards en moins de deux minutes.
         </motion.p>
 
         <div className="space-y-32">
@@ -90,10 +90,10 @@ export function HowItWorksContent() {
                 className={i % 2 === 1 ? "lg:order-2" : ""}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center border-2 border-violet-200 bg-violet-50 font-mono text-sm font-bold text-violet-600">
+                  <span className="flex h-10 w-10 items-center justify-center border-2 border-red-200 bg-red-50 font-mono text-sm font-bold text-red-600">
                     {step.num}
                   </span>
-                  <step.icon size={20} className="text-violet-500" strokeWidth={1.5} />
+                  <step.icon size={20} className="text-red-500" strokeWidth={1.5} />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-gray-900 lg:text-3xl">
                   {step.title}
@@ -104,7 +104,7 @@ export function HowItWorksContent() {
                 <ul className="space-y-2">
                   {step.details.map((d) => (
                     <li key={d} className="flex items-center gap-2 text-sm text-gray-600">
-                      <ArrowRight size={12} className="text-violet-400" />
+                      <ArrowRight size={12} className="text-red-400" />
                       {d}
                     </li>
                   ))}

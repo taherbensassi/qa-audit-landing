@@ -40,7 +40,7 @@ export function Showcase() {
               onClick={() => setActiveIndex(i)}
               className={`px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                 i === activeIndex
-                  ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
+                  ? "bg-red-600 text-white shadow-lg shadow-red-500/30"
                   : "text-white/40 hover:text-white/70 hover:bg-white/5"
               }`}
             >

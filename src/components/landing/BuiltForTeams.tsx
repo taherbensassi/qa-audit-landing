@@ -5,17 +5,17 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/anima
 import { CheckCircle, Users, Shield } from "lucide-react";
 
 const qaManagerPoints = [
-  "Monitor 100% of calls — not just a 2% sample",
-  "Surface coaching opportunities automatically",
-  "Track agent improvement over time with data",
-  "Export audit-ready reports in one click",
+  "Surveillez 100% des appels — pas seulement 2%",
+  "Identifiez automatiquement les opportunités de coaching",
+  "Suivez la progression des agents avec des données concrètes",
+  "Exportez des rapports d'audit en un clic",
 ];
 
 const compliancePoints = [
-  "Verify script adherence across every call",
-  "Flag regulatory violations in real time",
-  "Generate compliance audit trails automatically",
-  "Full traceability with GDPR compliance",
+  "Vérifiez l'adhérence au script sur chaque appel",
+  "Signalez les violations réglementaires en temps réel",
+  "Générez des pistes d'audit conformité automatiquement",
+  "Traçabilité complète conforme au RGPD",
 ];
 
 export function BuiltForTeams() {
@@ -30,24 +30,24 @@ export function BuiltForTeams() {
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-400"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-400"
         >
-          Built for Your Team
+          Conçu pour votre équipe
         </motion.p>
         <motion.h2
           variants={fadeInUp}
           className="mb-4 max-w-3xl text-3xl font-bold tracking-tight text-white lg:text-4xl"
           style={{ lineHeight: 1.2 }}
         >
-          AI handles the volume.
+          L'IA gère le volume.
           <br />
-          <span className="text-violet-400">Your expertise drives the quality.</span>
+          <span className="text-red-400">Votre expertise pilote la qualité.</span>
         </motion.h2>
         <motion.p
           variants={fadeInUp}
           className="mb-16 max-w-2xl text-base text-zinc-400"
         >
-          We don't replace your QA team — we give them superpowers. Your auditors set the standards, calibrate the AI, and make the final call. The platform just makes sure nothing slips through the cracks.
+          Nous ne remplaçons pas votre équipe QA — nous lui donnons des super-pouvoirs. Vos auditeurs définissent les standards, calibrent l'IA et ont le dernier mot. La plateforme s'assure que rien ne passe entre les mailles.
         </motion.p>
 
         <div className="grid gap-8 lg:grid-cols-2">
@@ -57,10 +57,10 @@ export function BuiltForTeams() {
             className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10"
           >
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center bg-violet-500/10">
-                <Users size={20} className="text-violet-400" strokeWidth={1.5} />
+              <div className="flex h-10 w-10 items-center justify-center bg-red-500/10">
+                <Users size={20} className="text-red-400" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg font-semibold text-white">For QA Managers</h3>
+              <h3 className="text-lg font-semibold text-white">Pour les Responsables QA</h3>
             </div>
             <ul className="space-y-4">
               {qaManagerPoints.map((point, i) => (
@@ -72,7 +72,7 @@ export function BuiltForTeams() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + i * 0.1 }}
                 >
-                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-violet-400" />
+                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-red-400" />
                   {point}
                 </motion.li>
               ))}
@@ -88,7 +88,7 @@ export function BuiltForTeams() {
               <div className="flex h-10 w-10 items-center justify-center bg-indigo-500/10">
                 <Shield size={20} className="text-indigo-400" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg font-semibold text-white">For Compliance Officers</h3>
+              <h3 className="text-lg font-semibold text-white">Pour les Compliance Officers</h3>
             </div>
             <ul className="space-y-4">
               {compliancePoints.map((point, i) => (

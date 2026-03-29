@@ -12,7 +12,7 @@ const { platform } = content;
 export function Platform() {
   return (
     <Section id="platform" className="bg-white">
-      <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
+      <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600">
         {platform.label}
       </motion.p>
       <motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
@@ -40,7 +40,7 @@ export function Platform() {
               className="mb-8 flex items-center gap-3 text-xs font-semibold tracking-widest uppercase text-gray-400"
             >
               <motion.span
-                className="h-px bg-violet-300"
+                className="h-px bg-red-300"
                 initial={{ width: 0 }}
                 whileInView={{ width: 32 }}
                 viewport={{ once: true }}
@@ -57,10 +57,10 @@ export function Platform() {
                     key={item.title}
                     variants={direction}
                     whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                    className="group border border-gray-100 bg-white p-8 transition-all duration-300 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50"
+                    className="group border border-gray-100 bg-white p-8 transition-all duration-300 hover:border-red-200 hover:shadow-lg hover:shadow-red-50"
                   >
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100">
-                      <Icon size={18} className="text-violet-600" strokeWidth={1.5} />
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center bg-red-50 transition-colors duration-300 group-hover:bg-red-100">
+                      <Icon size={18} className="text-red-600" strokeWidth={1.5} />
                     </div>
                     <h4 className="mb-2 text-sm font-semibold text-gray-900">{item.title}</h4>
                     <p className="text-sm leading-relaxed text-gray-500">{item.description}</p>

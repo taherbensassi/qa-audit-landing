@@ -9,7 +9,7 @@ const { metrics } = content;
 
 export function Metrics() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-violet-600 via-violet-700 to-indigo-700 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-r from-red-600 via-violet-700 to-indigo-700 py-24">
       {/* Floating shapes — CSS only, no parallax hooks */}
       <div className="pointer-events-none absolute top-0 left-[20%] h-40 w-40 bg-white/[0.04] animate-float" />
       <div className="pointer-events-none absolute bottom-0 right-[15%] h-32 w-32 bg-white/[0.03] animate-float-delayed" />

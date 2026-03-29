@@ -23,10 +23,10 @@ export function Button({
   };
   const variants = {
     primary:
-      "bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:-translate-y-0.5",
+      "bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/20 hover:shadow-red-500/30 hover:-translate-y-0.5",
     secondary:
-      "border border-violet-200 hover:border-violet-300 text-violet-700 bg-white hover:bg-violet-50 hover:-translate-y-0.5",
-    ghost: "text-violet-600 hover:text-violet-700",
+      "border border-red-200 hover:border-red-300 text-red-700 bg-white hover:bg-red-50 hover:-translate-y-0.5",
+    ghost: "text-red-600 hover:text-red-700",
     primaryDark:
       "bg-white text-zinc-900 hover:bg-zinc-100 shadow-lg shadow-white/10 hover:-translate-y-0.5 font-semibold",
     secondaryDark:

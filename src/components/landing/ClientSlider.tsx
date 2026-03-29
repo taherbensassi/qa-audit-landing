@@ -5,18 +5,18 @@ import { fadeInUp } from "@/lib/animations";
 import { Building2, Zap, Shield, Globe, BarChart3, BrainCircuit } from "lucide-react";
 
 const industries = [
-  { icon: Zap, label: "Energy", delay: 0 },
-  { icon: Globe, label: "Telecom", delay: 0.8 },
-  { icon: Shield, label: "Insurance", delay: 1.6 },
-  { icon: Building2, label: "Banking", delay: 2.4 },
-  { icon: BarChart3, label: "Retail", delay: 3.2 },
+  { icon: Zap, label: "Énergie", delay: 0 },
+  { icon: Globe, label: "Télécom", delay: 0.8 },
+  { icon: Shield, label: "Assurance", delay: 1.6 },
+  { icon: Building2, label: "Banque", delay: 2.4 },
+  { icon: BarChart3, label: "Commerce", delay: 3.2 },
   { icon: BrainCircuit, label: "BPO", delay: 4.0 },
 ];
 
 export function ClientSlider() {
   return (
     <section className="relative border-y border-gray-100 bg-white py-16 overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-violet-50/20 via-transparent to-violet-50/20" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-50/20 via-transparent to-violet-50/20" />
 
       <motion.p
         variants={fadeInUp}
@@ -25,11 +25,11 @@ export function ClientSlider() {
         viewport={{ once: true }}
         className="mb-10 text-center text-xs font-medium tracking-[0.2em] uppercase text-gray-400"
       >
-        Built for regulated industries
+        Conçu pour les industries réglementées
       </motion.p>
 
       {/* 3D orbital ring of industry icons */}
-      <div className="relative mx-auto h-48 w-full max-w-3xl" style={{ perspective: 800 }}>
+      <div className="relative mx-auto h-48 w-full max-w-3xl overflow-hidden" style={{ perspective: 800 }}>
         <div className="absolute inset-0 flex items-center justify-center">
           {/* Center badge */}
           <motion.div
@@ -39,11 +39,11 @@ export function ClientSlider() {
             transition={{ delay: 0.3, type: "spring", damping: 12 }}
             className="relative z-10 flex flex-col items-center gap-2"
           >
-            <div className="flex h-16 w-16 items-center justify-center border-2 border-violet-200 bg-violet-50">
-              <Shield size={24} className="text-violet-600" strokeWidth={1.5} />
+            <div className="flex h-16 w-16 items-center justify-center border-2 border-red-200 bg-red-50">
+              <Shield size={24} className="text-red-600" strokeWidth={1.5} />
             </div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-violet-500">
-              Multi-Industry
+            <span className="font-mono text-[10px] uppercase tracking-widest text-red-500">
+              Multi-Industrie
             </span>
           </motion.div>
         </div>
@@ -51,8 +51,8 @@ export function ClientSlider() {
         {/* Orbiting industry tags */}
         {industries.map((item, i) => {
           const angle = (i / industries.length) * 360;
-          const radiusX = 280;
-          const radiusY = 70;
+          const radiusX = typeof window !== "undefined" && window.innerWidth < 640 ? 130 : 280;
+          const radiusY = typeof window !== "undefined" && window.innerWidth < 640 ? 50 : 70;
           return (
             <motion.div
               key={item.label}
@@ -89,8 +89,8 @@ export function ClientSlider() {
                 ease: "linear",
               }}
             >
-              <div className="flex items-center gap-2 border border-gray-100 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:border-violet-200 hover:shadow-md">
-                <item.icon size={14} className="text-violet-500" strokeWidth={1.5} />
+              <div className="flex items-center gap-2 border border-gray-100 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:border-red-200 hover:shadow-md">
+                <item.icon size={14} className="text-red-500" strokeWidth={1.5} />
                 <span className="text-xs font-medium text-gray-600 whitespace-nowrap">
                   {item.label}
                 </span>

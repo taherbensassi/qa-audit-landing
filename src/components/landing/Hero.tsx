@@ -74,12 +74,12 @@ function StaggeredText({
 
 /* Floating tech orbitals */
 const orbitals = [
-  { icon: BrainCircuit, label: "LLM Engine", x: "5%", y: "22%", delay: 0.5 },
-  { icon: Network, label: "MCP Protocol", x: "88%", y: "18%", delay: 1.0 },
-  { icon: Layers, label: "Multi-model", x: "3%", y: "65%", delay: 1.5 },
-  { icon: Zap, label: "Real-time", x: "92%", y: "58%", delay: 2.0 },
-  { icon: Lock, label: "SOC2", x: "12%", y: "45%", delay: 2.5 },
-  { icon: Activity, label: "Streaming", x: "82%", y: "40%", delay: 3.0 },
+  { icon: BrainCircuit, label: "Moteur LLM", x: "5%", y: "22%", delay: 0.5, accent: true },
+  { icon: Network, label: "Protocole MCP", x: "88%", y: "18%", delay: 1.0, accent: false },
+  { icon: Layers, label: "Multi-modèle", x: "3%", y: "65%", delay: 1.5, accent: false },
+  { icon: Zap, label: "Temps réel", x: "92%", y: "58%", delay: 2.0, accent: true },
+  { icon: Lock, label: "SOC2", x: "12%", y: "45%", delay: 2.5, accent: false },
+  { icon: Activity, label: "Streaming", x: "82%", y: "40%", delay: 3.0, accent: false },
 ];
 
 export function Hero() {
@@ -121,12 +121,12 @@ export function Hero() {
         }}
       />
 
-      {/* Radial glow center */}
+      {/* Radial glow center — red + violet layers */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 30%, rgba(124,58,237,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 50% 35% at 45% 25%, rgba(220,38,38,0.05) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 55% 35%, rgba(124,58,237,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -155,10 +155,10 @@ export function Hero() {
               ease: "easeInOut",
             }}
           >
-            <div className="flex h-6 w-6 items-center justify-center border border-violet-500/10 bg-violet-500/5 backdrop-blur-sm">
-              <orb.icon size={10} className="text-violet-400/50" />
+            <div className={`flex h-6 w-6 items-center justify-center border backdrop-blur-sm ${orb.accent ? "border-red-500/15 bg-red-500/5" : "border-violet-500/10 bg-violet-500/5"}`}>
+              <orb.icon size={10} className={orb.accent ? "text-red-400/60" : "text-violet-400/50"} />
             </div>
-            <span className="font-mono text-[8px] uppercase tracking-widest text-violet-400/30">
+            <span className={`font-mono text-[8px] uppercase tracking-widest ${orb.accent ? "text-red-400/35" : "text-violet-400/30"}`}>
               {orb.label}
             </span>
           </motion.div>
@@ -177,7 +177,7 @@ export function Hero() {
           variants={fadeUpStagger}
           className="mb-6 inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-4 py-1.5 backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 bg-emerald-400 keep-round animate-pulse" />
+          <span className="h-1.5 w-1.5 bg-red-500 keep-round animate-pulse" />
           <span className="font-mono text-xs tracking-wider uppercase text-zinc-500">
             {hero.label}
           </span>
@@ -187,7 +187,7 @@ export function Hero() {
         <motion.h1
           initial="hidden"
           animate="visible"
-          className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl"
+          className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl"
           style={{ lineHeight: 1.05 }}
         >
           <StaggeredText text={lines[0]} startIndex={0} />
@@ -196,7 +196,7 @@ export function Hero() {
             <StaggeredText
               text={lines[1]}
               startIndex={lines[0].length}
-              className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-red-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent"
             />
           )}
         </motion.h1>
@@ -214,7 +214,7 @@ export function Hero() {
         <motion.div
           custom={1.5}
           variants={fadeUpStagger}
-          className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="flex flex-col items-center justify-center gap-4 sm:flex-row w-full sm:w-auto"
         >
           <Button href={hero.cta.href} variant="primaryDark" size="lg">
             <span className="flex items-center">
@@ -248,7 +248,7 @@ export function Hero() {
       {/* Hero dashboard image with parallax */}
       <motion.div
         style={{ y: imageY, scale: imageScale }}
-        className="relative z-10 mx-auto mt-20 max-w-6xl px-6"
+        className="relative z-10 mx-auto mt-12 sm:mt-20 max-w-6xl px-6"
       >
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
@@ -257,8 +257,8 @@ export function Hero() {
           className="relative overflow-hidden border border-white/[0.08] bg-[#111113]/80 shadow-2xl shadow-black/40 backdrop-blur-sm"
         >
           {/* Glow corners */}
-          <span className="absolute top-0 left-0 w-16 h-px bg-gradient-to-r from-violet-500/30 to-transparent" />
-          <span className="absolute top-0 left-0 h-16 w-px bg-gradient-to-b from-violet-500/30 to-transparent" />
+          <span className="absolute top-0 left-0 w-16 h-px bg-gradient-to-r from-red-500/30 to-transparent" />
+          <span className="absolute top-0 left-0 h-16 w-px bg-gradient-to-b from-red-500/30 to-transparent" />
           <span className="absolute bottom-0 right-0 w-16 h-px bg-gradient-to-l from-indigo-500/30 to-transparent" />
           <span className="absolute bottom-0 right-0 h-16 w-px bg-gradient-to-t from-indigo-500/30 to-transparent" />
 

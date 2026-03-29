@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "nouraisolutionqaaudit — AI-Powered QA Auditing";
+export const alt = "nouraisolutionqaaudit — Audit Qualité IA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -24,14 +24,14 @@ export default function OGImage() {
           style={{
             display: "flex",
             fontSize: 14,
-            color: "#7c3aed",
+            color: "#dc2626",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: 24,
             fontWeight: 600,
           }}
         >
-          AI-Powered QA Auditing
+          Audit Qualité propulsé par l'IA
         </div>
         <div
           style={{
@@ -43,7 +43,7 @@ export default function OGImage() {
             marginBottom: 16,
           }}
         >
-          Every call evaluated.
+          Chaque appel évalué.
         </div>
         <div
           style={{
@@ -55,7 +55,7 @@ export default function OGImage() {
             marginBottom: 24,
           }}
         >
-          Every insight delivered.
+          Chaque insight livré.
         </div>
         <div
           style={{
@@ -66,7 +66,7 @@ export default function OGImage() {
             textAlign: "center",
           }}
         >
-          Quality intelligence for call centers
+          Intelligence qualité pour centres d'appels
         </div>
         <div
           style={{

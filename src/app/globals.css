@@ -14,8 +14,10 @@
 :root {
   --background: #ffffff;
   --foreground: #1a1a2e;
-  --accent: #7c3aed;
-  --accent-light: #a78bfa;
+  --accent: #dc2626;
+  --accent-light: #ef4444;
+  --accent-secondary: #7c3aed;
+  --accent-secondary-light: #a78bfa;
   --surface: #f8f8fc;
   --surface-raised: #ffffff;
   --border: rgba(0, 0, 0, 0.08);
@@ -25,14 +27,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-space);
   --font-mono: var(--font-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans), "Space Grotesk", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -114,6 +116,15 @@ html {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+  50% { box-shadow: 0 0 28px 6px rgba(220, 38, 38, 0.2); }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 3s ease-in-out infinite;
+}
+
 /* ================================================================= */
 /*  SHIMMER / SWEEP EFFECTS                                          */
 /* ================================================================= */
@@ -177,11 +188,11 @@ html {
 .animate-aurora {
   background: linear-gradient(
     135deg,
-    rgba(124, 58, 237, 0.15) 0%,
-    rgba(99, 102, 241, 0.1) 25%,
-    rgba(139, 92, 246, 0.15) 50%,
-    rgba(79, 70, 229, 0.1) 75%,
-    rgba(124, 58, 237, 0.15) 100%
+    rgba(220, 38, 38, 0.12) 0%,
+    rgba(124, 58, 237, 0.15) 25%,
+    rgba(99, 102, 241, 0.1) 50%,
+    rgba(139, 92, 246, 0.15) 75%,
+    rgba(220, 38, 38, 0.12) 100%
   );
   background-size: 300% 300%;
   animation: aurora 10s ease infinite;
@@ -233,7 +244,7 @@ html {
 /* ================================================================= */
 
 .text-gradient {
-  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #6366f1 100%);
+  background: linear-gradient(135deg, #ef4444 0%, #7c3aed 50%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -11,7 +11,7 @@ const { features } = content;
 export function FeatureGrid() {
   return (
     <Section id="features" className="bg-[#fafafa]">
-      <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
+      <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600">
         {features.label}
       </motion.p>
       <motion.h2
@@ -34,8 +34,8 @@ export function FeatureGrid() {
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
               className="group"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-gradient-to-br from-violet-50 to-indigo-50 transition-all duration-300 group-hover:from-violet-100 group-hover:to-indigo-100 group-hover:shadow-md group-hover:shadow-violet-100/50">
-                <Icon size={20} className="text-violet-600 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-gradient-to-br from-red-50 to-violet-50 transition-all duration-300 group-hover:from-red-100 group-hover:to-violet-100 group-hover:shadow-md group-hover:shadow-red-100/50">
+                <Icon size={20} className="text-red-600 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
               </div>
               <h3 className="mb-2 text-base font-semibold text-gray-900">{feature.title}</h3>
               <p className="text-sm leading-relaxed text-gray-500">{feature.description}</p>

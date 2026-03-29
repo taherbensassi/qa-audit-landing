@@ -17,57 +17,57 @@ import {
 const principles = [
   {
     icon: Lock,
-    title: "Encryption at rest & in transit",
+    title: "Chiffrement au repos & en transit",
     description:
-      "All data is encrypted using AES-256 at rest and TLS 1.3 in transit. Audio files, transcripts, and evaluation results are protected at every stage.",
+      "Toutes les données sont chiffrées en AES-256 au repos et TLS 1.3 en transit. Fichiers audio, transcriptions et résultats d'évaluation sont protégés à chaque étape.",
   },
   {
     icon: KeyRound,
-    title: "Role-based access control",
+    title: "Contrôle d'accès par rôle",
     description:
-      "Fine-grained permissions ensure that each user only accesses the operations, clients, and data relevant to their role. Super Admin, Manager, and Agent tiers.",
+      "Des permissions granulaires garantissent que chaque utilisateur n'accède qu'aux opérations, clients et données pertinents pour son rôle. Niveaux Super Admin, Manager et Agent.",
   },
   {
     icon: Eye,
-    title: "Audit logging",
+    title: "Journalisation d'audit",
     description:
-      "Every action is logged with timestamps, user identity, and IP address. Full audit trail for regulatory compliance and internal investigations.",
+      "Chaque action est enregistrée avec horodatage, identité utilisateur et adresse IP. Piste d'audit complète pour la conformité réglementaire et les investigations internes.",
   },
   {
     icon: Server,
-    title: "Infrastructure isolation",
+    title: "Isolation d'infrastructure",
     description:
-      "Each deployment runs in isolated infrastructure. No shared databases, no shared compute. Your data never touches another client's environment.",
+      "Chaque déploiement tourne sur une infrastructure isolée. Pas de base de données partagée, pas de calcul partagé. Vos données ne touchent jamais l'environnement d'un autre client.",
   },
   {
     icon: Database,
-    title: "Data residency",
+    title: "Résidence des données",
     description:
-      "Choose where your data lives. EU-hosted by default with GDPR-compliant data handling. Custom residency options available for enterprise.",
+      "Choisissez où vivent vos données. Hébergement UE par défaut avec traitement conforme au RGPD. Options de résidence personnalisées pour les entreprises.",
   },
   {
     icon: FileCheck,
-    title: "GDPR compliant",
+    title: "Conforme au RGPD",
     description:
-      "Built for European data protection regulations. Data minimization, right to erasure, processing agreements, and DPO support included.",
+      "Conçu pour les réglementations européennes de protection des données. Minimisation des données, droit à l'effacement, accords de traitement et support DPO inclus.",
   },
   {
     icon: Users,
-    title: "JWT authentication",
+    title: "Authentification JWT",
     description:
-      "Secure stateless authentication with short-lived access tokens and refresh token rotation. No session data stored server-side.",
+      "Authentification stateless sécurisée avec tokens d'accès à durée de vie courte et rotation des refresh tokens. Aucune donnée de session stockée côté serveur.",
   },
   {
     icon: Globe,
-    title: "API security",
+    title: "Sécurité API",
     description:
-      "Rate limiting, request validation, and CORS policies on all API endpoints. Swagger/OpenAPI documentation with security schemes.",
+      "Rate limiting, validation des requêtes et politiques CORS sur tous les endpoints API. Documentation Swagger/OpenAPI avec schémas de sécurité.",
   },
   {
     icon: Shield,
-    title: "Responsible AI",
+    title: "IA Responsable",
     description:
-      "AI evaluations are explainable — every score includes a justification. Human-in-the-loop validation ensures AI decisions are reviewed and calibrated.",
+      "Les évaluations IA sont explicables — chaque score inclut une justification. La validation humaine garantit que les décisions IA sont revues et calibrées.",
   },
 ];
 
@@ -82,23 +82,23 @@ export function SecurityContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-violet-600"
+          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-red-600"
         >
-          Security
+          Sécurité
         </motion.p>
         <motion.h1
           variants={fadeInUp}
           className="mb-4 text-center text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl"
         >
-          Security is not a feature.
+          La sécurité n'est pas une fonctionnalité.
           <br />
-          <span className="text-gray-400">It is the foundation.</span>
+          <span className="text-gray-400">C'est le fondement.</span>
         </motion.h1>
         <motion.p
           variants={fadeInUp}
           className="mx-auto mb-20 max-w-2xl text-center text-lg text-gray-500"
         >
-          We handle sensitive call recordings and compliance data. Our security architecture reflects that responsibility at every layer.
+          Nous traitons des enregistrements d'appels sensibles et des données de conformité. Notre architecture de sécurité reflète cette responsabilité à chaque niveau.
         </motion.p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -106,10 +106,10 @@ export function SecurityContent() {
             <motion.div
               key={p.title}
               variants={fadeInUp}
-              className="group border border-gray-100 p-6 transition-all duration-300 hover:border-violet-200 hover:bg-violet-50/30 hover:shadow-sm"
+              className="group border border-gray-100 p-6 transition-all duration-300 hover:border-red-200 hover:bg-red-50/30 hover:shadow-sm"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-violet-50 transition-colors group-hover:bg-violet-100">
-                <p.icon size={18} className="text-violet-600" strokeWidth={1.5} />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-red-50 transition-colors group-hover:bg-red-100">
+                <p.icon size={18} className="text-red-600" strokeWidth={1.5} />
               </div>
               <h3 className="mb-2 text-sm font-semibold text-gray-900">
                 {p.title}

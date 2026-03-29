@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -13,13 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "nouraisolutionqaaudit — AI-Powered QA Auditing for Call Centers",
+  title: "nouraisolutionqaaudit — Audit Qualité IA pour Centres d'Appels",
   description:
-    "Evaluate every conversation against your compliance grilles. Automatically, accurately, at scale.",
+    "Évaluez chaque conversation selon vos grilles de conformité. Automatiquement, avec précision, à grande échelle.",
   openGraph: {
-    title: "nouraisolutionqaaudit — AI-Powered QA Auditing for Call Centers",
+    title: "nouraisolutionqaaudit — Audit Qualité IA pour Centres d'Appels",
     description:
-      "Evaluate every conversation against your compliance grilles. Automatically, accurately, at scale.",
+      "Évaluez chaque conversation selon vos grilles de conformité. Automatiquement, avec précision, à grande échelle.",
     type: "website",
   },
   twitter: {
@@ -33,9 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>

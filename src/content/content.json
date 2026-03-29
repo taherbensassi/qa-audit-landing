@@ -2,197 +2,197 @@
   "nav": {
     "brand": "nouraisolutionqaaudit",
     "links": [
-      { "label": "Platform", "href": "#platform" },
-      { "label": "Features", "href": "#features" },
-      { "label": "Use Cases", "href": "#use-cases" },
-      { "label": "Security", "href": "/security" },
-      { "label": "Pricing", "href": "/pricing" }
+      { "label": "Plateforme", "href": "#platform" },
+      { "label": "Fonctionnalités", "href": "#features" },
+      { "label": "Cas d'usage", "href": "#use-cases" },
+      { "label": "Sécurité", "href": "/security" },
+      { "label": "Tarifs", "href": "/pricing" }
     ],
-    "cta": { "label": "Request Demo", "href": "#demo" }
+    "cta": { "label": "Demander une démo", "href": "#demo" }
   },
   "hero": {
-    "label": "Quality Intelligence for Call Centers",
-    "headline": "Every call evaluated.\nEvery insight delivered.",
-    "subheadline": "Transition from manual QA sampling to full AI-powered quality monitoring. Analyze 100% of your conversations with precision that matches your best auditors.",
-    "cta": { "label": "Request a Demo", "href": "#demo" },
-    "secondaryCta": { "label": "Explore the Platform", "href": "#platform" },
+    "label": "Intelligence Qualité pour Centres d'Appels",
+    "headline": "Chaque appel évalué.\nChaque insight livré.",
+    "subheadline": "Passez de l'échantillonnage manuel à un monitoring qualité 100% IA. Analysez l'intégralité de vos conversations avec la précision de vos meilleurs auditeurs.",
+    "cta": { "label": "Demander une démo", "href": "#demo" },
+    "secondaryCta": { "label": "Explorer la plateforme", "href": "#platform" },
     "image": "/images/product/dashboard.png"
   },
   "clients": {
-    "headline": "Trusted by leading call centers"
+    "headline": "La confiance des leaders du secteur"
   },
   "useCases": {
-    "label": "Use Cases",
-    "headline": "Built for every team in your organization",
+    "label": "Cas d'usage",
+    "headline": "Conçu pour chaque équipe de votre organisation",
     "items": [
       {
-        "title": "Quality Assurance",
-        "description": "Automate call evaluations using your existing grilles. Score every conversation consistently, surface coaching opportunities, and track agent performance over time.",
+        "title": "Assurance Qualité",
+        "description": "Automatisez les évaluations d'appels avec vos grilles existantes. Notez chaque conversation de manière cohérente, identifiez les opportunités de coaching et suivez la performance des agents dans le temps.",
         "image": "/images/product/evaltion.png",
-        "stats": "+98% accuracy vs. manual audit"
+        "stats": "+98% de précision vs. audit manuel"
       },
       {
-        "title": "Compliance & Risk",
-        "description": "Monitor regulatory adherence across every interaction. Detect script deviations, flag non-compliant language, and generate audit-ready compliance reports automatically.",
+        "title": "Conformité & Risques",
+        "description": "Surveillez la conformité réglementaire sur chaque interaction. Détectez les écarts de script, signalez les formulations non conformes et générez automatiquement des rapports d'audit prêts à l'emploi.",
         "image": "/images/product/workflow.png",
-        "stats": "35% improvement in script adherence"
+        "stats": "35% d'amélioration de l'adhérence au script"
       },
       {
-        "title": "Sales Performance",
-        "description": "Analyze commercial conversations to identify winning patterns. Track pitch compliance, measure conversion drivers, and replicate top-performer behaviors across your team.",
+        "title": "Performance Commerciale",
+        "description": "Analysez les conversations commerciales pour identifier les schémas gagnants. Suivez la conformité du pitch, mesurez les facteurs de conversion et répliquez les comportements des meilleurs vendeurs.",
         "image": "/images/product/grille.png",
-        "stats": "+15% conversion rate improvement"
+        "stats": "+15% d'amélioration du taux de conversion"
       }
     ]
   },
   "platform": {
-    "label": "Platform",
-    "headline": "One platform, complete visibility",
-    "description": "A unified workspace where QA managers, compliance officers, and team leads collaborate on quality — from call ingestion to executive reporting.",
+    "label": "Plateforme",
+    "headline": "Une plateforme, une visibilité totale",
+    "description": "Un espace de travail unifié où responsables qualité, compliance officers et team leads collaborent — de l'ingestion des appels au reporting exécutif.",
     "image": "/images/product/dashboard.png",
     "capabilities": [
       {
-        "category": "Ingestion & Processing",
+        "category": "Ingestion & Traitement",
         "items": [
-          { "title": "Audio Upload", "description": "Batch or real-time call ingestion from any telephony system", "icon": "Upload" },
-          { "title": "AI Transcription", "description": "Multi-language transcription with speaker diarization", "icon": "Mic" },
-          { "title": "Third-Party Integration", "description": "Connect your existing recording platform via API", "icon": "Plug" }
+          { "title": "Import Audio", "description": "Ingestion d'appels en lot ou en temps réel depuis tout système de téléphonie", "icon": "Upload" },
+          { "title": "Transcription IA", "description": "Transcription multi-langue avec diarisation des locuteurs", "icon": "Mic" },
+          { "title": "Intégration Tierce", "description": "Connectez votre plateforme d'enregistrement existante via API", "icon": "Plug" }
         ]
       },
       {
-        "category": "Evaluation & Scoring",
+        "category": "Évaluation & Scoring",
         "items": [
-          { "title": "Evaluation Grilles", "description": "Custom scoring frameworks with weighted themes and items", "icon": "ClipboardCheck" },
-          { "title": "Compliance Criteria", "description": "Severity-based compliance rules with automatic flagging", "icon": "Shield" },
-          { "title": "Evaluation Levels", "description": "Configurable scoring scales with color-coded performance tiers", "icon": "BarChart3" }
+          { "title": "Grilles d'Évaluation", "description": "Cadres de notation personnalisés avec thèmes et items pondérés", "icon": "ClipboardCheck" },
+          { "title": "Critères de Conformité", "description": "Règles de conformité par sévérité avec signalement automatique", "icon": "Shield" },
+          { "title": "Niveaux d'Évaluation", "description": "Échelles de notation configurables avec paliers de performance colorés", "icon": "BarChart3" }
         ]
       },
       {
-        "category": "Intelligence & Learning",
+        "category": "Intelligence & Apprentissage",
         "items": [
-          { "title": "LLM-Powered Analysis", "description": "AI models trained on your evaluation standards and calibrated to your team", "icon": "Brain" },
-          { "title": "Script Validation", "description": "Verify adherence to call scripts across every phase of the conversation", "icon": "FileCheck" },
-          { "title": "Prompt Calibration", "description": "Fine-tune AI evaluation prompts with side-by-side human comparison", "icon": "SlidersHorizontal" }
+          { "title": "Analyse par LLM", "description": "Modèles IA entraînés sur vos standards d'évaluation et calibrés pour votre équipe", "icon": "Brain" },
+          { "title": "Validation de Script", "description": "Vérifiez l'adhérence aux scripts d'appel à chaque phase de la conversation", "icon": "FileCheck" },
+          { "title": "Calibration des Prompts", "description": "Affinez les prompts d'évaluation IA avec comparaison humaine côte à côte", "icon": "SlidersHorizontal" }
         ]
       },
       {
-        "category": "Operations & Monitoring",
+        "category": "Opérations & Monitoring",
         "items": [
-          { "title": "Client Management", "description": "Multi-tenant workspace with client-specific grilles and scripts", "icon": "Building2" },
-          { "title": "Real-Time Monitoring", "description": "Live dashboard tracking evaluation progress and pipeline status", "icon": "Activity" },
-          { "title": "Statistics & Analytics", "description": "Agent performance trends, score distributions, and quality metrics", "icon": "TrendingUp" }
+          { "title": "Gestion Clients", "description": "Espace multi-tenant avec grilles et scripts spécifiques par client", "icon": "Building2" },
+          { "title": "Monitoring Temps Réel", "description": "Dashboard en direct suivant la progression des évaluations et l'état du pipeline", "icon": "Activity" },
+          { "title": "Statistiques & Analytics", "description": "Tendances de performance agents, distributions de scores et métriques qualité", "icon": "TrendingUp" }
         ]
       },
       {
-        "category": "Reporting & Delivery",
+        "category": "Reporting & Livraison",
         "items": [
-          { "title": "PDF Reports", "description": "Generate branded audit reports with detailed scoring breakdowns", "icon": "FileText" },
-          { "title": "Email Alerts", "description": "Automated notifications for critical findings and compliance breaches", "icon": "Mail" },
-          { "title": "Export & API", "description": "Export data to Excel, integrate with BI tools, or consume via REST API", "icon": "Download" }
+          { "title": "Rapports PDF", "description": "Générez des rapports d'audit brandés avec ventilation détaillée des scores", "icon": "FileText" },
+          { "title": "Alertes Email", "description": "Notifications automatiques pour les constats critiques et manquements de conformité", "icon": "Mail" },
+          { "title": "Export & API", "description": "Exportez vers Excel, intégrez vos outils BI, ou consommez via API REST", "icon": "Download" }
         ]
       }
     ]
   },
   "features": {
-    "label": "Why Choose Us",
-    "headline": "The precision of your best auditor,\nat the scale of your entire operation",
+    "label": "Pourquoi Nous Choisir",
+    "headline": "La précision de votre meilleur auditeur,\nà l'échelle de toute votre opération",
     "items": [
       {
-        "title": "100% Call Coverage",
-        "description": "Stop sampling 2-3% of calls. Evaluate every single conversation with consistent, auditable criteria.",
+        "title": "100% des Appels Couverts",
+        "description": "Arrêtez d'échantillonner 2-3% des appels. Évaluez chaque conversation avec des critères cohérents et auditables.",
         "icon": "CheckCircle"
       },
       {
-        "title": "Your Grilles, Your Rules",
-        "description": "We adapt to your evaluation methodology — not the other way around. Import your existing scoring frameworks.",
+        "title": "Vos Grilles, Vos Règles",
+        "description": "Nous nous adaptons à votre méthodologie d'évaluation — pas l'inverse. Importez vos cadres de notation existants.",
         "icon": "Settings"
       },
       {
-        "title": "Human-in-the-Loop",
-        "description": "AI handles the volume. Your team handles the judgment calls. Review, calibrate, and approve at every step.",
+        "title": "L'Humain au Centre",
+        "description": "L'IA gère le volume. Votre équipe gère les décisions. Revoyez, calibrez et approuvez à chaque étape.",
         "icon": "Users"
       },
       {
-        "title": "Audit-Ready Compliance",
-        "description": "Every evaluation is traceable, timestamped, and exportable. Ready for regulatory audits at any moment.",
+        "title": "Conformité Prête pour l'Audit",
+        "description": "Chaque évaluation est traçable, horodatée et exportable. Prête pour les audits réglementaires à tout moment.",
         "icon": "Lock"
       },
       {
-        "title": "Multi-Industry",
-        "description": "Energy, telecom, insurance, banking — our platform adapts to the compliance requirements of your industry.",
+        "title": "Multi-Industries",
+        "description": "Énergie, télécom, assurance, banque — notre plateforme s'adapte aux exigences de conformité de votre industrie.",
         "icon": "Globe"
       },
       {
-        "title": "Secure by Design",
-        "description": "Data encryption at rest and in transit. Role-based access control. GDPR-compliant data handling.",
+        "title": "Sécurité par Conception",
+        "description": "Chiffrement des données au repos et en transit. Contrôle d'accès par rôle. Traitement conforme au RGPD.",
         "icon": "ShieldCheck"
       }
     ]
   },
   "metrics": [
-    { "value": "98.2%", "label": "Evaluation accuracy" },
-    { "value": "40x", "label": "Faster than manual review" },
-    { "value": "100%", "label": "Call coverage" },
-    { "value": "<2min", "label": "Per-call processing" }
+    { "value": "98.2%", "label": "Précision d'évaluation" },
+    { "value": "40x", "label": "Plus rapide que l'audit manuel" },
+    { "value": "100%", "label": "Couverture des appels" },
+    { "value": "<2min", "label": "Traitement par appel" }
   ],
   "showcase": {
-    "headline": "See the platform in action",
+    "headline": "La plateforme en action",
     "items": [
-      { "title": "Dashboard", "image": "/images/product/dashboard.png", "description": "Real-time overview of all evaluations, scores, and compliance status" },
-      { "title": "Evaluations", "image": "/images/product/evaltion.png", "description": "Browse, filter, and review AI-scored call evaluations" },
-      { "title": "Grille Editor", "image": "/images/product/grille.png", "description": "Build and customize evaluation grilles with weighted scoring" },
-      { "title": "AI Pipeline", "image": "/images/product/workflow.png", "description": "Watch the AI evaluate a call through the full pipeline in real time" }
+      { "title": "Dashboard", "image": "/images/product/dashboard.png", "description": "Vue en temps réel de toutes les évaluations, scores et statuts de conformité" },
+      { "title": "Évaluations", "image": "/images/product/evaltion.png", "description": "Parcourez, filtrez et examinez les évaluations d'appels notées par l'IA" },
+      { "title": "Éditeur de Grilles", "image": "/images/product/grille.png", "description": "Construisez et personnalisez vos grilles d'évaluation avec notation pondérée" },
+      { "title": "Pipeline IA", "image": "/images/product/workflow.png", "description": "Suivez l'évaluation IA d'un appel à travers le pipeline complet en temps réel" }
     ]
   },
   "demo": {
-    "label": "Get Started",
-    "headline": "Ready to transform your QA process?",
-    "description": "Send us a sample recording and your evaluation criteria. We will return a fully scored audit within 24 hours — no commitment required.",
-    "cta": "Request a Demo",
-    "successMessage": "Thank you. We will be in touch within 24 hours.",
+    "label": "Commencer",
+    "headline": "Prêt à transformer votre processus qualité ?",
+    "description": "Envoyez-nous un enregistrement et vos critères d'évaluation. Nous vous retournerons un audit complet et noté sous 24h — sans engagement.",
+    "cta": "Demander une démo",
+    "successMessage": "Merci. Nous vous recontacterons sous 24 heures.",
     "fields": [
-      { "name": "name", "label": "Full Name", "type": "text", "required": true },
-      { "name": "email", "label": "Work Email", "type": "email", "required": true },
-      { "name": "company", "label": "Company", "type": "text", "required": true },
-      { "name": "agents", "label": "Number of Agents", "type": "text", "required": false },
-      { "name": "message", "label": "Tell us about your QA challenges", "type": "textarea", "required": false }
+      { "name": "name", "label": "Nom complet", "type": "text", "required": true },
+      { "name": "email", "label": "Email professionnel", "type": "email", "required": true },
+      { "name": "company", "label": "Entreprise", "type": "text", "required": true },
+      { "name": "agents", "label": "Nombre d'agents", "type": "text", "required": false },
+      { "name": "message", "label": "Décrivez vos enjeux qualité", "type": "textarea", "required": false }
     ]
   },
   "footer": {
     "brand": "nouraisolutionqaaudit",
-    "tagline": "AI-powered quality intelligence for call centers.",
+    "tagline": "Intelligence qualité propulsée par l'IA pour les centres d'appels.",
     "columns": [
       {
-        "title": "Platform",
+        "title": "Plateforme",
         "links": [
-          { "label": "Features", "href": "#features" },
-          { "label": "Use Cases", "href": "#use-cases" },
-          { "label": "Pricing", "href": "/pricing" }
+          { "label": "Fonctionnalités", "href": "#features" },
+          { "label": "Cas d'usage", "href": "#use-cases" },
+          { "label": "Tarifs", "href": "/pricing" }
         ]
       },
       {
-        "title": "Company",
+        "title": "Entreprise",
         "links": [
-          { "label": "Security", "href": "/security" },
-          { "label": "How It Works", "href": "/how-it-works" },
+          { "label": "Sécurité", "href": "/security" },
+          { "label": "Comment ça marche", "href": "/how-it-works" },
           { "label": "Contact", "href": "#demo" }
         ]
       },
       {
         "title": "Industries",
         "links": [
-          { "label": "Energy", "href": "#use-cases" },
-          { "label": "Telecom", "href": "#use-cases" },
-          { "label": "Insurance", "href": "#use-cases" },
-          { "label": "Banking", "href": "#use-cases" }
+          { "label": "Énergie", "href": "#use-cases" },
+          { "label": "Télécom", "href": "#use-cases" },
+          { "label": "Assurance", "href": "#use-cases" },
+          { "label": "Banque", "href": "#use-cases" }
         ]
       }
     ],
-    "copyright": "2026 nouraisolutionqaaudit. All rights reserved."
+    "copyright": "2026 nouraisolutionqaaudit. Tous droits réservés."
   },
   "comingSoon": {
-    "headline": "Coming Soon",
-    "description": "This page is under construction. Check back soon for updates.",
-    "cta": { "label": "Back to Home", "href": "/" }
+    "headline": "Bientôt disponible",
+    "description": "Cette page est en cours de construction. Revenez bientôt pour les mises à jour.",
+    "cta": { "label": "Retour à l'accueil", "href": "/" }
   }
 }

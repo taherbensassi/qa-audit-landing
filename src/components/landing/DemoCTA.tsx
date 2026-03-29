@@ -35,11 +35,11 @@ export function DemoCTA() {
       <div className="mx-auto max-w-4xl">
         <motion.div
           variants={fadeInUp}
-          className="relative overflow-hidden border border-violet-100 bg-white p-8 shadow-xl shadow-violet-100/10 lg:p-12"
+          className="relative overflow-hidden border border-red-100 bg-white p-8 shadow-xl shadow-red-100/10 lg:p-12"
         >
           <div className="relative grid gap-12 lg:grid-cols-2 lg:items-start">
             <div>
-              <motion.p variants={fadeInLeft} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
+              <motion.p variants={fadeInLeft} className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600">
                 {demo.label}
               </motion.p>
               <motion.h2 variants={fadeInLeft} className="mb-4 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">
@@ -49,7 +49,7 @@ export function DemoCTA() {
                 {demo.description}
               </motion.p>
               <motion.div variants={fadeInLeft} className="space-y-3">
-                {["24-hour turnaround", "No commitment required", "Your data stays secure"].map((point, i) => (
+                {["Retour sous 24 heures", "Sans engagement", "Vos données restent sécurisées"].map((point, i) => (
                   <motion.div
                     key={point}
                     className="flex items-center gap-3 text-sm text-gray-600"
@@ -58,7 +58,7 @@ export function DemoCTA() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.1 }}
                   >
-                    <CheckCircle size={16} className="text-violet-500 flex-shrink-0" />
+                    <CheckCircle size={16} className="text-red-500 flex-shrink-0" />
                     {point}
                   </motion.div>
                 ))}
@@ -94,7 +94,7 @@ export function DemoCTA() {
                           placeholder={field.label}
                           required={field.required}
                           rows={3}
-                          className="w-full border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-300 focus:border-violet-400 focus:bg-white focus:shadow-md focus:shadow-violet-100/50 focus:outline-none"
+                          className="w-full border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-300 focus:border-red-400 focus:bg-white focus:shadow-md focus:shadow-red-100/50 focus:outline-none"
                         />
                       ) : (
                         <input
@@ -102,7 +102,7 @@ export function DemoCTA() {
                           type={field.type}
                           placeholder={field.label}
                           required={field.required}
-                          className="w-full border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-300 focus:border-violet-400 focus:bg-white focus:shadow-md focus:shadow-violet-100/50 focus:outline-none"
+                          className="w-full border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-300 focus:border-red-400 focus:bg-white focus:shadow-md focus:shadow-red-100/50 focus:outline-none"
                         />
                       )}
                     </motion.div>
@@ -110,9 +110,9 @@ export function DemoCTA() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-2 flex items-center justify-center gap-2 bg-violet-600 px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-violet-500/20 transition-all duration-300 hover:bg-violet-700 hover:shadow-xl hover:shadow-violet-500/30 disabled:opacity-50"
+                    className="mt-2 flex items-center justify-center gap-2 bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-red-500/20 transition-all duration-300 hover:bg-red-700 hover:shadow-xl hover:shadow-red-500/30 disabled:opacity-50"
                   >
-                    {loading ? "Sending..." : demo.cta}
+                    {loading ? "Envoi en cours..." : demo.cta}
                     {!loading && <ArrowRight size={16} />}
                   </button>
                 </form>

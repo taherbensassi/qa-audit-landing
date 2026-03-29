@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative border-t border-white/[0.04] bg-[#09090b] overflow-hidden">
       {/* Animated gradient top border */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/50 to-transparent"
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400/50 to-transparent"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
@@ -56,8 +56,8 @@ export function Footer() {
         <div className="mt-16 border-t border-white/[0.04] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-zinc-600">{footer.copyright}</p>
           <div className="flex gap-6">
-            <Link href="/security" className="text-xs text-zinc-600 hover:text-white transition-colors duration-200 underline-sweep">Privacy</Link>
-            <Link href="/security" className="text-xs text-zinc-600 hover:text-white transition-colors duration-200 underline-sweep">Terms</Link>
+            <Link href="/security" className="text-xs text-zinc-600 hover:text-white transition-colors duration-200 underline-sweep">Confidentialité</Link>
+            <Link href="/security" className="text-xs text-zinc-600 hover:text-white transition-colors duration-200 underline-sweep">Mentions légales</Link>
           </div>
         </div>
       </motion.div>

@@ -39,6 +39,7 @@ const CONNECTION_COUNT = 45;
 const PARTICLE_COUNT = 25;
 const ACCENT = { r: 139, g: 92, b: 246 }; // violet-500
 const ACCENT2 = { r: 99, g: 102, b: 241 }; // indigo-500
+const ACCENT_RED = { r: 220, g: 38, b: 38 }; // red-600
 
 function generateNodes(w: number, h: number): Node[] {
   const nodes: Node[] = [];
@@ -136,7 +137,7 @@ export function HeroNetwork() {
       ctx.stroke();
     });
 
-    // Draw particles flowing along connections
+    // Draw particles flowing along connections (mix of violet and red)
     particles.forEach((p) => {
       if (p.connectionIndex >= connections.length) return;
       const conn = connections[p.connectionIndex];
@@ -152,15 +153,17 @@ export function HeroNetwork() {
 
       const x = a.x + (b.x - a.x) * p.t;
       const y = a.y + (b.y - a.y) * p.t;
+      const isRed = p.connectionIndex % 4 === 0;
+      const col = isRed ? ACCENT_RED : ACCENT2;
 
       ctx.beginPath();
       ctx.arc(x, y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${ACCENT2.r}, ${ACCENT2.g}, ${ACCENT2.b}, ${0.4 + Math.sin(p.t * Math.PI) * 0.4})`;
+      ctx.fillStyle = `rgba(${col.r}, ${col.g}, ${col.b}, ${0.4 + Math.sin(p.t * Math.PI) * 0.4})`;
       ctx.fill();
     });
 
-    // Draw nodes
-    nodes.forEach((node) => {
+    // Draw nodes (some red-tinted for visual variety)
+    nodes.forEach((node, idx) => {
       const pulse = Math.sin(t * node.speed + node.phase) * 0.5 + 0.5;
       const radius = node.baseRadius + pulse * 1.2;
 
@@ -170,13 +173,16 @@ export function HeroNetwork() {
       const dist = Math.sqrt(dx * dx + dy * dy);
       const proximity = Math.max(0, 1 - dist / 200);
 
+      // Pick color — every 5th node is red
+      const col = idx % 5 === 0 ? ACCENT_RED : ACCENT;
+
       // Outer glow
       if (proximity > 0 || pulse > 0.6) {
         const glowRadius = radius * 3;
         const grad = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, glowRadius);
         const alpha = (proximity * 0.3 + pulse * 0.1) * node.brightness;
-        grad.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, ${alpha})`);
-        grad.addColorStop(1, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0)`);
+        grad.addColorStop(0, `rgba(${col.r}, ${col.g}, ${col.b}, ${alpha})`);
+        grad.addColorStop(1, `rgba(${col.r}, ${col.g}, ${col.b}, 0)`);
         ctx.beginPath();
         ctx.arc(node.x, node.y, glowRadius, 0, Math.PI * 2);
         ctx.fillStyle = grad;
@@ -187,7 +193,7 @@ export function HeroNetwork() {
       ctx.beginPath();
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
       const coreAlpha = (0.3 + pulse * 0.5 + proximity * 0.3) * node.brightness;
-      ctx.fillStyle = `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, ${coreAlpha})`;
+      ctx.fillStyle = `rgba(${col.r}, ${col.g}, ${col.b}, ${coreAlpha})`;
       ctx.fill();
     });
 

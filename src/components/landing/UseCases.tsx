@@ -51,7 +51,7 @@ export function UseCases() {
       className="relative bg-[#fafafa] py-24 lg:py-32 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
+        <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600">
           {useCases.label}
         </motion.p>
         <motion.h2 variants={fadeInUp} className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
@@ -66,7 +66,7 @@ export function UseCases() {
                 onClick={() => setActiveIndex(i)}
                 className={`relative px-5 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px ${
                   i === activeIndex
-                    ? "border-violet-600 text-violet-700"
+                    ? "border-red-600 text-red-700"
                     : "border-transparent text-gray-400 hover:text-gray-600 hover:border-gray-300"
                 }`}
               >
@@ -91,9 +91,9 @@ export function UseCases() {
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2 text-sm font-semibold text-violet-700"
+                  className="inline-flex items-center gap-2 bg-red-50 border border-red-100 px-4 py-2 text-sm font-semibold text-red-700"
                 >
-                  <span className="h-2 w-2 bg-violet-500 keep-round animate-pulse" />
+                  <span className="h-2 w-2 bg-red-500 keep-round animate-pulse" />
                   <AnimatedStat text={active.stats} />
                 </motion.div>
               </div>

@@ -8,54 +8,54 @@ import { Button } from "@/components/ui/Button";
 const plans = [
   {
     name: "Starter",
-    description: "For teams starting with AI quality monitoring",
-    price: "Contact us",
+    description: "Pour les équipes débutant le monitoring qualité IA",
+    price: "Nous contacter",
     period: "",
     features: [
-      "Up to 500 evaluations / month",
-      "1 operation",
-      "1 evaluation grille",
-      "AI transcription & scoring",
-      "PDF report export",
-      "Email support",
+      "Jusqu'à 500 évaluations / mois",
+      "1 opération",
+      "1 grille d'évaluation",
+      "Transcription & scoring IA",
+      "Export de rapports PDF",
+      "Support email",
     ],
-    cta: "Get Started",
+    cta: "Commencer",
     highlighted: false,
   },
   {
-    name: "Professional",
-    description: "For growing QA teams with multiple operations",
-    price: "Contact us",
+    name: "Professionnel",
+    description: "Pour les équipes QA en croissance avec plusieurs opérations",
+    price: "Nous contacter",
     period: "",
     features: [
-      "Up to 5,000 evaluations / month",
-      "Unlimited operations",
-      "Unlimited grilles & scripts",
-      "Compliance criteria engine",
-      "Statistics & analytics dashboard",
-      "API access",
+      "Jusqu'à 5 000 évaluations / mois",
+      "Opérations illimitées",
+      "Grilles & scripts illimités",
+      "Moteur de critères de conformité",
+      "Dashboard statistiques & analytics",
+      "Accès API",
       "Calibration & few-shot learning",
-      "Priority support",
+      "Support prioritaire",
     ],
-    cta: "Request a Demo",
+    cta: "Demander une démo",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    description: "For large call centers with compliance requirements",
-    price: "Custom",
+    name: "Entreprise",
+    description: "Pour les grands centres d'appels avec exigences de conformité",
+    price: "Sur mesure",
     period: "",
     features: [
-      "Unlimited evaluations",
-      "Multi-tenant workspace",
-      "Custom AI model fine-tuning",
-      "SSO / SAML authentication",
-      "Dedicated infrastructure",
-      "SLA guarantees",
-      "On-premise deployment option",
-      "Dedicated account manager",
+      "Évaluations illimitées",
+      "Espace multi-tenant",
+      "Fine-tuning de modèles IA personnalisés",
+      "Authentification SSO / SAML",
+      "Infrastructure dédiée",
+      "Garanties SLA",
+      "Option de déploiement on-premise",
+      "Account manager dédié",
     ],
-    cta: "Contact Sales",
+    cta: "Contacter les ventes",
     highlighted: false,
   },
 ];
@@ -71,21 +71,21 @@ export function PricingContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-violet-600"
+          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-red-600"
         >
-          Pricing
+          Tarifs
         </motion.p>
         <motion.h1
           variants={fadeInUp}
           className="mb-4 text-center text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl"
         >
-          Plans that scale with your team
+          Des offres qui s'adaptent à votre équipe
         </motion.h1>
         <motion.p
           variants={fadeInUp}
           className="mx-auto mb-20 max-w-2xl text-center text-lg text-gray-500"
         >
-          Start with a free pilot. No credit card required. We adapt to your evaluation methodology — not the other way around.
+          Commencez par un pilote gratuit. Sans carte bancaire. Nous nous adaptons à votre méthodologie d'évaluation — pas l'inverse.
         </motion.p>
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -95,13 +95,13 @@ export function PricingContent() {
               variants={fadeInUp}
               className={`relative flex flex-col border p-8 ${
                 plan.highlighted
-                  ? "border-violet-300 bg-violet-50/30 shadow-lg shadow-violet-100/50"
+                  ? "border-red-300 bg-red-50/30 shadow-lg shadow-red-100/50"
                   : "border-gray-200 bg-white"
               }`}
             >
               {plan.highlighted && (
-                <span className="absolute -top-3 left-6 bg-violet-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
-                  Most Popular
+                <span className="absolute -top-3 left-6 bg-red-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
+                  Le plus populaire
                 </span>
               )}
 
@@ -119,7 +119,7 @@ export function PricingContent() {
               <ul className="mb-8 flex-1 space-y-3">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                    <Check size={14} className="mt-0.5 shrink-0 text-violet-500" />
+                    <Check size={14} className="mt-0.5 shrink-0 text-red-500" />
                     {f}
                   </li>
                 ))}

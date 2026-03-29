@@ -35,26 +35,26 @@ const steps = [
   {
     icon: Mic,
     num: "01",
-    label: "Voice Capture",
-    desc: "Multi-channel audio ingestion",
-    color: "#a78bfa",
+    label: "Capture Vocale",
+    desc: "Ingestion audio multi-canal",
+    color: "#ef4444",
     tags: ["WebRTC", "PCM 16-bit"],
     depth: 0,
   },
   {
     icon: BrainCircuit,
     num: "02",
-    label: "LLM Transcription",
-    desc: "Neural speech-to-text pipeline",
-    color: "#818cf8",
-    tags: ["Whisper v4", "Diarization"],
+    label: "Transcription IA",
+    desc: "Pipeline neural parole-texte",
+    color: "#dc2626",
+    tags: ["Whisper v4", "Diarisation"],
     depth: 12,
   },
   {
     icon: Network,
     num: "03",
-    label: "MCP Evaluation",
-    desc: "Multi-criteria protocol engine",
+    label: "Évaluation MCP",
+    desc: "Moteur protocole multi-critères",
     color: "#7c3aed",
     tags: ["MCP v2", "NLP"],
     depth: -8,
@@ -62,8 +62,8 @@ const steps = [
   {
     icon: BarChart3,
     num: "04",
-    label: "Neural Scoring",
-    desc: "Compliance verdict synthesis",
+    label: "Score Neural",
+    desc: "Synthèse verdict conformité",
     color: "#6366f1",
     tags: ["RAG", "Vector DB"],
     depth: 6,
@@ -72,13 +72,13 @@ const steps = [
 
 /* Floating tech labels that orbit around the workflow */
 const floatingTech = [
-  { label: "LLM", x: "-4%", y: "15%", delay: 0 },
-  { label: "MCP", x: "102%", y: "20%", delay: 0.8 },
-  { label: "NLP", x: "8%", y: "90%", delay: 1.6 },
-  { label: "RAG", x: "92%", y: "85%", delay: 2.4 },
-  { label: "ASR", x: "50%", y: "-8%", delay: 0.4 },
-  { label: "OIDC", x: "30%", y: "105%", delay: 1.2 },
-  { label: "gRPC", x: "70%", y: "105%", delay: 2.0 },
+  { label: "LLM", x: "-4%", y: "15%", delay: 0, red: true },
+  { label: "MCP", x: "102%", y: "20%", delay: 0.8, red: false },
+  { label: "NLP", x: "8%", y: "90%", delay: 1.6, red: false },
+  { label: "RAG", x: "92%", y: "85%", delay: 2.4, red: false },
+  { label: "ASR", x: "50%", y: "-8%", delay: 0.4, red: true },
+  { label: "OIDC", x: "30%", y: "105%", delay: 1.2, red: false },
+  { label: "gRPC", x: "70%", y: "105%", delay: 2.0, red: false },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -198,9 +198,9 @@ function TranscriptionTypewriter({ startDelay }: { startDelay: number }) {
   return (
     <div className="h-[60px] overflow-hidden bg-black/30 px-2 py-1.5 border border-violet-500/10 font-mono">
       <div className="flex items-center gap-1 mb-1 opacity-40">
-        <Cpu size={8} className="text-violet-400" />
-        <span className="text-[7px] text-violet-400 uppercase tracking-widest">
-          llm.transcribe()
+        <Cpu size={8} className="text-red-400" />
+        <span className="text-[7px] text-red-400 uppercase tracking-widest">
+          llm.transcrire()
         </span>
       </div>
       {lines.map((l, i) => (
@@ -233,11 +233,11 @@ function TranscriptionTypewriter({ startDelay }: { startDelay: number }) {
 /* ------------------------------------------------------------------ */
 
 const checklistItems = [
-  { text: "Greeting protocol", pass: true, weight: "0.15" },
-  { text: "Identity verification", pass: true, weight: "0.25" },
-  { text: "Solution proposed", pass: true, weight: "0.20" },
-  { text: "GDPR compliance", pass: false, weight: "0.30" },
-  { text: "Call closure", pass: true, weight: "0.10" },
+  { text: "Protocole d'accueil", pass: true, weight: "0.15" },
+  { text: "Vérification identité", pass: true, weight: "0.25" },
+  { text: "Solution proposée", pass: true, weight: "0.20" },
+  { text: "Conformité RGPD", pass: false, weight: "0.30" },
+  { text: "Clôture d'appel", pass: true, weight: "0.10" },
 ];
 
 function EvaluationChecklist({ startDelay }: { startDelay: number }) {
@@ -246,7 +246,7 @@ function EvaluationChecklist({ startDelay }: { startDelay: number }) {
       <div className="flex items-center gap-1 mb-1.5 opacity-40">
         <ScanSearch size={8} className="text-violet-400" />
         <span className="font-mono text-[7px] text-violet-400 uppercase tracking-widest">
-          mcp.evaluate()
+          mcp.évaluer()
         </span>
       </div>
       {checklistItems.map((item, i) => (
@@ -392,7 +392,7 @@ function ScoreRing({ startDelay }: { startDelay: number }) {
       >
         <ShieldCheck size={10} className="text-emerald-400" />
         <span className="font-mono text-[8px] uppercase tracking-widest text-emerald-400">
-          Compliant
+          Conforme
         </span>
       </motion.div>
     </div>
@@ -497,8 +497,8 @@ function TiltCard({
   const cardRef = useRef<HTMLDivElement>(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
-  const springX = useSpring(rotateX, { stiffness: 200, damping: 20 });
-  const springY = useSpring(rotateY, { stiffness: 200, damping: 20 });
+  const springX = useSpring(rotateX, { stiffness: 180, damping: 16 });
+  const springY = useSpring(rotateY, { stiffness: 180, damping: 16 });
 
   const handleMouse = useCallback(
     (e: React.MouseEvent) => {
@@ -508,8 +508,8 @@ function TiltCard({
       const y = e.clientY - rect.top;
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      rotateY.set(((x - centerX) / centerX) * 8);
-      rotateX.set(((centerY - y) / centerY) * 8);
+      rotateY.set(((x - centerX) / centerX) * 12);
+      rotateX.set(((centerY - y) / centerY) * 12);
     },
     [rotateX, rotateY]
   );
@@ -621,7 +621,7 @@ export function HeroWorkflow() {
         {floatingTech.map((t) => (
           <motion.span
             key={t.label}
-            className="absolute font-mono text-[9px] tracking-[0.2em] uppercase text-violet-500/20 select-none"
+            className={`absolute font-mono text-[9px] tracking-[0.2em] uppercase select-none ${t.red ? "text-red-500/25" : "text-violet-500/20"}`}
             style={{ left: t.x, top: t.y }}
             initial={{ opacity: 0 }}
             animate={{ opacity: [0.15, 0.3, 0.15] }}
@@ -650,7 +650,7 @@ export function HeroWorkflow() {
             <TiltCard
               depth={step.depth}
               enterDelay={cardDelays[i]}
-              className="relative w-[180px] lg:w-[190px] xl:w-[200px]"
+              className="relative w-full max-w-[280px] lg:w-[190px] xl:w-[200px] lg:max-w-none"
             >
               {/* Card glow border */}
               <motion.div
@@ -795,10 +795,10 @@ export function HeroWorkflow() {
         transition={{ delay: 2.5, duration: 0.8, ease: EASE }}
       >
         {[
-          { icon: Braces, text: "REST API v3" },
-          { icon: Workflow, text: "Pipeline orchestration" },
-          { icon: Cpu, text: "GPU-accelerated inference" },
-          { icon: Sparkles, text: "Real-time streaming" },
+          { icon: Braces, text: "API REST v3" },
+          { icon: Workflow, text: "Orchestration pipeline" },
+          { icon: Cpu, text: "Inférence GPU" },
+          { icon: Sparkles, text: "Streaming temps réel" },
         ].map((item) => (
           <div
             key={item.text}
