@@ -6,15 +6,15 @@
       { "label": "Fonctionnalités", "href": "#features" },
       { "label": "Cas d'usage", "href": "#use-cases" },
       { "label": "Sécurité", "href": "/security" },
-      { "label": "Tarifs", "href": "/pricing" }
+      { "label": "Contact", "href": "#contact" }
     ],
-    "cta": { "label": "Demander une démo", "href": "#demo" }
+    "cta": { "label": "Demander une démo", "href": "#contact" }
   },
   "hero": {
     "label": "Intelligence Qualité pour Centres d'Appels",
     "headline": "Chaque appel évalué.\nChaque insight livré.",
     "subheadline": "Passez de l'échantillonnage manuel à un monitoring qualité 100% IA. Analysez l'intégralité de vos conversations avec la précision de vos meilleurs auditeurs.",
-    "cta": { "label": "Demander une démo", "href": "#demo" },
+    "cta": { "label": "Demander une démo", "href": "#contact" },
     "secondaryCta": { "label": "Explorer la plateforme", "href": "#platform" },
     "image": "/images/product/dashboard.png"
   },
@@ -167,7 +167,7 @@
         "links": [
           { "label": "Fonctionnalités", "href": "#features" },
           { "label": "Cas d'usage", "href": "#use-cases" },
-          { "label": "Tarifs", "href": "/pricing" }
+          { "label": "Contact", "href": "#contact" }
         ]
       },
       {
@@ -175,7 +175,7 @@
         "links": [
           { "label": "Sécurité", "href": "/security" },
           { "label": "Comment ça marche", "href": "/how-it-works" },
-          { "label": "Contact", "href": "#demo" }
+          { "label": "Contact", "href": "#contact" }
         ]
       },
       {

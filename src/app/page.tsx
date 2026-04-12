@@ -8,7 +8,7 @@ import { FeatureGrid } from "@/components/landing/FeatureGrid";
 import { BuiltForTeams } from "@/components/landing/BuiltForTeams";
 import { Metrics } from "@/components/landing/Metrics";
 import { Showcase } from "@/components/landing/Showcase";
-import { DemoCTA } from "@/components/landing/DemoCTA";
+import { Contact } from "@/components/landing/Contact";
 import { Footer } from "@/components/landing/Footer";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
         <BuiltForTeams />
         <Metrics />
         <Showcase />
-        <DemoCTA />
+        <Contact />
       </main>
       <Footer />
     </>
