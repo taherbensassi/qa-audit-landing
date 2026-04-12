@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DemoPlaceholder } from "@/components/ui/DemoPlaceholder";
+import { AppPreview } from "@/components/ui/AppPreview";
 import { Section } from "@/components/ui/Section";
 import { content } from "@/lib/content";
 import { fadeInUp, scaleIn, staggerFast, slideInFromLeft, slideInFromRight } from "@/lib/animations";
@@ -22,8 +22,8 @@ export function Platform() {
         {platform.description}
       </motion.p>
 
-      <motion.div variants={scaleIn} className="mb-24 overflow-hidden border border-gray-200 shadow-xl">
-        <DemoPlaceholder aspectRatio="16/9" />
+      <motion.div variants={scaleIn} className="mb-24 shadow-2xl shadow-black/10">
+        <AppPreview variant="dashboard" aspectRatio="16/9" />
       </motion.div>
 
       <div className="space-y-20">

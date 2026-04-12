@@ -7,7 +7,7 @@ import { content } from "@/lib/content";
 import { staggerContainer } from "@/lib/animations";
 
 import { ArrowRight } from "lucide-react";
-import { DemoPlaceholder } from "@/components/ui/DemoPlaceholder";
+import { AppPreview } from "@/components/ui/AppPreview";
 import { HeroWorkflow } from "./HeroWorkflow";
 import { HeroNetwork } from "./HeroNetwork";
 
@@ -200,9 +200,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 40, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 2.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/40"
+          className="relative shadow-2xl shadow-black/50"
         >
-          <DemoPlaceholder aspectRatio="16/9" />
+          <AppPreview variant="dashboard" aspectRatio="16/9" />
         </motion.div>
       </div>
 

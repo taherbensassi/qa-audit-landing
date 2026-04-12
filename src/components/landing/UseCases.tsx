@@ -2,11 +2,18 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { DemoPlaceholder } from "@/components/ui/DemoPlaceholder";
+import { AppPreview, AppPreviewVariant } from "@/components/ui/AppPreview";
 import { content } from "@/lib/content";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const { useCases } = content;
+
+// Map use case index to the most relevant AppPreview variant
+const previewVariants: AppPreviewVariant[] = [
+  "evaluations", // Assurance Qualité
+  "compliance",  // Conformité & Risques
+  "dashboard",   // Performance Commerciale
+];
 
 function AnimatedStat({ text }: { text: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -51,20 +58,27 @@ export function UseCases() {
       className="relative bg-[#fafafa] py-24 lg:py-32 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
+        <motion.p
+          variants={fadeInUp}
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
+        >
           {useCases.label}
         </motion.p>
-        <motion.h2 variants={fadeInUp} className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
+        <motion.h2
+          variants={fadeInUp}
+          className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl"
+        >
           {useCases.headline}
         </motion.h2>
 
         <motion.div variants={fadeInUp}>
-          <div className="mb-12 flex flex-wrap gap-2 border-b border-gray-200">
+          {/* Tabs */}
+          <div className="mb-12 flex flex-wrap gap-0 border-b border-gray-200">
             {useCases.items.map((item, i) => (
               <button
                 key={item.title}
                 onClick={() => setActiveIndex(i)}
-                className={`relative px-5 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px ${
+                className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px ${
                   i === activeIndex
                     ? "border-violet-600 text-violet-700"
                     : "border-transparent text-gray-400 hover:text-gray-600 hover:border-gray-300"
@@ -75,36 +89,50 @@ export function UseCases() {
             ))}
           </div>
 
+          {/* Panel */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ type: "spring", damping: 20, stiffness: 200 }}
+              exit={{ opacity: 0, x: -30 }}
+              transition={{ type: "spring", damping: 22, stiffness: 220 }}
               className="grid items-center gap-12 lg:grid-cols-2"
             >
+              {/* Text */}
               <div>
-                <h3 className="mb-4 text-2xl font-semibold text-gray-900">{active.title}</h3>
-                <p className="mb-6 text-base leading-relaxed text-gray-500">{active.description}</p>
+                <h3 className="mb-4 text-2xl font-semibold text-gray-900">
+                  {active.title}
+                </h3>
+                <p className="mb-6 text-base leading-relaxed text-gray-500">
+                  {active.description}
+                </p>
                 <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.92, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2 text-sm font-semibold text-violet-700"
+                  transition={{ delay: 0.15 }}
+                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2.5 text-sm font-semibold text-violet-700"
                 >
-                  <span className="h-2 w-2 bg-violet-500 keep-round animate-pulse" />
+                  <span className="h-2 w-2 keep-round bg-violet-500 animate-pulse" />
                   <AnimatedStat text={active.stats} />
                 </motion.div>
               </div>
 
+              {/* AppPreview */}
               <motion.div
                 initial={{ clipPath: "inset(0 100% 0 0)" }}
                 animate={{ clipPath: "inset(0 0% 0 0)" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-                className="overflow-hidden border border-gray-200 shadow-lg transition-shadow duration-500 hover:shadow-xl"
+                transition={{
+                  duration: 0.75,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: 0.1,
+                }}
+                className="shadow-2xl shadow-black/20"
               >
-                <DemoPlaceholder label={active.title} aspectRatio="16/10" />
+                <AppPreview
+                  variant={previewVariants[activeIndex]}
+                  aspectRatio="16/10"
+                />
               </motion.div>
             </motion.div>
           </AnimatePresence>
