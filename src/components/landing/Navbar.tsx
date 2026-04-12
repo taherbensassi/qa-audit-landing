@@ -26,13 +26,13 @@ export function Navbar() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-red-100/50 shadow-sm shadow-red-100/20"
+          ? "bg-white/90 backdrop-blur-xl border-b border-violet-100/50 shadow-sm shadow-violet-100/20"
           : "bg-transparent"
       }`}
     >
       {/* Scroll progress */}
       <motion.div
-        className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-red-500/60 via-violet-400/40 to-indigo-500/60 origin-left"
+        className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-violet-500/60 via-violet-400/40 to-indigo-500/60 origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -40,7 +40,7 @@ export function Navbar() {
         <Link
           href="/"
           className={`text-base font-bold tracking-tight transition-colors ${
-            scrolled ? "text-red-700 hover:text-red-600" : "text-white hover:text-red-200"
+            scrolled ? "text-violet-700 hover:text-violet-600" : "text-white hover:text-violet-200"
           }`}
         >
           {nav.brand}
@@ -53,7 +53,7 @@ export function Navbar() {
               href={link.href}
               className={`px-3 py-2 text-sm transition-colors ${
                 scrolled
-                  ? "text-gray-500 hover:text-red-600"
+                  ? "text-gray-500 hover:text-violet-600"
                   : "text-white/70 hover:text-white"
               }`}
             >
@@ -65,7 +65,7 @@ export function Navbar() {
             href={nav.cta.href}
             className={`ml-4 px-5 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
               scrolled
-                ? "bg-red-600 text-white shadow-md shadow-red-500/20 hover:bg-red-700"
+                ? "bg-violet-600 text-white shadow-md shadow-violet-500/20 hover:bg-violet-700"
                 : "bg-white text-zinc-900 font-semibold hover:bg-zinc-100"
             }`}
           >
@@ -90,7 +90,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-red-50 bg-white md:hidden"
+            className="overflow-hidden border-t border-violet-50 bg-white md:hidden"
           >
             <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
               {nav.links.map((link, i) => (
@@ -103,7 +103,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-3 text-sm font-medium text-gray-700 transition-colors hover:text-red-600 border-b border-gray-50"
+                    className="block py-3 text-sm font-medium text-gray-700 transition-colors hover:text-violet-600 border-b border-gray-50"
                   >
                     {link.label}
                   </Link>
@@ -112,7 +112,7 @@ export function Navbar() {
               <Link
                 href={nav.cta.href}
                 onClick={() => setMobileOpen(false)}
-                className="mt-3 bg-red-600 px-5 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-red-700"
+                className="mt-3 bg-violet-600 px-5 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-violet-700"
               >
                 {nav.cta.label}
               </Link>

@@ -40,7 +40,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
         >
           Comment ça marche
         </motion.p>
@@ -58,7 +58,7 @@ export function HowItWorks() {
           {/* Connecting line */}
           <div className="pointer-events-none absolute top-16 left-[16.5%] right-[16.5%] hidden md:block">
             <motion.div
-              className="h-px w-full bg-gradient-to-r from-red-200 via-violet-300 to-violet-200"
+              className="h-px w-full bg-gradient-to-r from-violet-200 via-violet-300 to-violet-200"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -74,7 +74,7 @@ export function HowItWorks() {
             >
               {/* Number badge */}
               <motion.div
-                className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-red-200 bg-white text-lg font-bold text-red-600 keep-round shadow-sm relative z-10"
+                className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-violet-200 bg-white text-lg font-bold text-violet-600 keep-round shadow-sm relative z-10"
                 whileInView={{ scale: [0.8, 1.05, 1] }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
@@ -83,8 +83,8 @@ export function HowItWorks() {
               </motion.div>
 
               {/* Icon */}
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-red-50 transition-colors duration-300 group-hover:bg-red-100">
-                <step.icon size={22} className="text-red-600" strokeWidth={1.5} />
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100">
+                <step.icon size={22} className="text-violet-600" strokeWidth={1.5} />
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-900">

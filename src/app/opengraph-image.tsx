@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "nouraisolutionqaaudit — Audit Qualité IA";
+export const alt = "eva-voc — Audit Qualité IA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -24,7 +24,7 @@ export default function OGImage() {
           style={{
             display: "flex",
             fontSize: 14,
-            color: "#dc2626",
+            color: "#7c3aed",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: 24,
@@ -77,7 +77,7 @@ export default function OGImage() {
             color: "#9ca3af",
           }}
         >
-          nouraisolutionqaaudit
+          eva-voc
         </div>
       </div>
     ),

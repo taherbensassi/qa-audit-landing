@@ -39,7 +39,7 @@ const CONNECTION_COUNT = 45;
 const PARTICLE_COUNT = 25;
 const ACCENT = { r: 139, g: 92, b: 246 }; // violet-500
 const ACCENT2 = { r: 99, g: 102, b: 241 }; // indigo-500
-const ACCENT_RED = { r: 220, g: 38, b: 38 }; // red-600
+const ACCENT_RED = { r: 167, g: 139, b: 250 }; // violet-400
 
 function generateNodes(w: number, h: number): Node[] {
   const nodes: Node[] = [];
@@ -137,7 +137,7 @@ export function HeroNetwork() {
       ctx.stroke();
     });
 
-    // Draw particles flowing along connections (mix of violet and red)
+    // Draw particles flowing along connections
     particles.forEach((p) => {
       if (p.connectionIndex >= connections.length) return;
       const conn = connections[p.connectionIndex];
@@ -153,7 +153,7 @@ export function HeroNetwork() {
 
       const x = a.x + (b.x - a.x) * p.t;
       const y = a.y + (b.y - a.y) * p.t;
-      const isRed = p.connectionIndex % 4 === 0;
+      const isRed = p.connectionIndex % 4 === 0; // alternate violet variants
       const col = isRed ? ACCENT_RED : ACCENT2;
 
       ctx.beginPath();
@@ -162,7 +162,7 @@ export function HeroNetwork() {
       ctx.fill();
     });
 
-    // Draw nodes (some red-tinted for visual variety)
+    // Draw nodes (some violet-tinted for visual variety)
     nodes.forEach((node, idx) => {
       const pulse = Math.sin(t * node.speed + node.phase) * 0.5 + 0.5;
       const radius = node.baseRadius + pulse * 1.2;
@@ -173,7 +173,7 @@ export function HeroNetwork() {
       const dist = Math.sqrt(dx * dx + dy * dy);
       const proximity = Math.max(0, 1 - dist / 200);
 
-      // Pick color — every 5th node is red
+      // Pick color — alternate between violet variants
       const col = idx % 5 === 0 ? ACCENT_RED : ACCENT;
 
       // Outer glow

@@ -17,7 +17,7 @@ export function SectionDivider({ variant = "wave", flip = false, className = "" 
     return (
       <div ref={ref} className={`relative overflow-hidden py-1 ${className}`}>
         <motion.div
-          className="h-px w-full bg-gradient-to-r from-transparent via-red-400/60 to-transparent"
+          className="h-px w-full bg-gradient-to-r from-transparent via-violet-400/60 to-transparent"
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}

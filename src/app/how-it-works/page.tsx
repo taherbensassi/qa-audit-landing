@@ -5,7 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How It Works — nouraisolutionqaaudit",
+  title: "How It Works — eva-voc",
   description: "Discover how AI-powered QA auditing transforms your call center in 4 steps.",
 };
 

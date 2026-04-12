@@ -5,7 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Security — nouraisolutionqaaudit",
+  title: "Security — eva-voc",
   description: "Learn about our security practices and data protection commitments.",
 };
 

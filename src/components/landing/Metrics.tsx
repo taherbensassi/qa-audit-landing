@@ -9,12 +9,7 @@ const { metrics } = content;
 
 export function Metrics() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-red-600 via-violet-700 to-indigo-700 py-24">
-      {/* Floating shapes — CSS only, no parallax hooks */}
-      <div className="pointer-events-none absolute top-0 left-[20%] h-40 w-40 bg-white/[0.04] animate-float" />
-      <div className="pointer-events-none absolute bottom-0 right-[15%] h-32 w-32 bg-white/[0.03] animate-float-delayed" />
-      <div className="pointer-events-none absolute top-[20%] right-[40%] h-24 w-24 bg-white/[0.02] animate-float-slow keep-round" />
-
+    <section className="relative overflow-hidden bg-gradient-to-r from-violet-700 via-violet-600 to-indigo-700 py-24">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

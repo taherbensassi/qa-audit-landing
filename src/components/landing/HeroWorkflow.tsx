@@ -37,7 +37,7 @@ const steps = [
     num: "01",
     label: "Capture Vocale",
     desc: "Ingestion audio multi-canal",
-    color: "#ef4444",
+    color: "#7c3aed",
     tags: ["WebRTC", "PCM 16-bit"],
     depth: 0,
   },
@@ -46,7 +46,7 @@ const steps = [
     num: "02",
     label: "Transcription IA",
     desc: "Pipeline neural parole-texte",
-    color: "#dc2626",
+    color: "#8b5cf6",
     tags: ["Whisper v4", "Diarisation"],
     depth: 12,
   },
@@ -72,11 +72,11 @@ const steps = [
 
 /* Floating tech labels that orbit around the workflow */
 const floatingTech = [
-  { label: "LLM", x: "-4%", y: "15%", delay: 0, red: true },
+  { label: "LLM", x: "-4%", y: "15%", delay: 0, red: false },
   { label: "MCP", x: "102%", y: "20%", delay: 0.8, red: false },
   { label: "NLP", x: "8%", y: "90%", delay: 1.6, red: false },
   { label: "RAG", x: "92%", y: "85%", delay: 2.4, red: false },
-  { label: "ASR", x: "50%", y: "-8%", delay: 0.4, red: true },
+  { label: "ASR", x: "50%", y: "-8%", delay: 0.4, red: false },
   { label: "OIDC", x: "30%", y: "105%", delay: 1.2, red: false },
   { label: "gRPC", x: "70%", y: "105%", delay: 2.0, red: false },
 ];
@@ -198,8 +198,8 @@ function TranscriptionTypewriter({ startDelay }: { startDelay: number }) {
   return (
     <div className="h-[60px] overflow-hidden bg-black/30 px-2 py-1.5 border border-violet-500/10 font-mono">
       <div className="flex items-center gap-1 mb-1 opacity-40">
-        <Cpu size={8} className="text-red-400" />
-        <span className="text-[7px] text-red-400 uppercase tracking-widest">
+        <Cpu size={8} className="text-violet-400" />
+        <span className="text-[7px] text-violet-400 uppercase tracking-widest">
           llm.transcrire()
         </span>
       </div>
@@ -268,12 +268,12 @@ function EvaluationChecklist({ startDelay }: { startDelay: number }) {
             {item.pass ? (
               <Check size={9} className="text-emerald-400" strokeWidth={3} />
             ) : (
-              <X size={9} className="text-red-400" strokeWidth={3} />
+              <X size={9} className="text-orange-400" strokeWidth={3} />
             )}
           </motion.span>
           <span
             className={`text-[8px] leading-none flex-1 ${
-              item.pass ? "text-white/50" : "text-red-400/80"
+              item.pass ? "text-white/50" : "text-orange-400/80"
             }`}
           >
             {item.text}
@@ -621,7 +621,7 @@ export function HeroWorkflow() {
         {floatingTech.map((t) => (
           <motion.span
             key={t.label}
-            className={`absolute font-mono text-[9px] tracking-[0.2em] uppercase select-none ${t.red ? "text-red-500/25" : "text-violet-500/20"}`}
+            className="absolute font-mono text-[9px] tracking-[0.2em] uppercase select-none text-violet-500/20"
             style={{ left: t.x, top: t.y }}
             initial={{ opacity: 0 }}
             animate={{ opacity: [0.15, 0.3, 0.15] }}

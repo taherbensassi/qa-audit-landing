@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { content } from "@/lib/content";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { Play } from "lucide-react";
+import { DemoPlaceholder } from "@/components/ui/DemoPlaceholder";
 
 const { showcase } = content;
 
@@ -40,7 +39,7 @@ export function Showcase() {
               onClick={() => setActiveIndex(i)}
               className={`px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                 i === activeIndex
-                  ? "bg-red-600 text-white shadow-lg shadow-red-500/30"
+                  ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
                   : "text-white/40 hover:text-white/70 hover:bg-white/5"
               }`}
             >
@@ -60,15 +59,15 @@ export function Showcase() {
             <div className="group relative overflow-hidden border border-white/[0.08] bg-[#12121e] shadow-2xl">
               <div className="flex items-center gap-2 border-b border-white/[0.05] bg-[#0a0a16] px-4 py-3">
                 <div className="flex gap-1.5">
-                  <span className="h-2.5 w-2.5 bg-red-400/60 keep-round" />
+                  <span className="h-2.5 w-2.5 bg-zinc-400/60 keep-round" />
                   <span className="h-2.5 w-2.5 bg-yellow-400/60 keep-round" />
                   <span className="h-2.5 w-2.5 bg-green-400/60 keep-round" />
                 </div>
                 <div className="ml-3 flex-1 bg-white/[0.04] px-3 py-1 text-[10px] text-white/20 font-mono">
-                  app.nouraisolution.com/dashboard
+                  app.eva-voc.com/dashboard
                 </div>
               </div>
-              <Image src={active.image} alt={active.title} width={900} height={550} className="w-full" />
+              <DemoPlaceholder label={active.title} aspectRatio="16/10" />
             </div>
             <p className="mt-6 text-center text-sm text-white/50">{active.description}</p>
           </motion.div>

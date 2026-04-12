@@ -82,7 +82,7 @@ export function SecurityContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-red-600"
+          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-violet-600"
         >
           Sécurité
         </motion.p>
@@ -106,10 +106,10 @@ export function SecurityContent() {
             <motion.div
               key={p.title}
               variants={fadeInUp}
-              className="group border border-gray-100 p-6 transition-all duration-300 hover:border-red-200 hover:bg-red-50/30 hover:shadow-sm"
+              className="group border border-gray-100 p-6 transition-all duration-300 hover:border-violet-200 hover:bg-violet-50/30 hover:shadow-sm"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-red-50 transition-colors group-hover:bg-red-100">
-                <p.icon size={18} className="text-red-600" strokeWidth={1.5} />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-violet-50 transition-colors group-hover:bg-violet-100">
+                <p.icon size={18} className="text-violet-600" strokeWidth={1.5} />
               </div>
               <h3 className="mb-2 text-sm font-semibold text-gray-900">
                 {p.title}

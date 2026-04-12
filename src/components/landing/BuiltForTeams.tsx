@@ -30,7 +30,7 @@ export function BuiltForTeams() {
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-400"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-400"
         >
           Conçu pour votre équipe
         </motion.p>
@@ -41,7 +41,7 @@ export function BuiltForTeams() {
         >
           L'IA gère le volume.
           <br />
-          <span className="text-red-400">Votre expertise pilote la qualité.</span>
+          <span className="text-violet-400">Votre expertise pilote la qualité.</span>
         </motion.h2>
         <motion.p
           variants={fadeInUp}
@@ -57,8 +57,8 @@ export function BuiltForTeams() {
             className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10"
           >
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center bg-red-500/10">
-                <Users size={20} className="text-red-400" strokeWidth={1.5} />
+              <div className="flex h-10 w-10 items-center justify-center bg-violet-500/10">
+                <Users size={20} className="text-violet-400" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-semibold text-white">Pour les Responsables QA</h3>
             </div>
@@ -72,7 +72,7 @@ export function BuiltForTeams() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + i * 0.1 }}
                 >
-                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-red-400" />
+                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-violet-400" />
                   {point}
                 </motion.li>
               ))}

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { DemoPlaceholder } from "@/components/ui/DemoPlaceholder";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
 import { Upload, BrainCircuit, ClipboardCheck, BarChart3, ArrowRight } from "lucide-react";
 
@@ -55,7 +55,7 @@ export function HowItWorksContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 font-mono text-xs tracking-widest uppercase text-red-600"
+          className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
         >
           Comment ça marche
         </motion.p>
@@ -90,10 +90,10 @@ export function HowItWorksContent() {
                 className={i % 2 === 1 ? "lg:order-2" : ""}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center border-2 border-red-200 bg-red-50 font-mono text-sm font-bold text-red-600">
+                  <span className="flex h-10 w-10 items-center justify-center border-2 border-violet-200 bg-violet-50 font-mono text-sm font-bold text-violet-600">
                     {step.num}
                   </span>
-                  <step.icon size={20} className="text-red-500" strokeWidth={1.5} />
+                  <step.icon size={20} className="text-violet-500" strokeWidth={1.5} />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-gray-900 lg:text-3xl">
                   {step.title}
@@ -104,7 +104,7 @@ export function HowItWorksContent() {
                 <ul className="space-y-2">
                   {step.details.map((d) => (
                     <li key={d} className="flex items-center gap-2 text-sm text-gray-600">
-                      <ArrowRight size={12} className="text-red-400" />
+                      <ArrowRight size={12} className="text-violet-400" />
                       {d}
                     </li>
                   ))}
@@ -116,14 +116,8 @@ export function HowItWorksContent() {
                 variants={i % 2 === 0 ? fadeInRight : fadeInLeft}
                 className={i % 2 === 1 ? "lg:order-1" : ""}
               >
-                <div className="overflow-hidden border border-gray-200 bg-gray-50 shadow-lg shadow-gray-200/50">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    width={800}
-                    height={500}
-                    className="w-full"
-                  />
+                <div className="overflow-hidden border border-gray-200 shadow-lg shadow-gray-200/50">
+                  <DemoPlaceholder label={step.title} aspectRatio="16/10" />
                 </div>
               </motion.div>
             </motion.div>

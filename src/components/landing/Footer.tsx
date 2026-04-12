@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative border-t border-white/[0.04] bg-[#09090b] overflow-hidden">
       {/* Animated gradient top border */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400/50 to-transparent"
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/50 to-transparent"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}

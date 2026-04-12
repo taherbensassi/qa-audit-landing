@@ -71,7 +71,7 @@ export function PricingContent() {
       >
         <motion.p
           variants={fadeInUp}
-          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-red-600"
+          className="mb-3 text-center font-mono text-xs tracking-widest uppercase text-violet-600"
         >
           Tarifs
         </motion.p>
@@ -95,12 +95,12 @@ export function PricingContent() {
               variants={fadeInUp}
               className={`relative flex flex-col border p-8 ${
                 plan.highlighted
-                  ? "border-red-300 bg-red-50/30 shadow-lg shadow-red-100/50"
+                  ? "border-violet-300 bg-violet-50/30 shadow-lg shadow-violet-100/50"
                   : "border-gray-200 bg-white"
               }`}
             >
               {plan.highlighted && (
-                <span className="absolute -top-3 left-6 bg-red-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
+                <span className="absolute -top-3 left-6 bg-violet-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
                   Le plus populaire
                 </span>
               )}
@@ -119,7 +119,7 @@ export function PricingContent() {
               <ul className="mb-8 flex-1 space-y-3">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                    <Check size={14} className="mt-0.5 shrink-0 text-red-500" />
+                    <Check size={14} className="mt-0.5 shrink-0 text-violet-500" />
                     {f}
                   </li>
                 ))}

@@ -14,11 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "nouraisolutionqaaudit — Audit Qualité IA pour Centres d'Appels",
+  title: "eva-voc — Audit Qualité IA pour Centres d'Appels",
   description:
     "Évaluez chaque conversation selon vos grilles de conformité. Automatiquement, avec précision, à grande échelle.",
   openGraph: {
-    title: "nouraisolutionqaaudit — Audit Qualité IA pour Centres d'Appels",
+    title: "eva-voc — Audit Qualité IA pour Centres d'Appels",
     description:
       "Évaluez chaque conversation selon vos grilles de conformité. Automatiquement, avec précision, à grande échelle.",
     type: "website",
