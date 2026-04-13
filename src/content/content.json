@@ -62,33 +62,35 @@
       {
         "category": "Évaluation & Scoring",
         "items": [
-          { "title": "Grilles d'Évaluation", "description": "Cadres de notation personnalisés avec thèmes et items pondérés", "icon": "ClipboardCheck" },
-          { "title": "Critères de Conformité", "description": "Règles de conformité par sévérité avec signalement automatique", "icon": "Shield" },
-          { "title": "Niveaux d'Évaluation", "description": "Échelles de notation configurables avec paliers de performance colorés", "icon": "BarChart3" }
+          { "title": "Grilles d'Évaluation", "description": "Cadres dynamiques Catégorie → Question, pondération configurable, personnalisable par client", "icon": "ClipboardCheck" },
+          { "title": "Critères de Conformité", "description": "Conformité situationnelle intelligente — analyse contextuelle, pas simple matching de mots-clés. Signalement par sévérité", "icon": "Shield" },
+          { "title": "Niveaux d'Évaluation", "description": "Échelles de notation configurables avec paliers de performance colorés", "icon": "BarChart3" },
+          { "title": "Verdict Dynamique", "description": "Verdicts auto-générés avec règles configurables : compliance, score normalisé, seuils métier", "icon": "Zap" }
         ]
       },
       {
         "category": "Intelligence & Apprentissage",
         "items": [
-          { "title": "Analyse par LLM", "description": "Modèles IA entraînés sur vos standards d'évaluation et calibrés pour votre équipe", "icon": "Brain" },
+          { "title": "Claude par Anthropic", "description": "Propulsé par Claude d'Anthropic — le modèle IA le plus précis du marché, calibré sur vos standards d'évaluation", "icon": "Brain" },
           { "title": "Validation de Script", "description": "Vérifiez l'adhérence aux scripts d'appel à chaque phase de la conversation", "icon": "FileCheck" },
-          { "title": "Calibration des Prompts", "description": "Affinez les prompts d'évaluation IA avec comparaison humaine côte à côte", "icon": "SlidersHorizontal" }
+          { "title": "Calibration & Boucle d'apprentissage", "description": "Chaque validation manager affine les prompts IA. Plus vous utilisez evaVoc, plus il s'adapte à votre contexte", "icon": "SlidersHorizontal" },
+          { "title": "Insights & Tendances IA", "description": "Détection d'anomalies, identification de patterns, clustering des appels et analyse prédictive des tendances", "icon": "Sparkles" }
         ]
       },
       {
         "category": "Opérations & Monitoring",
         "items": [
-          { "title": "Gestion Clients", "description": "Espace multi-tenant avec grilles et scripts spécifiques par client", "icon": "Building2" },
+          { "title": "Gestion Clients", "description": "Architecture multi-tenant avec données isolées, grilles, scripts et configurations spécifiques par client", "icon": "Building2" },
           { "title": "Monitoring Temps Réel", "description": "Dashboard en direct suivant la progression des évaluations et l'état du pipeline", "icon": "Activity" },
-          { "title": "Statistiques & Analytics", "description": "Tendances de performance agents, distributions de scores et métriques qualité", "icon": "TrendingUp" }
+          { "title": "Statistiques & Analytics", "description": "KPIs en temps réel, classements agents, distributions de scores, tendances de performance et alertes", "icon": "TrendingUp" }
         ]
       },
       {
         "category": "Reporting & Livraison",
         "items": [
-          { "title": "Rapports PDF", "description": "Générez des rapports d'audit brandés avec ventilation détaillée des scores", "icon": "FileText" },
+          { "title": "Rapports Multi-niveaux", "description": "Rapports par évaluation, par agent, par campagne. PDF brandés avec ventilation détaillée des scores", "icon": "FileText" },
           { "title": "Alertes Email", "description": "Notifications automatiques pour les constats critiques et manquements de conformité", "icon": "Mail" },
-          { "title": "Export & API", "description": "Exportez vers Excel, intégrez vos outils BI, ou consommez via API REST", "icon": "Download" }
+          { "title": "Import/Export & API", "description": "Import/export Excel natif pour grilles, scripts et données. Intégration outils BI via API REST", "icon": "Download" }
         ]
       }
     ]
@@ -109,7 +111,7 @@
       },
       {
         "title": "L'Humain au Centre",
-        "description": "L'IA gère le volume. Votre équipe gère les décisions. Revoyez, calibrez et approuvez à chaque étape.",
+        "description": "L'IA Claude d'Anthropic gère le volume. Votre équipe gère les décisions. Une boucle d'apprentissage continue affine le modèle à chaque validation.",
         "icon": "Users"
       },
       {
