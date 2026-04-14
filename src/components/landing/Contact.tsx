@@ -130,7 +130,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* eva-voc by NourAI */}
+            {/* evaVoc by NourAI */}
             <div className="border border-violet-500/20 bg-violet-600/[0.04] p-6 flex items-start gap-4">
               <div className="flex items-end gap-[3px] h-[18px] shrink-0 mt-0.5">
                 <div className="w-[3px] h-[8px] bg-violet-500" />
@@ -139,7 +139,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-white mb-1">
-                  eva-voc est un produit NourAI Solutions
+                  evaVoc est un produit NourAI Solutions
                 </p>
                 <p className="text-xs text-zinc-400 leading-relaxed mb-3">
                   Intelligence qualité propulsée par l&apos;IA pour les centres
@@ -230,7 +230,7 @@ export function Contact() {
               <input
                 type="hidden"
                 name="_subject"
-                value="Nouveau message depuis eva-voc"
+                value="Nouveau message depuis evaVoc"
               />
 
               {submitError && (

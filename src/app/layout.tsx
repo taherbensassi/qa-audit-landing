@@ -14,19 +14,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "eva-voc — Audit Qualité IA pour Centres d'Appels",
+  title: "evaVoc — Audit Qualité IA pour Centres d'Appels",
   description:
     "Évaluez 100% de vos conversations avec la précision de vos meilleurs auditeurs. 40x plus rapide que l'audit manuel. Conforme RGPD. Propulsé par Claude d'Anthropic.",
   openGraph: {
-    title: "eva-voc — Audit Qualité IA pour Centres d'Appels",
+    title: "evaVoc — Audit Qualité IA pour Centres d'Appels",
     description:
       "Évaluez 100% de vos conversations avec la précision de vos meilleurs auditeurs. 40x plus rapide que l'audit manuel. Conforme RGPD.",
     type: "website",
-    siteName: "eva-voc",
+    siteName: "evaVoc",
   },
   twitter: {
     card: "summary_large_image",
-    title: "eva-voc — Audit Qualité IA pour Centres d'Appels",
+    title: "evaVoc — Audit Qualité IA pour Centres d'Appels",
     description:
       "Évaluez 100% de vos conversations. 40x plus rapide que l'audit manuel.",
   },

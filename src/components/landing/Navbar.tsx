@@ -51,7 +51,7 @@ function EvavocLogo() {
         <div className="w-[3px] h-[11px] bg-violet-500" />
       </div>
       <span className="text-[16px] font-bold text-white tracking-tight leading-none">
-        eva-voc
+        evaVoc
       </span>
     </div>
   );

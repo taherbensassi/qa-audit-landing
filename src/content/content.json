@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "eva-voc",
+    "brand": "evaVoc",
     "links": [
       { "label": "Fonctionnalités", "href": "#features" },
       { "label": "Cas d'usage", "href": "#use-cases" },
@@ -13,7 +13,7 @@
   "hero": {
     "label": "Propulsé par Claude d'Anthropic",
     "headline": "Arrêtez d'écouter\n2% de vos appels.",
-    "subheadline": "eva-voc évalue 100% de vos conversations avec la précision de vos meilleurs auditeurs — 40x plus vite. Passez de l'échantillonnage manuel au monitoring qualité intégral.",
+    "subheadline": "evaVoc évalue 100% de vos conversations avec la précision de vos meilleurs auditeurs — 40x plus vite. Passez de l'échantillonnage manuel au monitoring qualité intégral.",
     "cta": { "label": "Obtenir un audit gratuit", "href": "#contact" },
     "secondaryCta": { "label": "Voir la plateforme", "href": "#platform" },
     "image": "/images/product/dashboard.png"
@@ -53,7 +53,7 @@
     ]
   },
   "features": {
-    "label": "Pourquoi eva-voc",
+    "label": "Pourquoi evaVoc",
     "headline": "Ne manquez plus jamais\nun appel problématique.",
     "items": [
       {
@@ -64,13 +64,13 @@
       },
       {
         "title": "Vos grilles, vos règles",
-        "description": "Importez vos cadres de notation existants en quelques clics. eva-voc s'adapte à votre méthodologie — pas l'inverse.",
+        "description": "Importez vos cadres de notation existants en quelques clics. evaVoc s'adapte à votre méthodologie — pas l'inverse.",
         "icon": "Settings",
         "stat": "0 reconfiguration"
       },
       {
         "title": "L'humain garde le contrôle",
-        "description": "L'IA gère le volume, votre équipe gère les décisions. Chaque validation affine le modèle. Plus vous utilisez eva-voc, plus il comprend votre contexte.",
+        "description": "L'IA gère le volume, votre équipe gère les décisions. Chaque validation affine le modèle. Plus vous utilisez evaVoc, plus il comprend votre contexte.",
         "icon": "Users",
         "stat": "Boucle d'apprentissage continue"
       },
@@ -222,7 +222,7 @@
     ]
   },
   "footer": {
-    "brand": "eva-voc",
+    "brand": "evaVoc",
     "tagline": "Intelligence qualité propulsée par l'IA pour les centres d'appels.",
     "columns": [
       {
@@ -256,7 +256,7 @@
       "Chiffrement AES-256",
       "Multi-tenant isolé"
     ],
-    "copyright": "2026 eva-voc par NourAI Solutions. Tous droits réservés."
+    "copyright": "2026 evaVoc par NourAI Solutions. Tous droits réservés."
   },
   "comingSoon": {
     "headline": "Bientôt disponible",

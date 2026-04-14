@@ -613,7 +613,7 @@ export function AppPreview({
             <div className="w-[2.5px] h-[8px] bg-violet-500" />
           </div>
           <span className="font-bold text-[9px] text-white/50 tracking-tight leading-none">
-            eva-voc
+            evaVoc
           </span>
           <span className="w-px h-3 bg-white/10 shrink-0" />
           <span className="text-[8px] text-white/50">
