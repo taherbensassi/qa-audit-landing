@@ -7,6 +7,7 @@ import { content } from "@/lib/content";
 import { staggerContainer } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 import { AppPreview } from "@/components/ui/AppPreview";
+import { HeroWorkflow } from "./HeroWorkflow";
 import { HeroNetwork } from "./HeroNetwork";
 
 const { hero } = content;
@@ -33,6 +34,7 @@ export function Hero() {
 
   const networkY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const networkOpacity = useTransform(scrollYProgress, [0, 0.6], [0.6, 0]);
+  const workflowY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const lines = hero.headline.split("\n");
 
@@ -95,7 +97,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline — fast fade-in, no per-letter animation */}
+        {/* Headline */}
         <motion.h1
           custom={0.2}
           variants={fadeUp}
@@ -143,14 +145,24 @@ export function Hero() {
             {hero.secondaryCta.label}
           </Button>
         </motion.div>
+
+        {/* 3D Workflow animation — parallax layer */}
+        <motion.div
+          custom={0.8}
+          variants={fadeUp}
+          className="mt-20"
+          style={{ y: workflowY }}
+        >
+          <HeroWorkflow />
+        </motion.div>
       </motion.div>
 
       {/* Platform preview */}
-      <div className="relative z-10 mx-auto mt-16 sm:mt-24 max-w-6xl px-6">
+      <div className="relative z-10 mx-auto mt-12 sm:mt-20 max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 2.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative shadow-2xl shadow-black/50"
         >
           <AppPreview variant="dashboard" aspectRatio="16/9" />

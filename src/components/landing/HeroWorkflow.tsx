@@ -35,37 +35,37 @@ const steps = [
   {
     icon: Mic,
     num: "01",
-    label: "Capture Vocale",
-    desc: "Ingestion audio multi-canal",
+    label: "Ingestion Audio",
+    desc: "Import multi-canal temps réel",
     color: "#7c3aed",
-    tags: ["WebRTC", "PCM 16-bit"],
+    tags: ["API", "Multi-format"],
     depth: 0,
   },
   {
     icon: BrainCircuit,
     num: "02",
     label: "Transcription IA",
-    desc: "Pipeline neural parole-texte",
+    desc: "Parole-texte multi-langue",
     color: "#8b5cf6",
-    tags: ["Whisper v4", "Diarisation"],
+    tags: ["Claude", "Diarisation"],
     depth: 12,
   },
   {
     icon: Network,
     num: "03",
-    label: "Évaluation MCP",
-    desc: "Moteur protocole multi-critères",
+    label: "Évaluation Grille",
+    desc: "Scoring selon vos critères",
     color: "#7c3aed",
-    tags: ["MCP v2", "NLP"],
+    tags: ["Conformité", "NLP"],
     depth: -8,
   },
   {
     icon: BarChart3,
     num: "04",
-    label: "Score Neural",
-    desc: "Synthèse verdict conformité",
+    label: "Score & Verdict",
+    desc: "Rapport prêt pour l'audit",
     color: "#6366f1",
-    tags: ["RAG", "Vector DB"],
+    tags: ["PDF", "Export"],
     depth: 6,
   },
 ];
@@ -278,7 +278,7 @@ function EvaluationChecklist({ startDelay }: { startDelay: number }) {
           >
             {item.text}
           </span>
-          <span className="font-mono text-[7px] text-white/20">
+          <span className="font-mono text-[7px] text-white/40">
             w:{item.weight}
           </span>
         </motion.div>
@@ -735,7 +735,7 @@ export function HeroWorkflow() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
-                      <span className="font-mono text-[8px] tracking-widest text-white/15 uppercase">
+                      <span className="font-mono text-[8px] tracking-widest text-white/40 uppercase">
                         {step.num}
                       </span>
                       <span
@@ -752,7 +752,7 @@ export function HeroWorkflow() {
                 </div>
 
                 {/* Desc */}
-                <p className="text-[8px] text-white/25 mb-2.5 font-mono">
+                <p className="text-[8px] text-white/50 mb-2.5 font-mono">
                   {step.desc}
                 </p>
 
@@ -766,7 +766,7 @@ export function HeroWorkflow() {
                   {step.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[7px] uppercase tracking-wider px-1.5 py-0.5 border text-white/25"
+                      className="font-mono text-[7px] uppercase tracking-wider px-1.5 py-0.5 border text-white/50"
                       style={{ borderColor: `${step.color}15` }}
                     >
                       {tag}
@@ -821,7 +821,7 @@ export function HeroWorkflow() {
         ].map((item) => (
           <div
             key={item.text}
-            className="flex items-center gap-1.5 text-white/15"
+            className="flex items-center gap-1.5 text-white/40"
           >
             <item.icon size={10} />
             <span className="font-mono text-[8px] uppercase tracking-wider">
