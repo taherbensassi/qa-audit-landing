@@ -76,8 +76,8 @@ export function Contact() {
         </motion.p>
         <motion.h2
           variants={blurIn}
-          className="mb-4 text-3xl font-bold tracking-tight text-white lg:text-5xl"
-          style={{ lineHeight: 1.15 }}
+          className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          style={{ lineHeight: 1.1 }}
         >
           Envoyez-nous un appel.
           <br />

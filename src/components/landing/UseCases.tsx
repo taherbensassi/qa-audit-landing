@@ -66,8 +66,8 @@ export function UseCases() {
         </motion.p>
         <motion.h2
           variants={fadeInUp}
-          className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
-          style={{ lineHeight: 1.15 }}
+          className="mb-16 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+          style={{ lineHeight: 1.1 }}
         >
           {useCases.headline}
         </motion.h2>
@@ -102,10 +102,10 @@ export function UseCases() {
             >
               {/* Text */}
               <div>
-                <h3 className="mb-4 text-2xl font-semibold text-gray-900">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900 lg:text-3xl">
                   {active.title}
                 </h3>
-                <p className="mb-6 text-base leading-relaxed text-gray-500">
+                <p className="mb-6 text-base leading-relaxed text-gray-500 lg:text-lg">
                   {active.description}
                 </p>
                 <motion.div

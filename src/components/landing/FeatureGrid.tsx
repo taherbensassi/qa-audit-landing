@@ -16,8 +16,8 @@ export function FeatureGrid() {
       </motion.p>
       <motion.h2
         variants={blurIn}
-        className="mb-16 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
-        style={{ lineHeight: 1.15 }}
+        className="mb-16 max-w-2xl text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+        style={{ lineHeight: 1.1 }}
       >
         {features.headline.split("\n").map((line: string, i: number) => (
           <span key={i}>{line}{i === 0 && <br />}</span>
@@ -42,8 +42,8 @@ export function FeatureGrid() {
               >
                 <Icon size={20} className="text-violet-600 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
               </motion.div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">{feature.title}</h3>
-              <p className="mb-3 text-sm leading-relaxed text-gray-500 lg:text-base">{feature.description}</p>
+              <h3 className="mb-2 text-lg font-bold text-gray-900">{feature.title}</h3>
+              <p className="mb-3 text-base leading-relaxed text-gray-500">{feature.description}</p>
               {feature.stat && (
                 <span className="inline-block font-mono text-xs tracking-wider text-violet-600 bg-violet-50 px-2 py-0.5">
                   {feature.stat}

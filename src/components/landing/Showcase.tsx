@@ -61,7 +61,7 @@ export function Showcase() {
       >
         <motion.h2
           variants={blurIn}
-          className="mb-16 text-center text-3xl font-bold tracking-tight text-white lg:text-5xl"
+          className="mb-16 text-center text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
           {showcase.headline}
         </motion.h2>

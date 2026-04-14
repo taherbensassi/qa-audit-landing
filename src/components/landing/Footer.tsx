@@ -37,7 +37,7 @@ export function Footer() {
           className="mb-16 border border-violet-500/20 bg-violet-600/[0.04] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
         >
           <div>
-            <p className="text-base font-semibold text-white lg:text-lg">
+            <p className="text-base font-bold text-white lg:text-lg">
               Prêt à évaluer 100% de vos appels ?
             </p>
             <p className="mt-1 text-sm text-zinc-400">

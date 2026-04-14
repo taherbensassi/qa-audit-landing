@@ -26,20 +26,20 @@ export function Metrics() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-10 mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4"
+        className="relative z-10 mx-auto grid max-w-6xl grid-cols-2 gap-y-6 px-6 sm:gap-y-0 lg:grid-cols-4"
       >
         {metrics.map((metric: { value: string; label: string; context?: string }, i: number) => (
           <motion.div
             key={metric.label}
             variants={springNumber}
-            className={`px-6 py-8 text-center ${
-              i < metrics.length - 1 ? "border-r border-white/10" : ""
-            }`}
+            className={`px-4 py-6 text-center sm:px-6 sm:py-8 ${
+              i % 2 === 0 ? "border-r border-white/10" : ""
+            } ${i < 2 ? "sm:border-r sm:border-white/10" : ""} lg:border-r lg:border-white/10 last:border-r-0`}
           >
-            <div className="mb-2 font-mono text-3xl font-bold text-white lg:text-5xl">
+            <div className="mb-2 font-mono text-3xl font-black text-white sm:text-4xl lg:text-5xl">
               <AnimatedCounter value={metric.value} />
             </div>
-            <p className="text-sm font-medium text-white/80">{metric.label}</p>
+            <p className="text-sm font-semibold text-white/80">{metric.label}</p>
             {metric.context && (
               <p className="mt-1 text-xs text-white/50">{metric.context}</p>
             )}

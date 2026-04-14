@@ -46,8 +46,8 @@ export function HowItWorks() {
         </motion.p>
         <motion.h2
           variants={clipReveal}
-          className="mb-20 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
-          style={{ lineHeight: 1.15 }}
+          className="mb-20 max-w-2xl text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+          style={{ lineHeight: 1.1 }}
         >
           {(howItWorks?.headline ?? "Opérationnel en 48h.\nSans changer vos processus.").split("\n").map((line: string, i: number) => (
             <span key={i}>
@@ -105,7 +105,7 @@ export function HowItWorks() {
                   <Icon size={22} className="text-violet-600" strokeWidth={1.5} />
                 </motion.div>
 
-                <h3 className="mb-2 text-lg font-semibold text-gray-900 lg:text-xl">
+                <h3 className="mb-2 text-lg font-bold text-gray-900 lg:text-xl">
                   {step.title}
                 </h3>
 

@@ -17,8 +17,8 @@ export function Platform() {
       </motion.p>
       <motion.h2
         variants={fadeInUp}
-        className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
-        style={{ lineHeight: 1.15 }}
+        className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+        style={{ lineHeight: 1.1 }}
       >
         {platform.headline.split("\n").map((line: string, i: number) => (
           <span key={i}>{line}{i === 0 && <br />}</span>
@@ -68,8 +68,8 @@ export function Platform() {
                     <div className="mb-4 flex h-10 w-10 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100">
                       <Icon size={18} className="text-violet-600" strokeWidth={1.5} />
                     </div>
-                    <h4 className="mb-2 text-sm font-semibold text-gray-900">{item.title}</h4>
-                    <p className="text-sm leading-relaxed text-gray-500">{item.description}</p>
+                    <h4 className="mb-2 text-base font-bold text-gray-900">{item.title}</h4>
+                    <p className="text-sm leading-relaxed text-gray-500 lg:text-base">{item.description}</p>
                   </motion.div>
                 );
               })}

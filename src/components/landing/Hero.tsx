@@ -101,8 +101,8 @@ export function Hero() {
         <motion.h1
           custom={0.2}
           variants={fadeUp}
-          className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl"
-          style={{ lineHeight: 1.08 }}
+          className="mb-6 text-[2.5rem] font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          style={{ lineHeight: 1.05 }}
         >
           <span>{lines[0]}</span>
           <br />
@@ -117,7 +117,7 @@ export function Hero() {
         <motion.p
           custom={0.4}
           variants={fadeUp}
-          className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
+          className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg lg:text-xl"
         >
           {hero.subheadline}
         </motion.p>

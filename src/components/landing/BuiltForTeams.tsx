@@ -50,8 +50,8 @@ export function BuiltForTeams() {
         </motion.p>
         <motion.h2
           variants={blurIn}
-          className="mb-4 max-w-3xl text-3xl font-bold tracking-tight text-white lg:text-5xl"
-          style={{ lineHeight: 1.15 }}
+          className="mb-4 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          style={{ lineHeight: 1.1 }}
         >
           {(builtForTeams?.headline ?? "L'IA gère le volume.\nVotre expertise pilote la qualité.").split("\n").map((line: string, i: number) => (
             <span key={i}>
@@ -82,7 +82,7 @@ export function BuiltForTeams() {
                   <div className={`flex h-10 w-10 items-center justify-center bg-${accentColor}-500/10`}>
                     <TeamIcon size={20} className={`text-${accentColor}-400`} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-white lg:text-xl">{team.title}</h3>
+                  <h3 className="text-lg font-bold text-white lg:text-xl">{team.title}</h3>
                 </div>
                 <ul className="space-y-4">
                   {team.points.map((point: string, i: number) => (
