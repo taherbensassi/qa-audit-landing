@@ -190,3 +190,47 @@ export const staggerSlow: Variants = {
   },
 };
 
+/* ------------------------------------------------------------------ */
+/*  3D card lift & glow (scroll-triggered)                            */
+/* ------------------------------------------------------------------ */
+
+export const liftGlow: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    rotateX: -8,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transition: { type: "spring", damping: 18, stiffness: 100 },
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/*  3D card flip (for tab transitions)                                */
+/* ------------------------------------------------------------------ */
+
+export const flipIn: Variants = {
+  hidden: { opacity: 0, rotateY: 60, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    rotateY: 0,
+    scale: 1,
+    transition: { type: "spring", damping: 20, stiffness: 120 },
+  },
+};
+
+export const flipOut: Variants = {
+  hidden: { opacity: 1, rotateY: 0, scale: 1 },
+  visible: {
+    opacity: 0,
+    rotateY: -60,
+    scale: 0.9,
+    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+

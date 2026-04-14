@@ -10,8 +10,8 @@ const { useCases } = content;
 
 // Map use case index to the most relevant AppPreview variant
 const previewVariants: AppPreviewVariant[] = [
-  "evaluations", // Assurance Qualité
-  "compliance",  // Conformité & Risques
+  "evaluations", // Assurance Qualite
+  "compliance",  // Conformite & Risques
   "dashboard",   // Performance Commerciale
 ];
 
@@ -44,9 +44,42 @@ function AnimatedStat({ text }: { text: string }) {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/*  3D flip transition variants                                        */
+/* ------------------------------------------------------------------ */
+
+const flipVariants = {
+  enter: (direction: number) => ({
+    opacity: 0,
+    rotateY: direction > 0 ? 45 : -45,
+    scale: 0.92,
+    z: -100,
+  }),
+  center: {
+    opacity: 1,
+    rotateY: 0,
+    scale: 1,
+    z: 0,
+    transition: { type: "spring", damping: 22, stiffness: 160 },
+  },
+  exit: (direction: number) => ({
+    opacity: 0,
+    rotateY: direction > 0 ? -45 : 45,
+    scale: 0.92,
+    z: -100,
+    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 export function UseCases() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const active = useCases.items[activeIndex];
+
+  const handleTabChange = (i: number) => {
+    setDirection(i > activeIndex ? 1 : -1);
+    setActiveIndex(i);
+  };
 
   return (
     <motion.section
@@ -78,7 +111,7 @@ export function UseCases() {
             {useCases.items.map((item, i) => (
               <button
                 key={item.title}
-                onClick={() => setActiveIndex(i)}
+                onClick={() => handleTabChange(i)}
                 className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
                   i === activeIndex
                     ? "border-violet-600 text-violet-700"
@@ -90,60 +123,66 @@ export function UseCases() {
             ))}
           </div>
 
-          {/* Panel */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
-              transition={{ type: "spring", damping: 22, stiffness: 220 }}
-              className="grid items-center gap-12 lg:grid-cols-2"
-            >
-              {/* Text */}
-              <div>
-                <h3 className="mb-4 text-2xl font-bold text-gray-900 lg:text-3xl">
-                  {active.title}
-                </h3>
-                <p className="mb-6 text-base leading-relaxed text-gray-500 lg:text-lg">
-                  {active.description}
-                </p>
-                <motion.div
-                  initial={{ scale: 0.92, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.15 }}
-                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2.5"
-                >
-                  <span className="h-2 w-2 keep-round bg-violet-500 animate-pulse" />
-                  <span className="text-sm font-semibold text-violet-700">
-                    <AnimatedStat text={active.stats} />
-                  </span>
-                  {(active as { statsContext?: string }).statsContext && (
-                    <span className="text-xs text-violet-500">
-                      {(active as { statsContext?: string }).statsContext}
-                    </span>
-                  )}
-                </motion.div>
-              </div>
-
-              {/* AppPreview */}
+          {/* Panel with 3D perspective flip */}
+          <div style={{ perspective: 1200 }}>
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
-                initial={{ clipPath: "inset(0 100% 0 0)" }}
-                animate={{ clipPath: "inset(0 0% 0 0)" }}
-                transition={{
-                  duration: 0.75,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: 0.1,
-                }}
-                className="shadow-2xl shadow-black/20"
+                key={activeIndex}
+                custom={direction}
+                variants={flipVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                style={{ transformStyle: "preserve-3d" }}
+                className="grid items-center gap-12 lg:grid-cols-2"
               >
-                <AppPreview
-                  variant={previewVariants[activeIndex]}
-                  aspectRatio="16/10"
-                />
+                {/* Text */}
+                <div>
+                  <h3 className="mb-4 text-2xl font-bold text-gray-900 lg:text-3xl">
+                    {active.title}
+                  </h3>
+                  <p className="mb-6 text-base leading-relaxed text-gray-500 lg:text-lg">
+                    {active.description}
+                  </p>
+                  <motion.div
+                    initial={{ scale: 0.92, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.15 }}
+                    className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2.5"
+                  >
+                    <span className="h-2 w-2 keep-round bg-violet-500 animate-pulse" />
+                    <span className="text-sm font-semibold text-violet-700">
+                      <AnimatedStat text={active.stats} />
+                    </span>
+                    {(active as { statsContext?: string }).statsContext && (
+                      <span className="text-xs text-violet-500">
+                        {(active as { statsContext?: string }).statsContext}
+                      </span>
+                    )}
+                  </motion.div>
+                </div>
+
+                {/* AppPreview with 3D entrance */}
+                <motion.div
+                  initial={{ rotateY: 20, opacity: 0, scale: 0.95 }}
+                  animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+                  transition={{
+                    type: "spring",
+                    damping: 20,
+                    stiffness: 140,
+                    delay: 0.1,
+                  }}
+                  style={{ transformStyle: "preserve-3d" }}
+                  className="shadow-2xl shadow-black/20"
+                >
+                  <AppPreview
+                    variant={previewVariants[activeIndex]}
+                    aspectRatio="16/10"
+                  />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
+            </AnimatePresence>
+          </div>
         </motion.div>
       </div>
     </motion.section>
