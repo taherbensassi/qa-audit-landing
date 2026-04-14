@@ -62,7 +62,7 @@ export function BuiltForTeams() {
         </motion.h2>
         <motion.p
           variants={blurIn}
-          className="mb-16 max-w-2xl text-base text-zinc-400 lg:text-lg"
+          className="mb-16 max-w-2xl text-base text-white/70 lg:text-lg"
         >
           {builtForTeams?.subheadline ?? "Déployé en complément — jamais en remplacement. Vos auditeurs définissent les standards, calibrent l'IA et ont le dernier mot. La plateforme s'assure que rien ne passe entre les mailles."}
         </motion.p>

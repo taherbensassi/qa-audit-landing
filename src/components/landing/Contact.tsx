@@ -85,7 +85,7 @@ export function Contact() {
         </motion.h2>
         <motion.p
           variants={blurIn}
-          className="mb-16 max-w-xl text-base text-zinc-400 lg:text-lg"
+          className="mb-16 max-w-xl text-base text-white/70 lg:text-lg"
         >
           Gratuit, sans engagement. Voyez la différence sur vos propres données — avec vos critères d&apos;évaluation.
         </motion.p>
@@ -107,7 +107,7 @@ export function Contact() {
                     <p className="text-sm font-medium text-white">Email</p>
                     <a
                       href="mailto:contact@nouraisolutions.tn"
-                      className="mt-1 block text-sm text-zinc-400 transition-colors hover:text-violet-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+                      className="mt-1 block text-sm text-white/70 transition-colors hover:text-violet-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                     >
                       contact@nouraisolutions.tn
                     </a>
@@ -120,7 +120,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Adresse</p>
-                    <p className="mt-1 text-sm text-zinc-400 leading-relaxed">
+                    <p className="mt-1 text-sm text-white/70 leading-relaxed">
                       13, rue Taher Memmi<br />
                       Manzeh 6, Ariana<br />
                       Tunisie
@@ -141,7 +141,7 @@ export function Contact() {
                 <p className="text-sm font-semibold text-white mb-1">
                   evaVoc est un produit NourAI Solutions
                 </p>
-                <p className="text-xs text-zinc-400 leading-relaxed mb-3">
+                <p className="text-xs text-white/70 leading-relaxed mb-3">
                   Intelligence qualité propulsée par l&apos;IA pour les centres
                   d&apos;appels. Conçu et développé en Tunisie.
                 </p>
@@ -166,14 +166,14 @@ export function Contact() {
             <h3 className="mb-2 text-base font-semibold text-white lg:text-lg">
               Demandez votre audit gratuit
             </h3>
-            <p className="mb-6 text-sm text-zinc-400">
+            <p className="mb-6 text-sm text-white/70">
               Remplissez le formulaire et recevez votre audit sous 24h.
             </p>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="contact-name" className="mb-1.5 block text-xs font-medium text-zinc-400">
+                  <label htmlFor="contact-name" className="mb-1.5 block text-xs font-medium text-white/70">
                     Nom complet
                   </label>
                   <input
@@ -186,7 +186,7 @@ export function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="mb-1.5 block text-xs font-medium text-zinc-400">
+                  <label htmlFor="contact-email" className="mb-1.5 block text-xs font-medium text-white/70">
                     Email professionnel
                   </label>
                   <input
@@ -201,7 +201,7 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="contact-company" className="mb-1.5 block text-xs font-medium text-zinc-400">
+                <label htmlFor="contact-company" className="mb-1.5 block text-xs font-medium text-white/70">
                   Entreprise
                 </label>
                 <input
@@ -214,7 +214,7 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="contact-message" className="mb-1.5 block text-xs font-medium text-zinc-400">
+                <label htmlFor="contact-message" className="mb-1.5 block text-xs font-medium text-white/70">
                   Décrivez vos enjeux qualité
                 </label>
                 <textarea
@@ -276,14 +276,14 @@ export function Contact() {
                 <p className="text-sm font-semibold text-white">
                   Message envoyé
                 </p>
-                <p className="mt-0.5 text-xs text-zinc-400">
+                <p className="mt-0.5 text-xs text-white/70">
                   Merci, nous vous recontacterons sous 24 heures avec votre audit.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setSubmitSuccess(false)}
-                className="text-zinc-500 hover:text-white transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+                className="text-white/50 hover:text-white transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                 aria-label="Fermer"
               >
                 <X size={14} />

@@ -79,7 +79,7 @@ export function Showcase() {
                 className={`relative px-5 py-2.5 text-sm font-medium transition-colors duration-250 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
                   i === activeIndex
                     ? "text-white"
-                    : "text-white/40 hover:text-white/70"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {i === activeIndex && (
@@ -116,7 +116,7 @@ export function Showcase() {
                   aspectRatio="16/10"
                 />
               </div>
-              <p className="mt-6 text-center text-sm text-white/40">
+              <p className="mt-6 text-center text-sm text-white/70">
                 {active.description}
               </p>
             </motion.div>

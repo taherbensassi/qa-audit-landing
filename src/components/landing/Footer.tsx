@@ -40,7 +40,7 @@ export function Footer() {
             <p className="text-base font-bold text-white lg:text-lg">
               Prêt à évaluer 100% de vos appels ?
             </p>
-            <p className="mt-1 text-sm text-zinc-400">
+            <p className="mt-1 text-sm text-white/70">
               Obtenez votre audit gratuit en 24h — sans engagement.
             </p>
           </div>
@@ -56,12 +56,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <motion.div variants={fadeInUp}>
             <p className="mb-2 text-sm font-bold text-white">{footer.brand}</p>
-            <p className="text-sm text-zinc-400">{footer.tagline}</p>
+            <p className="text-sm text-white/70">{footer.tagline}</p>
           </motion.div>
 
           {footer.columns.map((column: { title: string; links: { label: string; href: string }[] }) => (
             <motion.div key={column.title} variants={fadeInUp}>
-              <p className="mb-4 text-xs font-semibold tracking-widest uppercase text-zinc-400">
+              <p className="mb-4 text-xs font-semibold tracking-widest uppercase text-white/70">
                 {column.title}
               </p>
               <ul className="flex flex-col gap-3">
@@ -69,7 +69,7 @@ export function Footer() {
                   <li key={`${column.title}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-sm text-zinc-400 transition-colors duration-200 hover:text-white underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+                      className="text-sm text-white/70 transition-colors duration-200 hover:text-white underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                     >
                       {link.label}
                     </Link>
@@ -88,7 +88,7 @@ export function Footer() {
               return (
                 <div
                   key={badge}
-                  className="inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs text-zinc-400"
+                  className="inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs text-white/70"
                 >
                   <TrustIcon size={12} className="text-violet-400" strokeWidth={1.5} />
                   {badge}
@@ -99,10 +99,10 @@ export function Footer() {
         )}
 
         <div className="mt-12 border-t border-white/[0.04] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-zinc-500">{footer.copyright}</p>
+          <p className="text-xs text-white/50">{footer.copyright}</p>
           <div className="flex gap-6">
-            <Link href="/security" className="text-xs text-zinc-500 hover:text-white transition-colors duration-200 underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500">Confidentialité</Link>
-            <Link href="/security" className="text-xs text-zinc-500 hover:text-white transition-colors duration-200 underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500">Mentions légales</Link>
+            <Link href="/security" className="text-xs text-white/50 hover:text-white transition-colors duration-200 underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500">Confidentialité</Link>
+            <Link href="/security" className="text-xs text-white/50 hover:text-white transition-colors duration-200 underline-sweep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500">Mentions légales</Link>
           </div>
         </div>
       </motion.div>

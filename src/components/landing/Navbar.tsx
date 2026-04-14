@@ -127,7 +127,7 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   aria-current={isActive ? "true" : undefined}
                   className={`relative px-4 py-2 text-[13px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
-                    isActive ? "text-white" : "text-zinc-400 hover:text-white"
+                    isActive ? "text-white" : "text-white/60 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -199,7 +199,7 @@ export function Navbar() {
                       className={`block py-3 text-[14px] font-medium transition-colors border-b border-white/[0.05] ${
                         isActive
                           ? "text-white border-l-2 border-l-violet-500 pl-3"
-                          : "text-white/50 hover:text-white"
+                          : "text-white/70 hover:text-white"
                       }`}
                     >
                       {link.label}

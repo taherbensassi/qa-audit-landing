@@ -819,7 +819,7 @@ export function HeroWorkflow() {
         ].map((item) => (
           <div
             key={item.text}
-            className="flex items-center gap-2 text-zinc-400"
+            className="flex items-center gap-2 text-white/60"
           >
             <item.icon size={14} />
             <span className="font-mono text-xs uppercase tracking-wider">

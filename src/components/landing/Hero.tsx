@@ -92,7 +92,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-4 py-1.5 backdrop-blur-md"
         >
           <span className="h-1.5 w-1.5 bg-violet-500 keep-round animate-pulse" />
-          <span className="font-mono text-xs tracking-wider uppercase text-zinc-400">
+          <span className="font-mono text-xs tracking-wider uppercase text-violet-300">
             {hero.label}
           </span>
         </motion.div>
@@ -117,7 +117,7 @@ export function Hero() {
         <motion.p
           custom={0.4}
           variants={fadeUp}
-          className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg lg:text-xl"
+          className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg lg:text-xl"
         >
           {hero.subheadline}
         </motion.p>
