@@ -61,7 +61,7 @@ export function Showcase() {
       >
         <motion.h2
           variants={blurIn}
-          className="mb-16 text-center text-3xl font-bold tracking-tight text-white lg:text-4xl"
+          className="mb-16 text-center text-3xl font-bold tracking-tight text-white lg:text-5xl"
         >
           {showcase.headline}
         </motion.h2>
@@ -76,10 +76,10 @@ export function Showcase() {
               <button
                 key={item.title}
                 onClick={() => setActiveIndex(i)}
-                className={`relative px-5 py-2.5 text-sm font-medium transition-colors duration-250 ${
+                className={`relative px-5 py-2.5 text-sm font-medium transition-colors duration-250 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
                   i === activeIndex
                     ? "text-white"
-                    : "text-white/35 hover:text-white/65"
+                    : "text-white/40 hover:text-white/70"
                 }`}
               >
                 {i === activeIndex && (

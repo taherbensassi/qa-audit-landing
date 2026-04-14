@@ -134,10 +134,6 @@ export const rotateIn: Variants = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  3D tilt card helper (for mouse-tracking components)               */
-/* ------------------------------------------------------------------ */
-
-/* ------------------------------------------------------------------ */
 /*  Blur & clip-path reveals                                          */
 /* ------------------------------------------------------------------ */
 
@@ -194,21 +190,3 @@ export const staggerSlow: Variants = {
   },
 };
 
-/* ------------------------------------------------------------------ */
-/*  3D tilt card helper (for mouse-tracking components)               */
-/* ------------------------------------------------------------------ */
-
-export function calcTilt(
-  e: React.MouseEvent<HTMLElement>,
-  intensity: number = 10
-): { rotateX: number; rotateY: number } {
-  const rect = e.currentTarget.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-  return {
-    rotateY: ((x - centerX) / centerX) * intensity,
-    rotateX: ((centerY - y) / centerY) * intensity,
-  };
-}

@@ -43,7 +43,7 @@ export function Button({
   }, [x, y]);
 
   const base =
-    "inline-flex items-center justify-center font-medium transition-all duration-300 group btn-shine";
+    "inline-flex items-center justify-center font-medium transition-all duration-300 group btn-shine cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500";
   const sizes = {
     default: "px-6 py-3 text-sm",
     lg: "px-8 py-4 text-base",

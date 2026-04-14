@@ -2,52 +2,155 @@
   "nav": {
     "brand": "eva-voc",
     "links": [
-      { "label": "Plateforme", "href": "#platform" },
       { "label": "Fonctionnalités", "href": "#features" },
       { "label": "Cas d'usage", "href": "#use-cases" },
+      { "label": "Plateforme", "href": "#platform" },
       { "label": "Sécurité", "href": "/security" },
       { "label": "Contact", "href": "#contact" }
     ],
-    "cta": { "label": "Demander une démo", "href": "#contact" }
+    "cta": { "label": "Audit gratuit", "href": "#contact" }
   },
   "hero": {
-    "label": "Intelligence Qualité pour Centres d'Appels",
-    "headline": "Chaque appel évalué.\nChaque insight livré.",
-    "subheadline": "Passez de l'échantillonnage manuel à un monitoring qualité 100% IA. Analysez l'intégralité de vos conversations avec la précision de vos meilleurs auditeurs.",
-    "cta": { "label": "Demander une démo", "href": "#contact" },
-    "secondaryCta": { "label": "Explorer la plateforme", "href": "#platform" },
+    "label": "Propulsé par Claude d'Anthropic",
+    "headline": "Arrêtez d'écouter\n2% de vos appels.",
+    "subheadline": "eva-voc évalue 100% de vos conversations avec la précision de vos meilleurs auditeurs — 40x plus vite. Passez de l'échantillonnage manuel au monitoring qualité intégral.",
+    "cta": { "label": "Obtenir un audit gratuit", "href": "#contact" },
+    "secondaryCta": { "label": "Voir la plateforme", "href": "#platform" },
     "image": "/images/product/dashboard.png"
   },
+  "metrics": [
+    { "value": "98.2%", "label": "Précision d'évaluation", "context": "vs. 78% en audit manuel" },
+    { "value": "40x", "label": "Plus rapide que l'audit manuel", "context": "< 2 min par appel" },
+    { "value": "100%", "label": "Couverture des appels", "context": "vs. 2-3% en échantillonnage" },
+    { "value": "48h", "label": "Déploiement opérationnel", "context": "sans changer vos processus" }
+  ],
   "clients": {
-    "headline": "La confiance des leaders du secteur"
+    "headline": "Adopté par les leaders de l'industrie",
+    "subheadline": "Plus de 500 000 appels analysés dans 6+ secteurs"
+  },
+  "howItWorks": {
+    "label": "Comment ça marche",
+    "headline": "Opérationnel en 48h.\nSans changer vos processus.",
+    "steps": [
+      {
+        "title": "Connectez",
+        "description": "Importez vos appels ou connectez votre système de téléphonie via API. En lot ou en temps réel — tous formats, toutes langues.",
+        "time": "< 30 min",
+        "icon": "Upload"
+      },
+      {
+        "title": "Évaluez",
+        "description": "L'IA transcrit et analyse chaque appel selon vos grilles d'évaluation. Chaque critère, chaque règle de conformité — noté automatiquement.",
+        "time": "Temps réel",
+        "icon": "Brain"
+      },
+      {
+        "title": "Agissez",
+        "description": "Identifiez les opportunités de coaching, exportez des rapports prêts pour l'audit. Votre équipe se concentre sur l'amélioration — pas sur l'écoute.",
+        "time": "Instantané",
+        "icon": "TrendingUp"
+      }
+    ]
+  },
+  "features": {
+    "label": "Pourquoi eva-voc",
+    "headline": "Ne manquez plus jamais\nun appel problématique.",
+    "items": [
+      {
+        "title": "100% des appels couverts",
+        "description": "Vous n'échantillonnez que 2-3% de vos appels. Les 97% restants passent sous le radar — avec leurs risques de conformité et opportunités de coaching.",
+        "icon": "CheckCircle",
+        "stat": "50x plus de couverture"
+      },
+      {
+        "title": "Vos grilles, vos règles",
+        "description": "Importez vos cadres de notation existants en quelques clics. eva-voc s'adapte à votre méthodologie — pas l'inverse.",
+        "icon": "Settings",
+        "stat": "0 reconfiguration"
+      },
+      {
+        "title": "L'humain garde le contrôle",
+        "description": "L'IA gère le volume, votre équipe gère les décisions. Chaque validation affine le modèle. Plus vous utilisez eva-voc, plus il comprend votre contexte.",
+        "icon": "Users",
+        "stat": "Boucle d'apprentissage continue"
+      },
+      {
+        "title": "Prêt pour l'audit",
+        "description": "Chaque évaluation est traçable, horodatée et exportable. Quand le régulateur appelle, vos rapports sont déjà prêts.",
+        "icon": "Lock",
+        "stat": "100% traçabilité"
+      },
+      {
+        "title": "Multi-industries",
+        "description": "Énergie, télécom, assurance, banque, BPO — notre plateforme intègre les exigences de conformité spécifiques à votre industrie.",
+        "icon": "Globe",
+        "stat": "6+ secteurs"
+      },
+      {
+        "title": "Sécurité par conception",
+        "description": "Chiffrement AES-256 au repos et en transit. Contrôle d'accès par rôle. Architecture multi-tenant isolée. Conforme RGPD.",
+        "icon": "ShieldCheck",
+        "stat": "RGPD conforme"
+      }
+    ]
   },
   "useCases": {
     "label": "Cas d'usage",
-    "headline": "Conçu pour chaque équipe de votre organisation",
+    "headline": "Chaque équipe y trouve sa valeur.",
     "items": [
       {
         "title": "Assurance Qualité",
-        "description": "Automatisez les évaluations d'appels avec vos grilles existantes. Notez chaque conversation de manière cohérente, identifiez les opportunités de coaching et suivez la performance des agents dans le temps.",
+        "description": "Évaluez chaque conversation avec vos grilles existantes. Identifiez les opportunités de coaching en temps réel et suivez la progression de chaque agent — sans écouter un seul appel.",
         "image": "/images/product/evaltion.png",
-        "stats": "+98% de précision vs. audit manuel"
+        "stats": "+98% de précision",
+        "statsContext": "vs. 78% en audit manuel"
       },
       {
         "title": "Conformité & Risques",
-        "description": "Surveillez la conformité réglementaire sur chaque interaction. Détectez les écarts de script, signalez les formulations non conformes et générez automatiquement des rapports d'audit prêts à l'emploi.",
+        "description": "Surveillez l'adhérence au script sur chaque interaction. Détectez les formulations non conformes, signalez les écarts par niveau de sévérité et générez des rapports d'audit en un clic.",
         "image": "/images/product/workflow.png",
-        "stats": "35% d'amélioration de l'adhérence au script"
+        "stats": "35% d'amélioration",
+        "statsContext": "de l'adhérence au script"
       },
       {
         "title": "Performance Commerciale",
-        "description": "Analysez les conversations commerciales pour identifier les schémas gagnants. Suivez la conformité du pitch, mesurez les facteurs de conversion et répliquez les comportements des meilleurs vendeurs.",
+        "description": "Analysez les conversations commerciales pour identifier les schémas gagnants. Mesurez la conformité du pitch, les facteurs de conversion et répliquez les comportements de vos meilleurs vendeurs.",
         "image": "/images/product/grille.png",
-        "stats": "+15% d'amélioration du taux de conversion"
+        "stats": "+15% de conversion",
+        "statsContext": "sur les appels commerciaux"
+      }
+    ]
+  },
+  "builtForTeams": {
+    "label": "Conçu pour votre équipe",
+    "headline": "L'IA gère le volume.\nVotre expertise pilote la qualité.",
+    "subheadline": "Déployé en complément — jamais en remplacement. Vos auditeurs définissent les standards, calibrent l'IA et ont le dernier mot. La plateforme s'assure que rien ne passe entre les mailles.",
+    "teams": [
+      {
+        "title": "Responsables Qualité",
+        "icon": "ClipboardCheck",
+        "points": [
+          "Surveillez 100% des appels — pas seulement 2%",
+          "Identifiez automatiquement les besoins de coaching",
+          "Suivez la progression des agents avec des données concrètes",
+          "Exportez des rapports d'audit en un clic"
+        ]
+      },
+      {
+        "title": "Compliance Officers",
+        "icon": "Shield",
+        "points": [
+          "Vérifiez l'adhérence au script sur chaque appel",
+          "Signalez les manquements réglementaires en temps réel",
+          "Générez des rapports de conformité prêts pour l'audit",
+          "Traçabilité complète, conforme RGPD"
+        ]
       }
     ]
   },
   "platform": {
     "label": "Plateforme",
-    "headline": "Une plateforme, une visibilité totale",
+    "headline": "Une plateforme.\nUne visibilité totale.",
     "description": "Un espace de travail unifié où responsables qualité, compliance officers et team leads collaborent — de l'ingestion des appels au reporting exécutif.",
     "image": "/images/product/dashboard.png",
     "capabilities": [
@@ -63,7 +166,7 @@
         "category": "Évaluation & Scoring",
         "items": [
           { "title": "Grilles d'Évaluation", "description": "Cadres dynamiques Catégorie → Question, pondération configurable, personnalisable par client", "icon": "ClipboardCheck" },
-          { "title": "Critères de Conformité", "description": "Conformité situationnelle intelligente — analyse contextuelle, pas simple matching de mots-clés. Signalement par sévérité", "icon": "Shield" },
+          { "title": "Critères de Conformité", "description": "Analyse contextuelle intelligente — pas simple matching de mots-clés. Signalement par sévérité", "icon": "Shield" },
           { "title": "Niveaux d'Évaluation", "description": "Échelles de notation configurables avec paliers de performance colorés", "icon": "BarChart3" },
           { "title": "Verdict Dynamique", "description": "Verdicts auto-générés avec règles configurables : compliance, score normalisé, seuils métier", "icon": "Zap" }
         ]
@@ -71,87 +174,45 @@
       {
         "category": "Intelligence & Apprentissage",
         "items": [
-          { "title": "Claude par Anthropic", "description": "Propulsé par Claude d'Anthropic — le modèle IA le plus précis du marché, calibré sur vos standards d'évaluation", "icon": "Brain" },
+          { "title": "Claude par Anthropic", "description": "Propulsé par Claude d'Anthropic — le modèle IA le plus précis du marché, calibré sur vos standards", "icon": "Brain" },
           { "title": "Validation de Script", "description": "Vérifiez l'adhérence aux scripts d'appel à chaque phase de la conversation", "icon": "FileCheck" },
-          { "title": "Calibration & Boucle d'apprentissage", "description": "Chaque validation manager affine les prompts IA. Plus vous utilisez evaVoc, plus il s'adapte à votre contexte", "icon": "SlidersHorizontal" },
-          { "title": "Insights & Tendances IA", "description": "Détection d'anomalies, identification de patterns, clustering des appels et analyse prédictive des tendances", "icon": "Sparkles" }
+          { "title": "Calibration Continue", "description": "Chaque validation manager affine les prompts IA. Plus vous l'utilisez, plus il s'adapte", "icon": "SlidersHorizontal" },
+          { "title": "Insights & Tendances", "description": "Détection d'anomalies, identification de patterns, clustering des appels et analyse prédictive", "icon": "Sparkles" }
         ]
       },
       {
         "category": "Opérations & Monitoring",
         "items": [
-          { "title": "Gestion Clients", "description": "Architecture multi-tenant avec données isolées, grilles, scripts et configurations spécifiques par client", "icon": "Building2" },
+          { "title": "Gestion Clients", "description": "Architecture multi-tenant avec données isolées et configurations spécifiques par client", "icon": "Building2" },
           { "title": "Monitoring Temps Réel", "description": "Dashboard en direct suivant la progression des évaluations et l'état du pipeline", "icon": "Activity" },
-          { "title": "Statistiques & Analytics", "description": "KPIs en temps réel, classements agents, distributions de scores, tendances de performance et alertes", "icon": "TrendingUp" }
+          { "title": "Analytics Avancés", "description": "KPIs en temps réel, classements agents, distributions de scores et alertes automatiques", "icon": "TrendingUp" }
         ]
       },
       {
         "category": "Reporting & Livraison",
         "items": [
-          { "title": "Rapports Multi-niveaux", "description": "Rapports par évaluation, par agent, par campagne. PDF brandés avec ventilation détaillée des scores", "icon": "FileText" },
-          { "title": "Alertes Email", "description": "Notifications automatiques pour les constats critiques et manquements de conformité", "icon": "Mail" },
-          { "title": "Import/Export & API", "description": "Import/export Excel natif pour grilles, scripts et données. Intégration outils BI via API REST", "icon": "Download" }
+          { "title": "Rapports Multi-niveaux", "description": "Par évaluation, par agent, par campagne. PDF brandés avec ventilation détaillée", "icon": "FileText" },
+          { "title": "Alertes Automatiques", "description": "Notifications pour les constats critiques et manquements de conformité", "icon": "Mail" },
+          { "title": "Import/Export & API", "description": "Import/export Excel natif pour grilles et données. Intégration outils BI via API REST", "icon": "Download" }
         ]
       }
     ]
   },
-  "features": {
-    "label": "Pourquoi Nous Choisir",
-    "headline": "La précision de votre meilleur auditeur,\nà l'échelle de toute votre opération",
-    "items": [
-      {
-        "title": "100% des Appels Couverts",
-        "description": "Arrêtez d'échantillonner 2-3% des appels. Évaluez chaque conversation avec des critères cohérents et auditables.",
-        "icon": "CheckCircle"
-      },
-      {
-        "title": "Vos Grilles, Vos Règles",
-        "description": "Nous nous adaptons à votre méthodologie d'évaluation — pas l'inverse. Importez vos cadres de notation existants.",
-        "icon": "Settings"
-      },
-      {
-        "title": "L'Humain au Centre",
-        "description": "L'IA Claude d'Anthropic gère le volume. Votre équipe gère les décisions. Une boucle d'apprentissage continue affine le modèle à chaque validation.",
-        "icon": "Users"
-      },
-      {
-        "title": "Conformité Prête pour l'Audit",
-        "description": "Chaque évaluation est traçable, horodatée et exportable. Prête pour les audits réglementaires à tout moment.",
-        "icon": "Lock"
-      },
-      {
-        "title": "Multi-Industries",
-        "description": "Énergie, télécom, assurance, banque — notre plateforme s'adapte aux exigences de conformité de votre industrie.",
-        "icon": "Globe"
-      },
-      {
-        "title": "Sécurité par Conception",
-        "description": "Chiffrement des données au repos et en transit. Contrôle d'accès par rôle. Traitement conforme au RGPD.",
-        "icon": "ShieldCheck"
-      }
-    ]
-  },
-  "metrics": [
-    { "value": "98.2%", "label": "Précision d'évaluation" },
-    { "value": "40x", "label": "Plus rapide que l'audit manuel" },
-    { "value": "100%", "label": "Couverture des appels" },
-    { "value": "<2min", "label": "Traitement par appel" }
-  ],
   "showcase": {
     "headline": "La plateforme en action",
     "items": [
-      { "title": "Dashboard", "image": "/images/product/dashboard.png", "description": "Vue en temps réel de toutes les évaluations, scores et statuts de conformité" },
-      { "title": "Évaluations", "image": "/images/product/evaltion.png", "description": "Parcourez, filtrez et examinez les évaluations d'appels notées par l'IA" },
-      { "title": "Éditeur de Grilles", "image": "/images/product/grille.png", "description": "Construisez et personnalisez vos grilles d'évaluation avec notation pondérée" },
-      { "title": "Pipeline IA", "image": "/images/product/workflow.png", "description": "Suivez l'évaluation IA d'un appel à travers le pipeline complet en temps réel" }
+      { "title": "Dashboard", "image": "/images/product/dashboard.png", "description": "Pilotez vos KPIs qualité en temps réel — scores, conformité et alertes sur un seul écran" },
+      { "title": "Évaluations", "image": "/images/product/evaltion.png", "description": "Parcourez chaque appel évalué par l'IA — filtrez, comparez et validez en quelques clics" },
+      { "title": "Éditeur de Grilles", "image": "/images/product/grille.png", "description": "Construisez vos grilles sur mesure avec pondération et critères de conformité intégrés" },
+      { "title": "Pipeline IA", "image": "/images/product/workflow.png", "description": "Suivez le parcours d'un appel à travers le pipeline complet — de l'audio brut au score final" }
     ]
   },
   "demo": {
     "label": "Commencer",
-    "headline": "Prêt à transformer votre processus qualité ?",
-    "description": "Envoyez-nous un enregistrement et vos critères d'évaluation. Nous vous retournerons un audit complet et noté sous 24h — sans engagement.",
-    "cta": "Demander une démo",
-    "successMessage": "Merci. Nous vous recontacterons sous 24 heures.",
+    "headline": "Envoyez-nous un appel.\nOn vous retourne l'audit en 24h.",
+    "description": "Gratuit, sans engagement. Voyez la différence sur vos propres données — avec vos critères d'évaluation.",
+    "cta": "Obtenir mon audit gratuit",
+    "successMessage": "Merci. Nous vous recontacterons sous 24 heures avec votre audit.",
     "fields": [
       { "name": "name", "label": "Nom complet", "type": "text", "required": true },
       { "name": "email", "label": "Email professionnel", "type": "email", "required": true },
@@ -190,7 +251,12 @@
         ]
       }
     ],
-    "copyright": "2026 eva-voc. Tous droits réservés."
+    "trust": [
+      "RGPD Conforme",
+      "Chiffrement AES-256",
+      "Multi-tenant isolé"
+    ],
+    "copyright": "2026 eva-voc par NourAI Solutions. Tous droits réservés."
   },
   "comingSoon": {
     "headline": "Bientôt disponible",

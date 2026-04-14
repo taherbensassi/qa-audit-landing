@@ -125,8 +125,9 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-4 py-2 text-[13px] font-medium transition-colors duration-200 ${
-                    isActive ? "text-white" : "text-white/45 hover:text-white"
+                  aria-current={isActive ? "true" : undefined}
+                  className={`relative px-4 py-2 text-[13px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
+                    isActive ? "text-white" : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -152,7 +153,7 @@ export function Navbar() {
           <Link
             href={nav.cta.href}
             onClick={(e) => handleNavClick(e, nav.cta.href)}
-            className="px-5 py-2.5 text-[13px] font-semibold bg-violet-600 text-white transition-colors duration-200 hover:bg-violet-500 select-none btn-shine"
+            className="px-5 py-2.5 text-[13px] font-semibold bg-violet-600 text-white transition-colors duration-200 hover:bg-violet-500 select-none btn-shine cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400"
           >
             {nav.cta.label}
           </Link>
@@ -161,8 +162,9 @@ export function Navbar() {
         {/* Mobile trigger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white/60 hover:text-white transition-colors"
-          aria-label="Toggle menu"
+          className="md:hidden text-white/60 hover:text-white transition-colors p-2 -mr-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>

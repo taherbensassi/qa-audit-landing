@@ -18,15 +18,20 @@ export function ClientSlider() {
     <section className="relative border-y border-gray-100 bg-white py-16 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-violet-50/20 via-transparent to-violet-50/20" />
 
-      <motion.p
+      <motion.div
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mb-10 text-center text-xs font-medium tracking-[0.2em] uppercase text-gray-400"
+        className="mb-10 text-center"
       >
-        Conçu pour les industries réglementées
-      </motion.p>
+        <p className="text-xs font-medium tracking-[0.2em] uppercase text-gray-400">
+          Adopté par les leaders de l&apos;industrie
+        </p>
+        <p className="mt-2 text-sm text-gray-400">
+          Plus de 500 000 appels analysés dans 6+ secteurs
+        </p>
+      </motion.div>
 
       {/* 3D orbital ring of industry icons */}
       <div className="relative mx-auto h-48 w-full max-w-3xl overflow-hidden" style={{ perspective: 800 }}>

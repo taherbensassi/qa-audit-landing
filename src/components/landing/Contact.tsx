@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { slideInFromLeft, slideInFromRight, blurIn, staggerContainer } from "@/lib/animations";
-import { Mail, MapPin, ExternalLink, CheckCircle, X } from "lucide-react";
+import { Mail, MapPin, ExternalLink, CheckCircle, X, ArrowRight } from "lucide-react";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +41,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#09090b] py-24 lg:py-32"
+      className="relative overflow-hidden bg-[var(--dark-bg)] py-24 lg:py-32"
     >
       {/* Subtle grid */}
       <div
@@ -72,27 +72,29 @@ export function Contact() {
           variants={blurIn}
           className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-500"
         >
-          Contact
+          Commencer
         </motion.p>
         <motion.h2
           variants={blurIn}
-          className="mb-4 text-3xl font-bold tracking-tight text-white lg:text-4xl"
+          className="mb-4 text-3xl font-bold tracking-tight text-white lg:text-5xl"
+          style={{ lineHeight: 1.15 }}
         >
-          Discutons de votre projet
+          Envoyez-nous un appel.
+          <br />
+          <span className="text-violet-400">On vous retourne l&apos;audit en 24h.</span>
         </motion.h2>
         <motion.p
           variants={blurIn}
-          className="mb-16 max-w-xl text-base text-zinc-400"
+          className="mb-16 max-w-xl text-base text-zinc-400 lg:text-lg"
         >
-          Prêt à transformer votre processus qualité ? Nous sommes là pour
-          répondre à vos questions.
+          Gratuit, sans engagement. Voyez la différence sur vos propres données — avec vos critères d&apos;évaluation.
         </motion.p>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left — contact info (slides from left) */}
+          {/* Left — contact info */}
           <motion.div variants={slideInFromLeft} className="space-y-8">
             <div className="border border-white/[0.06] bg-white/[0.02] p-8 space-y-6 hover:border-violet-500/15 transition-colors duration-500">
-              <h3 className="text-base font-semibold text-white">
+              <h3 className="text-base font-semibold text-white lg:text-lg">
                 Informations de contact
               </h3>
 
@@ -105,7 +107,7 @@ export function Contact() {
                     <p className="text-sm font-medium text-white">Email</p>
                     <a
                       href="mailto:contact@nouraisolutions.tn"
-                      className="mt-1 block text-sm text-zinc-400 transition-colors hover:text-violet-400"
+                      className="mt-1 block text-sm text-zinc-400 transition-colors hover:text-violet-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                     >
                       contact@nouraisolutions.tn
                     </a>
@@ -139,7 +141,7 @@ export function Contact() {
                 <p className="text-sm font-semibold text-white mb-1">
                   eva-voc est un produit NourAI Solutions
                 </p>
-                <p className="text-xs text-zinc-500 leading-relaxed mb-3">
+                <p className="text-xs text-zinc-400 leading-relaxed mb-3">
                   Intelligence qualité propulsée par l&apos;IA pour les centres
                   d&apos;appels. Conçu et développé en Tunisie.
                 </p>
@@ -147,7 +149,7 @@ export function Contact() {
                   href="https://nouraisolutions.tn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-violet-400 hover:text-violet-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-violet-400 hover:text-violet-300 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                 >
                   nouraisolutions.tn
                   <ExternalLink size={11} />
@@ -156,65 +158,72 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Right — form (slides from right) */}
+          {/* Right — form */}
           <motion.div
             variants={slideInFromRight}
             className="border border-white/[0.06] bg-white/[0.02] p-8 hover:border-violet-500/15 transition-colors duration-500"
           >
-            <h3 className="mb-6 text-base font-semibold text-white">
-              Envoyez-nous un message
+            <h3 className="mb-2 text-base font-semibold text-white lg:text-lg">
+              Demandez votre audit gratuit
             </h3>
+            <p className="mb-6 text-sm text-zinc-400">
+              Remplissez le formulaire et recevez votre audit sous 24h.
+            </p>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1.5 block text-xs text-zinc-500">
+                  <label htmlFor="contact-name" className="mb-1.5 block text-xs font-medium text-zinc-400">
                     Nom complet
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
                     required
                     placeholder="Votre nom"
-                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
+                    className="slight-round w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50 input-glow"
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-xs text-zinc-500">
+                  <label htmlFor="contact-email" className="mb-1.5 block text-xs font-medium text-zinc-400">
                     Email professionnel
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     required
                     placeholder="votre@email.com"
-                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
+                    className="slight-round w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50 input-glow"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="mb-1.5 block text-xs text-zinc-500">
+                <label htmlFor="contact-company" className="mb-1.5 block text-xs font-medium text-zinc-400">
                   Entreprise
                 </label>
                 <input
+                  id="contact-company"
                   type="text"
                   name="company"
                   placeholder="Nom de votre entreprise"
-                  className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
+                  className="slight-round w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50 input-glow"
                 />
               </div>
 
               <div>
-                <label className="mb-1.5 block text-xs text-zinc-500">
-                  Message
+                <label htmlFor="contact-message" className="mb-1.5 block text-xs font-medium text-zinc-400">
+                  Décrivez vos enjeux qualité
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   rows={4}
                   required
-                  placeholder="Décrivez vos enjeux qualité..."
-                  className="w-full resize-none border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
+                  placeholder="Nombre d'agents, volume d'appels, enjeux de conformité..."
+                  className="slight-round w-full resize-none border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50 input-glow"
                 />
               </div>
 
@@ -225,15 +234,22 @@ export function Contact() {
               />
 
               {submitError && (
-                <p className="text-xs text-red-400">{submitError}</p>
+                <p className="text-xs text-red-400" role="alert">{submitError}</p>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-violet-500 disabled:opacity-50 btn-shine"
+                className="w-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-violet-500 disabled:opacity-50 btn-shine cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                {isSubmitting ? (
+                  "Envoi en cours..."
+                ) : (
+                  <>
+                    Obtenir mon audit gratuit
+                    <ArrowRight size={16} />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
@@ -248,7 +264,9 @@ export function Contact() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="fixed bottom-6 right-6 z-[100] max-w-sm border border-emerald-400/30 bg-[#09090b] shadow-2xl shadow-emerald-900/30 p-4"
+            className="fixed bottom-6 right-6 z-[100] max-w-sm border border-emerald-400/30 bg-[var(--dark-bg)] shadow-2xl shadow-emerald-900/30 p-4"
+            role="status"
+            aria-live="polite"
           >
             <div className="flex items-start gap-3">
               <div className="mt-0.5 text-emerald-400 shrink-0">
@@ -259,13 +277,13 @@ export function Contact() {
                   Message envoyé
                 </p>
                 <p className="mt-0.5 text-xs text-zinc-400">
-                  Merci, nous vous recontacterons sous 24 heures.
+                  Merci, nous vous recontacterons sous 24 heures avec votre audit.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setSubmitSuccess(false)}
-                className="text-zinc-600 hover:text-white transition-colors"
+                className="text-zinc-500 hover:text-white transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                 aria-label="Fermer"
               >
                 <X size={14} />

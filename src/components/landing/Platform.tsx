@@ -15,10 +15,16 @@ export function Platform() {
       <motion.p variants={fadeInUp} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
         {platform.label}
       </motion.p>
-      <motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
-        {platform.headline}
+      <motion.h2
+        variants={fadeInUp}
+        className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+        style={{ lineHeight: 1.15 }}
+      >
+        {platform.headline.split("\n").map((line: string, i: number) => (
+          <span key={i}>{line}{i === 0 && <br />}</span>
+        ))}
       </motion.h2>
-      <motion.p variants={fadeInUp} className="mb-16 max-w-2xl text-base text-gray-500">
+      <motion.p variants={fadeInUp} className="mb-16 max-w-2xl text-base text-gray-500 lg:text-lg">
         {platform.description}
       </motion.p>
 

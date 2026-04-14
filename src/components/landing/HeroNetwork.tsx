@@ -277,6 +277,7 @@ export function HeroNetwork() {
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
       style={{ opacity: 0.6, willChange: "transform" }}
+      aria-hidden="true"
     />
   );
 }

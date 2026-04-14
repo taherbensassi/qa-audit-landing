@@ -1,30 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { content } from "@/lib/content";
 import { clipReveal, tiltIn, springNumber, staggerSlow } from "@/lib/animations";
-import { Upload, Brain, LineChart } from "lucide-react";
+import { getIcon } from "@/lib/icons";
 
-const steps = [
+const { howItWorks } = content;
+
+const steps = howItWorks?.steps ?? [
   {
-    num: "01",
-    icon: Upload,
-    title: "Ingestion",
-    description:
-      "Importez vos appels ou connectez votre système de téléphonie via API. En lot ou en temps réel — nous traitons l'audio dans tous les formats et toutes les langues.",
+    title: "Connectez",
+    description: "Importez vos appels ou connectez votre système de téléphonie via API. En lot ou en temps réel — tous formats, toutes langues.",
+    time: "< 30 min",
+    icon: "Upload",
   },
   {
-    num: "02",
-    icon: Brain,
-    title: "Évaluation",
-    description:
-      "L'IA transcrit et analyse chaque appel selon vos grilles d'évaluation personnalisées. Chaque thème, chaque critère, chaque règle de conformité — noté en secondes.",
+    title: "Évaluez",
+    description: "L'IA transcrit et analyse chaque appel selon vos grilles d'évaluation. Chaque critère, chaque règle de conformité — noté automatiquement.",
+    time: "Temps réel",
+    icon: "Brain",
   },
   {
-    num: "03",
-    icon: LineChart,
-    title: "Action",
-    description:
-      "Consultez les scores, identifiez les opportunités de coaching et exportez des rapports de conformité prêts pour l'audit. Votre équipe se concentre sur l'amélioration — pas sur l'écoute.",
+    title: "Agissez",
+    description: "Identifiez les opportunités de coaching, exportez des rapports prêts pour l'audit. Votre équipe se concentre sur l'amélioration — pas sur l'écoute.",
+    time: "Instantané",
+    icon: "TrendingUp",
   },
 ];
 
@@ -42,16 +42,19 @@ export function HowItWorks() {
           variants={clipReveal}
           className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600"
         >
-          Comment ça marche
+          {howItWorks?.label ?? "Comment ça marche"}
         </motion.p>
         <motion.h2
           variants={clipReveal}
-          className="mb-20 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl"
-          style={{ lineHeight: 1.2 }}
+          className="mb-20 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+          style={{ lineHeight: 1.15 }}
         >
-          De l'audio brut à l'insight actionnable
-          <br />
-          <span className="text-gray-400">en trois étapes</span>
+          {(howItWorks?.headline ?? "Opérationnel en 48h.\nSans changer vos processus.").split("\n").map((line: string, i: number) => (
+            <span key={i}>
+              {i === 0 ? line : <span className="text-gray-400">{line}</span>}
+              {i === 0 && <br />}
+            </span>
+          ))}
         </motion.h2>
 
         <div className="relative grid gap-12 md:grid-cols-3" style={{ perspective: 800 }}>
@@ -64,7 +67,6 @@ export function HowItWorks() {
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             />
-            {/* Trailing glow dot */}
             <motion.div
               className="absolute top-1/2 -translate-y-1/2 h-2 w-2 keep-round bg-violet-400 shadow-[0_0_12px_rgba(139,92,246,0.6)]"
               initial={{ left: "0%", opacity: 0 }}
@@ -78,37 +80,48 @@ export function HowItWorks() {
             />
           </div>
 
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              variants={tiltIn}
-              className="group relative text-center"
-            >
-              {/* Number badge — spring bounce */}
+          {steps.map((step: { title: string; description: string; time?: string; icon: string }, i: number) => {
+            const Icon = getIcon(step.icon);
+            return (
               <motion.div
-                className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-violet-200 bg-white text-lg font-bold text-violet-600 keep-round shadow-sm relative z-10"
-                variants={springNumber}
+                key={step.title}
+                variants={tiltIn}
+                className="group relative text-center"
               >
-                {step.num}
-              </motion.div>
+                {/* Number badge */}
+                <motion.div
+                  className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border-2 border-violet-200 bg-white text-lg font-bold text-violet-600 keep-round shadow-sm relative z-10"
+                  variants={springNumber}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </motion.div>
 
-              {/* Icon */}
-              <motion.div
-                className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100"
-                whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.4 }}
-              >
-                <step.icon size={22} className="text-violet-600" strokeWidth={1.5} />
-              </motion.div>
+                {/* Icon */}
+                <motion.div
+                  className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-violet-50 transition-colors duration-300 group-hover:bg-violet-100"
+                  whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <Icon size={22} className="text-violet-600" strokeWidth={1.5} />
+                </motion.div>
 
-              <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                {step.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-500">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="mb-2 text-lg font-semibold text-gray-900 lg:text-xl">
+                  {step.title}
+                </h3>
+
+                {/* Time badge */}
+                {step.time && (
+                  <span className="mb-3 inline-block font-mono text-xs tracking-wider text-violet-600 bg-violet-50 px-2 py-0.5">
+                    {step.time}
+                  </span>
+                )}
+
+                <p className="text-sm leading-relaxed text-gray-500 lg:text-base">
+                  {step.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </motion.section>

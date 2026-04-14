@@ -10,24 +10,23 @@ const { features } = content;
 
 export function FeatureGrid() {
   return (
-    <Section id="features" className="bg-[#fafafa]">
+    <Section id="features" className="bg-[var(--surface)]">
       <motion.p variants={blurIn} className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-600">
         {features.label}
       </motion.p>
       <motion.h2
         variants={blurIn}
-        className="mb-16 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl"
-        style={{ lineHeight: 1.2 }}
+        className="mb-16 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+        style={{ lineHeight: 1.15 }}
       >
-        {features.headline.split("\n").map((line, i) => (
+        {features.headline.split("\n").map((line: string, i: number) => (
           <span key={i}>{line}{i === 0 && <br />}</span>
         ))}
       </motion.h2>
 
       <div className="grid gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-        {features.items.map((feature, idx) => {
+        {features.items.map((feature: { title: string; description: string; icon: string; stat?: string }, idx: number) => {
           const Icon = getIcon(feature.icon);
-          // Alternate between fadeInLeft (even columns) and fadeInRight (odd columns)
           const variant = idx % 2 === 0 ? fadeInLeft : fadeInRight;
           return (
             <motion.div
@@ -43,8 +42,13 @@ export function FeatureGrid() {
               >
                 <Icon size={20} className="text-violet-600 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
               </motion.div>
-              <h3 className="mb-2 text-base font-semibold text-gray-900">{feature.title}</h3>
-              <p className="text-sm leading-relaxed text-gray-500">{feature.description}</p>
+              <h3 className="mb-2 text-lg font-semibold text-gray-900">{feature.title}</h3>
+              <p className="mb-3 text-sm leading-relaxed text-gray-500 lg:text-base">{feature.description}</p>
+              {feature.stat && (
+                <span className="inline-block font-mono text-xs tracking-wider text-violet-600 bg-violet-50 px-2 py-0.5">
+                  {feature.stat}
+                </span>
+              )}
             </motion.div>
           );
         })}

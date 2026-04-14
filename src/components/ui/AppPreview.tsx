@@ -79,7 +79,7 @@ function DashboardContent() {
             <div className="font-mono text-[13px] font-bold text-white leading-none">
               {k.value}
             </div>
-            <div className="text-[7px] text-white/25 mt-1">{k.label}</div>
+            <div className="text-[7px] text-white/50 mt-1">{k.label}</div>
             <div
               className={`text-[7px] mt-0.5 font-mono ${k.up ? "text-emerald-400/70" : "text-emerald-400/70"}`}
             >
@@ -93,7 +93,7 @@ function DashboardContent() {
       <div className="grid grid-cols-5 flex-1 min-h-0">
         {/* Chart */}
         <div className="col-span-2 p-3 border-r border-white/[0.05] flex flex-col">
-          <div className="text-[7px] text-white/20 uppercase tracking-widest mb-2 font-mono">
+          <div className="text-[7px] text-white/45 uppercase tracking-widest mb-2 font-mono">
             Score / semaine
           </div>
           <div className="flex items-end gap-[3px] flex-1">
@@ -121,7 +121,7 @@ function DashboardContent() {
             {days.map((d, i) => (
               <span
                 key={i}
-                className="flex-1 text-center text-[6px] text-white/15"
+                className="flex-1 text-center text-[9px] text-white/40"
               >
                 {d}
               </span>
@@ -131,13 +131,13 @@ function DashboardContent() {
 
         {/* Evals list */}
         <div className="col-span-3 p-3 flex flex-col overflow-hidden">
-          <div className="text-[7px] text-white/20 uppercase tracking-widest mb-2 font-mono">
+          <div className="text-[7px] text-white/45 uppercase tracking-widest mb-2 font-mono">
             Dernières évaluations
           </div>
           <div className="space-y-2 flex-1">
             {evalRows.slice(0, 4).map((row) => (
               <div key={row.id} className="flex items-center gap-2">
-                <span className="font-mono text-[7px] text-white/20 w-9 shrink-0">
+                <span className="font-mono text-[7px] text-white/45 w-9 shrink-0">
                   {row.id}
                 </span>
                 <span className="text-[8px] text-white/45 w-16 shrink-0 truncate">
@@ -182,13 +182,13 @@ function EvaluationsContent() {
       {/* Filter bar */}
       <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/[0.05] shrink-0">
         <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] px-2 py-1 flex-1">
-          <Search size={7} className="text-white/20" />
-          <span className="text-[7px] text-white/20">Rechercher...</span>
+          <Search size={7} className="text-white/45" />
+          <span className="text-[7px] text-white/45">Rechercher...</span>
         </div>
         {["Client ▾", "Statut ▾", "Période ▾"].map((f) => (
           <div
             key={f}
-            className="text-[7px] text-white/25 px-2 py-1 border border-white/[0.06] whitespace-nowrap"
+            className="text-[7px] text-white/50 px-2 py-1 border border-white/[0.06] whitespace-nowrap"
           >
             {f}
           </div>
@@ -205,7 +205,7 @@ function EvaluationsContent() {
         ].map((h) => (
           <span
             key={h.label}
-            className={`font-mono text-[6px] text-white/15 uppercase tracking-widest ${h.span}`}
+            className={`font-mono text-[9px] text-white/40 uppercase tracking-widest ${h.span}`}
           >
             {h.label}
           </span>
@@ -279,7 +279,7 @@ function GrilleContent() {
     <div className="grid grid-cols-5 flex-1 min-h-0">
       {/* Tree */}
       <div className="col-span-2 border-r border-white/[0.05] p-3 overflow-hidden">
-        <div className="font-mono text-[6px] text-white/20 uppercase tracking-widest mb-2">
+        <div className="font-mono text-[9px] text-white/45 uppercase tracking-widest mb-2">
           Sections
         </div>
         <div className="space-y-0.5">
@@ -299,7 +299,7 @@ function GrilleContent() {
                 >
                   {s.name}
                 </span>
-                <span className="font-mono text-[7px] text-white/20">
+                <span className="font-mono text-[7px] text-white/45">
                   {s.weight}
                 </span>
               </div>
@@ -311,12 +311,12 @@ function GrilleContent() {
                       item === "Salutation" ? "bg-violet-500/10" : ""
                     }`}
                   >
-                    <ChevronRight size={6} className="text-white/15 shrink-0" />
+                    <ChevronRight size={6} className="text-white/40 shrink-0" />
                     <span
                       className={`text-[7px] ${
                         item === "Salutation"
                           ? "text-violet-300/80"
-                          : "text-white/25"
+                          : "text-white/50"
                       }`}
                     >
                       {item}
@@ -331,7 +331,7 @@ function GrilleContent() {
       {/* Detail */}
       <div className="col-span-3 p-3 flex flex-col gap-3">
         <div>
-          <div className="font-mono text-[6px] text-white/20 uppercase tracking-widest mb-1.5">
+          <div className="font-mono text-[9px] text-white/45 uppercase tracking-widest mb-1.5">
             Item sélectionné
           </div>
           <div className="text-[9px] font-semibold text-white/75 mb-2">
@@ -339,18 +339,18 @@ function GrilleContent() {
           </div>
           <div className="flex items-center gap-4 mb-3">
             <div>
-              <div className="text-[6px] text-white/20 mb-0.5">Poids</div>
+              <div className="text-[9px] text-white/45 mb-0.5">Poids</div>
               <div className="font-mono text-[8px] text-violet-400">5%</div>
             </div>
             <div>
-              <div className="text-[6px] text-white/20 mb-0.5">Sévérité</div>
+              <div className="text-[9px] text-white/45 mb-0.5">Sévérité</div>
               <div className="font-mono text-[8px] text-white/40">Standard</div>
             </div>
           </div>
         </div>
 
         <div>
-          <div className="font-mono text-[6px] text-white/20 uppercase tracking-widest mb-2">
+          <div className="font-mono text-[9px] text-white/45 uppercase tracking-widest mb-2">
             Niveaux
           </div>
           <div className="space-y-1.5">
@@ -408,13 +408,13 @@ function PipelineContent() {
     <div className="flex flex-col flex-1 min-h-0 p-3 gap-3">
       {/* Call meta */}
       <div className="flex items-center gap-2 shrink-0">
-        <span className="font-mono text-[7px] text-white/25 uppercase">
+        <span className="font-mono text-[7px] text-white/50 uppercase">
           Appel
         </span>
         <span className="font-mono text-[9px] text-violet-400">#1028</span>
-        <span className="text-white/10">·</span>
+        <span className="text-white/30">·</span>
         <span className="font-mono text-[8px] text-white/30">M. Martin</span>
-        <span className="text-white/10">·</span>
+        <span className="text-white/30">·</span>
         <span className="font-mono text-[8px] text-white/30">04:32</span>
       </div>
 
@@ -431,7 +431,7 @@ function PipelineContent() {
                     : "border-white/[0.05]"
               }`}
             >
-              <div className="font-mono text-[6px] text-white/20 mb-1">
+              <div className="font-mono text-[9px] text-white/45 mb-1">
                 {step.num}
               </div>
               <div
@@ -440,12 +440,12 @@ function PipelineContent() {
                     ? "text-emerald-400"
                     : step.status === "active"
                       ? "text-white/80"
-                      : "text-white/20"
+                      : "text-white/45"
                 }`}
               >
                 {step.label}
               </div>
-              <div className="text-[6px] text-white/20 truncate">
+              <div className="text-[9px] text-white/45 truncate">
                 {step.detail}
               </div>
             </div>
@@ -465,7 +465,7 @@ function PipelineContent() {
       {/* Progress */}
       <div className="mt-auto shrink-0">
         <div className="flex items-center justify-between mb-1">
-          <span className="font-mono text-[7px] text-white/20 uppercase tracking-widest">
+          <span className="font-mono text-[7px] text-white/45 uppercase tracking-widest">
             Progression
           </span>
           <span className="font-mono text-[8px] text-violet-400">78%</span>
@@ -485,7 +485,7 @@ function PipelineContent() {
           >
             <Cpu size={7} className="text-violet-400/40" />
           </motion.div>
-          <span className="font-mono text-[7px] text-white/20">
+          <span className="font-mono text-[7px] text-white/45">
             Vérification conformité RGPD...
           </span>
         </div>
@@ -511,7 +511,7 @@ function ComplianceContent() {
     <div className="flex flex-col flex-1 min-h-0">
       {/* Sub-header */}
       <div className="flex items-center justify-between px-3 py-2 border-b border-white/[0.05] shrink-0">
-        <span className="font-mono text-[7px] text-white/20 uppercase tracking-widest">
+        <span className="font-mono text-[7px] text-white/45 uppercase tracking-widest">
           Critères de conformité
         </span>
         <div className="flex items-center gap-1">
@@ -556,7 +556,7 @@ function ComplianceContent() {
             >
               {c.text}
             </span>
-            <span className="font-mono text-[7px] text-white/15">
+            <span className="font-mono text-[7px] text-white/40">
               {c.weight}
             </span>
             <span
@@ -616,13 +616,13 @@ export function AppPreview({
             eva-voc
           </span>
           <span className="w-px h-3 bg-white/10 shrink-0" />
-          <span className="text-[8px] text-white/25">
+          <span className="text-[8px] text-white/50">
             {variantTitles[variant]}
           </span>
         </div>
         <div className="flex items-center gap-1">
           <span className="h-[5px] w-[5px] keep-round bg-emerald-400 animate-pulse" />
-          <span className="font-mono text-[6px] text-white/15 uppercase tracking-widest">
+          <span className="font-mono text-[9px] text-white/40 uppercase tracking-widest">
             Live
           </span>
         </div>

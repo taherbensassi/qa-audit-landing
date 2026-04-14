@@ -13,15 +13,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1a1a2e;
+  --foreground: #0f172a;
   --accent: #7c3aed;
-  --accent-light: #8b5cf6;
-  --accent-secondary: #7c3aed;
-  --accent-secondary-light: #a78bfa;
-  --surface: #f8f8fc;
+  --accent-light: #a78bfa;
+  --accent-dark: #6d28d9;
+  --surface: #f8fafc;
   --surface-raised: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
-  --muted: #6b7280;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --dark-bg: #09090b;
+}
+
+.slight-round {
+  border-radius: 2px !important;
 }
 
 @theme inline {
@@ -335,4 +339,31 @@ html {
 
 .underline-sweep:hover::after {
   width: 100%;
+}
+
+/* ================================================================= */
+/*  REDUCED MOTION — disable all CSS animations                      */
+/* ================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================================================= */
+/*  PRINT STYLES                                                      */
+/* ================================================================= */
+
+@media print {
+  .no-print,
+  nav,
+  footer,
+  canvas {
+    display: none !important;
+  }
 }

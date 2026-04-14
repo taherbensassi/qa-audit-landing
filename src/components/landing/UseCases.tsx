@@ -66,7 +66,8 @@ export function UseCases() {
         </motion.p>
         <motion.h2
           variants={fadeInUp}
-          className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl"
+          className="mb-16 text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+          style={{ lineHeight: 1.15 }}
         >
           {useCases.headline}
         </motion.h2>
@@ -78,7 +79,7 @@ export function UseCases() {
               <button
                 key={item.title}
                 onClick={() => setActiveIndex(i)}
-                className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px ${
+                className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 border-b-2 -mb-px cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
                   i === activeIndex
                     ? "border-violet-600 text-violet-700"
                     : "border-transparent text-gray-400 hover:text-gray-600 hover:border-gray-300"
@@ -111,10 +112,17 @@ export function UseCases() {
                   initial={{ scale: 0.92, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.15 }}
-                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2.5 text-sm font-semibold text-violet-700"
+                  className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 px-4 py-2.5"
                 >
                   <span className="h-2 w-2 keep-round bg-violet-500 animate-pulse" />
-                  <AnimatedStat text={active.stats} />
+                  <span className="text-sm font-semibold text-violet-700">
+                    <AnimatedStat text={active.stats} />
+                  </span>
+                  {(active as { statsContext?: string }).statsContext && (
+                    <span className="text-xs text-violet-500">
+                      {(active as { statsContext?: string }).statsContext}
+                    </span>
+                  )}
                 </motion.div>
               </div>
 
