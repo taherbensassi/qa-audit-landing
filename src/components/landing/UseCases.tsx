@@ -60,14 +60,14 @@ const flipVariants = {
     rotateY: 0,
     scale: 1,
     z: 0,
-    transition: { type: "spring", damping: 22, stiffness: 160 },
+    transition: { type: "spring" as const, damping: 22, stiffness: 160 },
   },
   exit: (direction: number) => ({
     opacity: 0,
     rotateY: direction > 0 ? -45 : 45,
     scale: 0.92,
     z: -100,
-    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
