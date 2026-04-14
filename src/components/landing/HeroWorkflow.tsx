@@ -10,8 +10,6 @@ import {
 } from "framer-motion";
 import {
   Mic,
-  FileText,
-  ClipboardCheck,
   BarChart3,
   Check,
   X,
@@ -821,10 +819,10 @@ export function HeroWorkflow() {
         ].map((item) => (
           <div
             key={item.text}
-            className="flex items-center gap-1.5 text-white/40"
+            className="flex items-center gap-2 text-zinc-400"
           >
-            <item.icon size={10} />
-            <span className="font-mono text-[8px] uppercase tracking-wider">
+            <item.icon size={14} />
+            <span className="font-mono text-xs uppercase tracking-wider">
               {item.text}
             </span>
           </div>
