@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { content } from "@/lib/content";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurIn, staggerContainer } from "@/lib/animations";
 import { AppPreview, AppPreviewVariant } from "@/components/ui/AppPreview";
 
 const { showcase } = content;
@@ -11,14 +11,34 @@ const { showcase } = content;
 // Map showcase tab index to AppPreview variant
 const tabVariants: AppPreviewVariant[] = [
   "dashboard",    // Dashboard
-  "evaluations",  // Évaluations
-  "grille",       // Éditeur de Grilles
+  "evaluations",  // Evaluations
+  "grille",       // Editeur de Grilles
   "pipeline",     // Pipeline IA
 ];
 
 export function Showcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = showcase.items[activeIndex];
+  const panelRef = useRef<HTMLDivElement>(null);
+  const tiltX = useRef(0);
+  const tiltY = useRef(0);
+  const [tiltStyle, setTiltStyle] = useState({ transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)" });
+
+  const handlePanelMouse = useCallback((e: React.MouseEvent) => {
+    const rect = panelRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    tiltX.current = y * -3; // max 3 degrees
+    tiltY.current = x * 3;
+    setTiltStyle({
+      transform: `perspective(1000px) rotateX(${tiltX.current}deg) rotateY(${tiltY.current}deg)`,
+    });
+  }, []);
+
+  const handlePanelLeave = useCallback(() => {
+    setTiltStyle({ transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)" });
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#1a1a2e] to-[#0f0f23] py-24 lg:py-32">
@@ -40,52 +60,68 @@ export function Showcase() {
         className="relative z-10 mx-auto max-w-6xl px-6"
       >
         <motion.h2
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-16 text-center text-3xl font-bold tracking-tight text-white lg:text-4xl"
         >
           {showcase.headline}
         </motion.h2>
 
-        {/* Tab bar */}
+        {/* Tab bar with sliding indicator */}
         <motion.div
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-8 flex justify-center gap-1 flex-wrap"
         >
-          {showcase.items.map((item, i) => (
-            <button
-              key={item.title}
-              onClick={() => setActiveIndex(i)}
-              className={`px-5 py-2.5 text-sm font-medium transition-all duration-250 ${
-                i === activeIndex
-                  ? "bg-violet-600 text-white"
-                  : "text-white/35 hover:text-white/65 hover:bg-white/[0.05]"
-              }`}
-            >
-              {item.title}
-            </button>
-          ))}
+          <LayoutGroup>
+            {showcase.items.map((item, i) => (
+              <button
+                key={item.title}
+                onClick={() => setActiveIndex(i)}
+                className={`relative px-5 py-2.5 text-sm font-medium transition-colors duration-250 ${
+                  i === activeIndex
+                    ? "text-white"
+                    : "text-white/35 hover:text-white/65"
+                }`}
+              >
+                {i === activeIndex && (
+                  <motion.div
+                    layoutId="showcase-tab"
+                    className="absolute inset-0 bg-violet-600"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{item.title}</span>
+              </button>
+            ))}
+          </LayoutGroup>
         </motion.div>
 
-        {/* Preview panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, scale: 0.97, filter: "blur(4px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, scale: 1.01, filter: "blur(4px)" }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="shadow-2xl shadow-black/60">
-              <AppPreview
-                variant={tabVariants[activeIndex]}
-                aspectRatio="16/10"
-              />
-            </div>
-            <p className="mt-6 text-center text-sm text-white/40">
-              {active.description}
-            </p>
-          </motion.div>
-        </AnimatePresence>
+        {/* Preview panel with light 3D tilt */}
+        <div
+          ref={panelRef}
+          onMouseMove={handlePanelMouse}
+          onMouseLeave={handlePanelLeave}
+          style={{ ...tiltStyle, transition: "transform 0.15s ease-out", willChange: "transform" }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, scale: 0.97, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 1.01, filter: "blur(4px)" }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="shadow-2xl shadow-black/60">
+                <AppPreview
+                  variant={tabVariants[activeIndex]}
+                  aspectRatio="16/10"
+                />
+              </div>
+              <p className="mt-6 text-center text-sm text-white/40">
+                {active.description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </motion.div>
     </section>
   );

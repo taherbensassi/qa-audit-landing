@@ -98,6 +98,7 @@ function generateParticles(): Particle[] {
 
 export function HeroNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisibleRef = useRef(true);
   const stateRef = useRef<{
     nodes: Node[];
     connections: Connection[];
@@ -106,10 +107,32 @@ export function HeroNetwork() {
     mouse: { x: number; y: number };
   } | null>(null);
 
+  /* Visibility gating — pause canvas draw loop when off-screen */
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        // Resume loop when scrolling back into view
+        if (entry.isIntersecting && stateRef.current) {
+          stateRef.current.animId = requestAnimationFrame(draw);
+        }
+      },
+      { rootMargin: "100px" }
+    );
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const draw = useCallback((time: number) => {
     const canvas = canvasRef.current;
     const state = stateRef.current;
     if (!canvas || !state) return;
+
+    // Skip drawing when off-screen
+    if (!isVisibleRef.current) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -253,7 +276,7 @@ export function HeroNetwork() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.6, willChange: "transform" }}
     />
   );
 }

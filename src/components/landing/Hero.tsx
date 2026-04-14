@@ -112,6 +112,19 @@ export function Hero() {
         }}
       />
 
+      {/* Animated gradient orbs */}
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
+        <div
+          className="absolute top-[15%] left-[20%] w-[350px] h-[350px] bg-violet-600/15 blur-[120px] keep-round animate-orb-1"
+        />
+        <div
+          className="absolute top-[25%] right-[15%] w-[300px] h-[300px] bg-indigo-500/12 blur-[100px] keep-round animate-orb-2"
+        />
+        <div
+          className="absolute top-[10%] left-[50%] w-[250px] h-[250px] bg-violet-400/10 blur-[110px] keep-round animate-orb-3"
+        />
+      </div>
+
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#09090b]/40 via-transparent to-[#09090b]" />
 
       <motion.div
@@ -165,7 +178,7 @@ export function Hero() {
           variants={fadeUpStagger}
           className="flex flex-col items-center justify-center gap-4 sm:flex-row w-full sm:w-auto"
         >
-          <Button href={hero.cta.href} variant="primaryDark" size="lg">
+          <Button href={hero.cta.href} variant="primaryDark" size="lg" className="animate-pulse-glow btn-shine">
             <span className="flex items-center">
               {hero.cta.label}
               <ArrowRight

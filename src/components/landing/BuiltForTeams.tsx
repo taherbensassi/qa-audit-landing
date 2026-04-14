@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
+import { blurIn, fadeInLeft, fadeInRight, staggerContainer, scaleReveal } from "@/lib/animations";
 import { CheckCircle, Users, Shield } from "lucide-react";
 
 const qaManagerPoints = [
@@ -29,13 +29,13 @@ export function BuiltForTeams() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-400"
         >
           Conçu pour votre équipe
         </motion.p>
         <motion.h2
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-4 max-w-3xl text-3xl font-bold tracking-tight text-white lg:text-4xl"
           style={{ lineHeight: 1.2 }}
         >
@@ -44,7 +44,7 @@ export function BuiltForTeams() {
           <span className="text-violet-400">Votre expertise pilote la qualité.</span>
         </motion.h2>
         <motion.p
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-16 max-w-2xl text-base text-zinc-400"
         >
           Nous ne remplaçons pas votre équipe QA — nous lui donnons des super-pouvoirs. Vos auditeurs définissent les standards, calibrent l'IA et ont le dernier mot. La plateforme s'assure que rien ne passe entre les mailles.
@@ -54,7 +54,7 @@ export function BuiltForTeams() {
           {/* QA Managers */}
           <motion.div
             variants={fadeInLeft}
-            className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10"
+            className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10 hover:border-violet-500/20 transition-colors duration-500"
           >
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center bg-violet-500/10">
@@ -70,9 +70,16 @@ export function BuiltForTeams() {
                   initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
+                  transition={{ delay: 0.3 + i * 0.12 }}
                 >
-                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-violet-400" />
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: [0, 1.3, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.12, duration: 0.3 }}
+                  >
+                    <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-violet-400" />
+                  </motion.span>
                   {point}
                 </motion.li>
               ))}
@@ -82,7 +89,7 @@ export function BuiltForTeams() {
           {/* Compliance Officers */}
           <motion.div
             variants={fadeInRight}
-            className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10"
+            className="border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10 hover:border-indigo-500/20 transition-colors duration-500"
           >
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center bg-indigo-500/10">
@@ -98,9 +105,16 @@ export function BuiltForTeams() {
                   initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
+                  transition={{ delay: 0.3 + i * 0.12 }}
                 >
-                  <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-indigo-400" />
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: [0, 1.3, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.12, duration: 0.3 }}
+                  >
+                    <CheckCircle size={16} className="mt-0.5 flex-shrink-0 text-indigo-400" />
+                  </motion.span>
                   {point}
                 </motion.li>
               ))}

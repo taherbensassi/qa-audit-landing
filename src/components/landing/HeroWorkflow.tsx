@@ -538,6 +538,7 @@ function TiltCard({
         rotateY: springY,
         transformStyle: "preserve-3d",
         perspective: 800,
+        willChange: "transform",
       }}
       className={className}
     >
@@ -569,33 +570,51 @@ export function HeroWorkflow() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const rafRef = useRef(0);
+  const isVisibleRef = useRef(true);
+
+  /* Visibility gating — skip mouse processing when off-screen */
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { isVisibleRef.current = entry.isIntersecting; },
+      { rootMargin: "100px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   /* Parallax layer transforms driven by mouse position */
   const layer1X = useSpring(useTransform(mouseX, [-1, 1], [8, -8]), {
-    stiffness: 100,
-    damping: 20,
+    stiffness: 60,
+    damping: 22,
   });
   const layer1Y = useSpring(useTransform(mouseY, [-1, 1], [6, -6]), {
-    stiffness: 100,
-    damping: 20,
+    stiffness: 60,
+    damping: 22,
   });
   const layer2X = useSpring(useTransform(mouseX, [-1, 1], [-4, 4]), {
-    stiffness: 80,
-    damping: 25,
+    stiffness: 50,
+    damping: 28,
   });
   const layer2Y = useSpring(useTransform(mouseY, [-1, 1], [-3, 3]), {
-    stiffness: 80,
-    damping: 25,
+    stiffness: 50,
+    damping: 28,
   });
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent) => {
-      const rect = containerRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
-      mouseX.set(x);
-      mouseY.set(y);
+      if (!isVisibleRef.current || rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        const rect = containerRef.current?.getBoundingClientRect();
+        if (!rect) { rafRef.current = 0; return; }
+        const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+        mouseX.set(x);
+        mouseY.set(y);
+        rafRef.current = 0;
+      });
     },
     [mouseX, mouseY]
   );

@@ -137,6 +137,67 @@ export const rotateIn: Variants = {
 /*  3D tilt card helper (for mouse-tracking components)               */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/*  Blur & clip-path reveals                                          */
+/* ------------------------------------------------------------------ */
+
+export const blurIn: Variants = {
+  hidden: { opacity: 0, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+export const clipRevealUp: Variants = {
+  hidden: { clipPath: "inset(100% 0 0 0)" },
+  visible: {
+    clipPath: "inset(0% 0 0 0)",
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/*  Spring-based entrances                                            */
+/* ------------------------------------------------------------------ */
+
+export const tiltIn: Variants = {
+  hidden: { opacity: 0, y: 60, rotateX: -15, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transition: { type: "spring", damping: 20, stiffness: 100 },
+  },
+};
+
+export const springNumber: Variants = {
+  hidden: { opacity: 0, scale: 0.3, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", damping: 8, stiffness: 120 },
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/*  Stagger slow (for dramatic reveals)                               */
+/* ------------------------------------------------------------------ */
+
+export const staggerSlow: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/*  3D tilt card helper (for mouse-tracking components)               */
+/* ------------------------------------------------------------------ */
+
 export function calcTilt(
   e: React.MouseEvent<HTMLElement>,
   intensity: number = 10

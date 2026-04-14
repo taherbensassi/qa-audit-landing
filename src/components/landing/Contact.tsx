@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { slideInFromLeft, slideInFromRight, blurIn, staggerContainer } from "@/lib/animations";
 import { Mail, MapPin, ExternalLink, CheckCircle, X } from "lucide-react";
 
 export function Contact() {
@@ -69,19 +69,19 @@ export function Contact() {
         className="relative z-10 mx-auto max-w-6xl px-6"
       >
         <motion.p
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-3 font-mono text-xs tracking-widest uppercase text-violet-500"
         >
           Contact
         </motion.p>
         <motion.h2
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-4 text-3xl font-bold tracking-tight text-white lg:text-4xl"
         >
           Discutons de votre projet
         </motion.h2>
         <motion.p
-          variants={fadeInUp}
+          variants={blurIn}
           className="mb-16 max-w-xl text-base text-zinc-400"
         >
           Prêt à transformer votre processus qualité ? Nous sommes là pour
@@ -89,9 +89,9 @@ export function Contact() {
         </motion.p>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left — contact info */}
-          <motion.div variants={fadeInUp} className="space-y-8">
-            <div className="border border-white/[0.06] bg-white/[0.02] p-8 space-y-6">
+          {/* Left — contact info (slides from left) */}
+          <motion.div variants={slideInFromLeft} className="space-y-8">
+            <div className="border border-white/[0.06] bg-white/[0.02] p-8 space-y-6 hover:border-violet-500/15 transition-colors duration-500">
               <h3 className="text-base font-semibold text-white">
                 Informations de contact
               </h3>
@@ -156,10 +156,10 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Right — form */}
+          {/* Right — form (slides from right) */}
           <motion.div
-            variants={fadeInUp}
-            className="border border-white/[0.06] bg-white/[0.02] p-8"
+            variants={slideInFromRight}
+            className="border border-white/[0.06] bg-white/[0.02] p-8 hover:border-violet-500/15 transition-colors duration-500"
           >
             <h3 className="mb-6 text-base font-semibold text-white">
               Envoyez-nous un message
@@ -176,7 +176,7 @@ export function Contact() {
                     name="name"
                     required
                     placeholder="Votre nom"
-                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none"
+                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
                   />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export function Contact() {
                     name="email"
                     required
                     placeholder="votre@email.com"
-                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none"
+                    className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ export function Contact() {
                   type="text"
                   name="company"
                   placeholder="Nom de votre entreprise"
-                  className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none"
+                  className="w-full border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
                 />
               </div>
 
@@ -214,7 +214,7 @@ export function Contact() {
                   rows={4}
                   required
                   placeholder="Décrivez vos enjeux qualité..."
-                  className="w-full resize-none border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none"
+                  className="w-full resize-none border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 transition-all duration-200 focus:border-violet-500/50 focus:bg-white/[0.05] focus:outline-none input-glow"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-violet-500 disabled:opacity-50"
+                className="w-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-violet-500 disabled:opacity-50 btn-shine"
               >
                 {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
               </button>

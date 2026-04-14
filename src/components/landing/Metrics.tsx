@@ -2,16 +2,27 @@
 
 import { motion } from "framer-motion";
 import { content } from "@/lib/content";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { springNumber, staggerSlow } from "@/lib/animations";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const { metrics } = content;
 
 export function Metrics() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-violet-700 via-violet-600 to-indigo-700 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-r from-violet-700 via-violet-600 to-indigo-700 py-24 animate-gradient">
+      {/* One-time shimmer sweep on entrance */}
       <motion.div
-        variants={staggerContainer}
+        className="pointer-events-none absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: [0, 0.15, 0] }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 1.5 }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+      </motion.div>
+
+      <motion.div
+        variants={staggerSlow}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -20,7 +31,7 @@ export function Metrics() {
         {metrics.map((metric, i) => (
           <motion.div
             key={metric.label}
-            variants={fadeInUp}
+            variants={springNumber}
             className={`px-6 py-8 text-center ${
               i < metrics.length - 1 ? "border-r border-white/10" : ""
             }`}
